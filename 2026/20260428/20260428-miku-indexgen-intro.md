@@ -10,6 +10,8 @@ release_date: 2026-04-28
 
 # [miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話
 
+![miku-indexgen: AI にファイルを読ませる前に、まず地図が欲しかった話](images-miku-indexgen-intro/000.png)
+
 ## はじめに
 
 生成AI や AI エージェントに、ローカルのファイル群を読んでもらうことが増えてきました。

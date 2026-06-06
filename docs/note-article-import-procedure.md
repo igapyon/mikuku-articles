@@ -105,6 +105,11 @@ Notes:
 
 - Keep `title`, `tags`, `author`, `published_to`, `writer_agent`, `url`, and
   `release_date`.
+- In unquoted front matter values, do not leave a half-width colon followed by a
+  space. For example, write `title: miku-grep 開発日誌：AI agent に選ばれる CLI...`,
+  not `title: miku-grep 開発日誌: AI agent に選ばれる CLI...`. The `: ` sequence
+  inside a YAML value can be parsed as a mapping separator by some tools and may
+  break metadata processing. Use a full-width colon `：` in Japanese titles.
 - Remove source-only metadata such as `slide: false` unless it is intentionally used
   by this repository.
 - Set `release_date` from the article date or the date encoded in the imported file
@@ -133,6 +138,29 @@ When images are not available yet:
 - Do not create placeholder image files unless explicitly needed.
 - Keep the Markdown article as copied from the source.
 - Add image directories later using the same article date directory.
+
+If an old local image workspace is later found, it may be possible to recover
+some images from that workspace. Treat this as an irregular recovery path, not
+the standard import route. This is not `Note掲載済み画像をローカル正本へ再取得`.
+Keep the distinction clear in `TODO.md`: local workspace recovery means the image
+files happened to remain in a local project/workplace directory, while Note image
+recovery means the local originals were not found and the already-uploaded Note
+images are being downloaded back into the article package.
+
+If the original local image files are no longer available but the article was
+already published to Note by the repository owner, treat the work as:
+
+```text
+Note掲載済み画像をローカル正本へ再取得
+```
+
+In this case, use the article's front matter `url` to inspect the published Note
+page and recover the already-uploaded article images back into the local article
+package. This is a recovery/import step for images that were uploaded by the
+owner, not a new external image source. Downloaded images may not be byte-for-byte
+identical to the original local generation files because Note may transform or
+serve optimized copies, so preserve the recovered image order and record the
+source Note URL when doing the import.
 
 Recommended image path pattern:
 
@@ -369,6 +397,8 @@ Before committing:
   part of the article package.
 - Confirm section images are linked in the intended order.
 - Confirm front matter follows the repository's standard key set and order.
+- Confirm front matter values do not contain unsafe half-width colon-space
+  sequences such as `title: ...: ...`; use full-width `：` in Japanese titles.
 - Confirm the article title appears as an H1 immediately after front matter.
 - Confirm `index.json` is regenerated after adding article Markdown, image prompt
   Markdown, or docs.
