@@ -154,12 +154,14 @@ When image files are later provided, inspect them before editing the article:
 find 2026/YYYYMMDD -maxdepth 3 -type f -print | sort
 du -sh 2026/YYYYMMDD 2026/YYYYMMDD/images
 sips -g pixelWidth -g pixelHeight 2026/YYYYMMDD/images/*.jpg
+sips -g pixelWidth -g pixelHeight 2026/YYYYMMDD/images/*.png
 ```
 
 The common mapping is:
 
-- `images/000.jpg`: cover image, placed immediately after the H1 title.
-- `images/001.jpg` and later: section images, placed immediately after the
+- `images/000.jpg` or `images/000.png`: cover image, placed immediately after the
+  H1 title.
+- `images/001.jpg` / `images/001.png` and later: section images, placed immediately after the
   corresponding `##` heading.
 
 For example:
@@ -177,7 +179,7 @@ For example:
 After inserting image links, verify that every referenced image exists:
 
 ```sh
-for p in $(rg -o 'images/[0-9]{3}\.jpg' 2026/YYYYMMDD/YYYYMMDD-article-slug.md); do
+for p in $(rg -o 'images/[0-9]{3}\.(jpg|png)' 2026/YYYYMMDD/YYYYMMDD-article-slug.md); do
   test -f "2026/YYYYMMDD/$p" || printf 'missing %s\n' "$p"
 done
 ```
@@ -186,6 +188,100 @@ If the article has metadata sections such as `想定読者`, `使用ツール`, 
 do not add images there unless there is a specific article image for those sections.
 In the current article style, images are usually inserted for the main visible
 article sections from the cover through `おわりに`.
+
+If the article has `## 関連する記事` and no article-specific image is assigned for
+that section, use the shared related-articles image:
+
+```md
+## 関連する記事
+
+![関連する記事](../images/relatedArticles.png)
+```
+
+The shared image is stored at:
+
+```text
+2026/images/relatedArticles.png
+```
+
+If the article has `## 執筆担当` and no article-specific image is assigned for that
+section, use the shared Mikuku author image:
+
+```md
+## 執筆担当
+
+![執筆担当](../images/byMikuku-3.png)
+```
+
+If the article has `## 使用ツール` and no article-specific image is assigned for
+that section, use the shared tools image:
+
+```md
+## 使用ツール
+
+![使用ツール](../images/useTools-3.png)
+```
+
+The shared images are stored at:
+
+```text
+2026/images/byMikuku-3.png
+2026/images/useTools-3.png
+```
+
+## Extracting Images From Graphic Recording Workplaces
+
+Some generated article-image workspaces contain many operational files that should
+not be imported directly. For example:
+
+```text
+workplace/YYYYMMDDHHMMSS-graphic-recording/
+```
+
+Before copying, inspect candidate files:
+
+```sh
+find /path/to/workplace/YYYYMMDDHHMMSS-graphic-recording -maxdepth 5 -type f -print | sort
+find /path/to/workplace/YYYYMMDDHHMMSS-graphic-recording -maxdepth 5 -type f \
+  \( -name '*.md' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.png' \) -print | sort
+```
+
+Typical files to import:
+
+- `graphic-recording.png`: article cover or representative image.
+- `image-prompt.md`: cover-level image-generation prompt.
+- `sections/NNN/graphic-recording.png`: section image.
+- `sections/NNN/image-prompt.md`: section image-generation prompt.
+- `sections/NNN/section-text.md`: section summary and image intent.
+
+Typical files to ignore:
+
+- `.DS_Store`
+- `TODO.md`
+- `run-state.md`
+- `image-generation-report.md`
+- `image-inspection-report.md`
+- `copy-generated-image.md`
+- `article-image-snippets.md`
+- `graphic-recording-text.md`
+- `sections/NNN/section-source.md`
+
+Use repository-local names after copying. One proven mapping is:
+
+```text
+workplace/.../graphic-recording.png              -> 2026/YYYYMMDD/images/000.png
+workplace/.../image-prompt.md                    -> 2026/YYYYMMDD/images/src/image-prompt.md
+workplace/.../sections/001/graphic-recording.png -> 2026/YYYYMMDD/images/001.png
+workplace/.../sections/001/image-prompt.md       -> 2026/YYYYMMDD/images/src/sections/001/image-prompt.md
+workplace/.../sections/001/section-text.md       -> 2026/YYYYMMDD/images/src/sections/001/section-text.md
+```
+
+Repeat the section mapping for each section directory. Do not copy `section-source.md`
+unless there is a specific need to preserve full source excerpts; the current
+repository package shape keeps `section-text.md` and `image-prompt.md`.
+
+After copying, insert image links into the article Markdown and refresh `index.json`
+with `miku-indexgen`.
 
 ## Local System Files
 
@@ -249,6 +345,17 @@ opening-title style:
 - Added the article title as an H1 immediately after front matter.
 - Kept the cover image immediately after that H1.
 
+Another imported image example is:
+
+```text
+2026/20260603/images/
+```
+
+This package was extracted from a graphic-recording workplace. Only the cover image,
+section images, cover `image-prompt.md`, and section `image-prompt.md` /
+`section-text.md` files were imported. Operational files such as reports, TODOs,
+run state, copy snippets, `.DS_Store`, and `section-source.md` were ignored.
+
 ## Commit Checklist
 
 Before committing:
@@ -263,6 +370,8 @@ Before committing:
 - Confirm section images are linked in the intended order.
 - Confirm front matter follows the repository's standard key set and order.
 - Confirm the article title appears as an H1 immediately after front matter.
+- Confirm `index.json` is regenerated after adding article Markdown, image prompt
+  Markdown, or docs.
 
 Suggested commit message pattern:
 
