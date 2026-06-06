@@ -1,5 +1,5 @@
 ---
-title: miku-grep 開発日誌: AI agent に選ばれる CLI をそっと考察中
+title: miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中
 tags: #生成AI #AIagent #CLI #JSON #AgentSkills #mikuSoft #mikugrep #mikuku
 author: igapyon
 published_to: note
@@ -8,7 +8,7 @@ url: https://note.com/toshikiigaa/n/na7fb76c52fda
 release_date: 2026-05-29
 ---
 
-# miku-grep 開発日誌: AI agent に選ばれる CLI をそっと考察中
+# miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中
 
 ## はじめに
 

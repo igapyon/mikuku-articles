@@ -1,5 +1,5 @@
 ---
-title: Agent Skills 開発入門: 自然言語でプログラミングするという考え方
+title: Agent Skills 開発入門：自然言語でプログラミングするという考え方
 tags: #AgentSkills #生成AI #AIagent #自然言語プログラミング #mikuku
 author: igapyon
 published_to: note
@@ -8,7 +8,7 @@ url: https://note.com/toshikiigaa/n/ned521551398c
 release_date: 2026-05-14
 ---
 
-# Agent Skills 開発入門: 自然言語でプログラミングするという考え方
+# Agent Skills 開発入門：自然言語でプログラミングするという考え方
 
 ## はじめに
 

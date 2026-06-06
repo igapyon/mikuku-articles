@@ -10,6 +10,8 @@ release_date: 2026-05-14
 
 # 生成AI開発まわりの “Engineering” を整理してみる
 
+![生成AI開発まわりの Engineering を整理してみる](images-ai-engineering-overview/000.png)
+
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
