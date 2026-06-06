@@ -14,6 +14,9 @@ release_date: 2026-05-14
 
 ## はじめに
 
+![はじめに](images-ai-engineering-overview/001.png)
+
+
 あ、あの…この記事は、みくくが担当します。
 
 最近、生成AIを使った開発まわりで、いろいろな “Engineering” という言葉を見かけるようになってきました。
@@ -46,6 +49,9 @@ AI が迷わず作業できる環境をどう作るか
 ここでは、いま生成AI開発まわりで出てきている概念群を、なるべく情報を落とさずに、ひとつずつ整理してみます。
 
 ## Prompt Engineering から Context Engineering へ
+
+![Prompt Engineering から Context Engineering へ](images-ai-engineering-overview/002.png)
+
 
 えっと…少し前まで、生成AI活用の中心にあったのは Prompt Engineering だったと思います。
 
@@ -87,6 +93,9 @@ AI が作業する世界そのものを、どう見せてあげるのか。
 えっと…そこが、だんだん大事になってきているのだと思います。
 
 ## Context Engineering で扱うもの
+
+![Context Engineering で扱うもの](images-ai-engineering-overview/003.png)
+
 
 あの…Context Engineering が扱うものは、思っているよりもかなり広いです。
 
@@ -130,6 +139,9 @@ AI が作業する世界そのものを、どう見せてあげるのか。
 AI agent が迷わず作業するための context 設計でもあるのです。
 
 ## 増えている “○○ Engineering”
+
+![増えている “○○ Engineering”](images-ai-engineering-overview/004.png)
+
 
 えっと…最近の生成AI開発まわりでは、いろいろな “Engineering” という言葉を見かけるようになってきました。
 
@@ -183,6 +195,9 @@ README、docs、TODO の分離、repository map、symbol index、search tool な
 人間が読むためだけの repository から、人間と AI agent が共存して作業する repository へ、少しずつ形が変わっているのかもしれません。
 
 ## 今後重要になりそうな概念
+
+![今後重要になりそうな概念](images-ai-engineering-overview/005.png)
+
 
 あ、あの…ここからは、これからさらに重要になっていきそうな概念を、少しだけ整理してみます。
 
@@ -289,6 +304,9 @@ TODO.md は、この long-horizon planning をかなり強く支援します。
 
 ## Repository Engineering の本質
 
+![Repository Engineering の本質](images-ai-engineering-overview/006.png)
+
+
 あ、あの…ここは少し大事なのですが、**Repository Engineering の本質は、AI を直接賢くすることではない**と思います。
 
 むしろ、
@@ -321,6 +339,9 @@ AI が迷わない構造を作る
 
 ## 重要な変化
 
+![重要な変化](images-ai-engineering-overview/007.png)
+
+
 以前は、
 
 ```text
@@ -350,6 +371,9 @@ AI が守る Agent Skills。
 
 ## 現在の先駆者たちの理解
 
+![現在の先駆者たちの理解](images-ai-engineering-overview/008.png)
+
+
 えっと…最近の AI の強さは、単純に LLM 単体の知能だけでは、少し説明しきれなくなっている気がします。
 
 むしろ、比喩的に書くと、次の掛け算で決まることが増えています。
@@ -374,6 +398,9 @@ Context Engineering
 でも、あの…それと同じくらい、AI が迷わず作業できる環境を整えてあげることも、大切になってきているのだと思います。
 
 ## おわりに
+
+![おわりに](images-ai-engineering-overview/009.png)
+
 
 一言でいうと、
 

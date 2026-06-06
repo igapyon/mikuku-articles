@@ -162,6 +162,74 @@ identical to the original local generation files because Note may transform or
 serve optimized copies, so preserve the recovered image order and record the
 source Note URL when doing the import.
 
+Do not assume that the published Note page exposes only cover images. Note may
+serve the cover image through a `production/uploads/images/...` URL, while body
+images may appear through `assets.st-note.com/img/...` URLs in rendered `figure`
+elements, `pictures` data, or `ImageObject` / `contentUrl` structured data. When
+recovering images from Note, inspect both the rendered figure order and embedded
+page data before deciding that only the cover image is available.
+
+When mapping recovered body images, use the visible article order:
+
+- the first article image is normally the cover or head image;
+- the first figure after each main body `##` heading belongs to that section;
+- stop before the Note support/footer area such as `いいなと思ったら応援しよう！`;
+- ignore duplicated heading lists or table-of-contents data if they appear after
+  the rendered article body.
+
+A practical recovery flow is:
+
+1. Save the published Note HTML locally.
+
+   ```sh
+   curl -L 'https://note.com/toshikiigaa/n/NOTE_ID' -o /tmp/note-NOTE_ID.html
+   ```
+
+2. Decode escaped slash and angle-bracket sequences before scanning image URLs.
+   Note page data may contain URLs as `https:\u002F\u002F...`, so a plain URL
+   search can miss body images.
+
+   ```sh
+   ruby -e 'html=File.read(ARGV[0]); html=html.gsub("\\u002F","/").gsub("\\u003C","<").gsub("\\u003E",">").gsub("\\u0026","&"); puts html.scan(%r{https://(?:assets\\.st-note\\.com/img|assets\\.st-note\\.com/production/uploads/images)/[^"<> ]+}).uniq' /tmp/note-NOTE_ID.html
+   ```
+
+3. Prefer article-body order over raw URL order. Raw HTML can include duplicated
+   data for metadata, previews, or page state. To map section images, scan the
+   decoded HTML for rendered `h2` and `figure img` order, then assign the first
+   image after each main body heading to that heading.
+
+4. Download each selected URL with `curl -L -o`, preserving the local package
+   sequence.
+
+   ```sh
+   curl -L -o 2026/YYYYMMDD/images-article-slug/000.png 'https://...'
+   curl -L -o 2026/YYYYMMDD/images-article-slug/001.png 'https://...'
+   ```
+
+5. Insert Markdown image links only for recovered article-specific images. Keep
+   shared images for `執筆担当`, `使用ツール`, and `関連する記事` unless a special
+   article-specific image is clearly present.
+
+For Note image recovery, recover only the article-specific image sequence:
+
+- `000`: the head or cover image, placed immediately after the H1 title.
+- `001` and later: images for the main body `##` sections.
+
+Do not recover or assign Note images for metadata sections such as `執筆担当` and
+`使用ツール` unless the published article clearly has a special article-specific
+image for that section. By default, use the repository's shared images for those
+sections.
+
+For Note image recovery, add a short recovery record under the image directory:
+
+```text
+2026/YYYYMMDD/images-article-slug/src/note-image-recovery.md
+```
+
+Include the recovery label, article path, title, source Note URL, recovered image
+number, and the note that the file may be an optimized or transformed copy served
+by Note.
+
 Recommended image path pattern:
 
 ```text

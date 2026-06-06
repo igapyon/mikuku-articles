@@ -10,7 +10,12 @@ release_date: 2026-04-10
 
 # [mikuproject] WBS 作成を生成AIに手伝ってもらったら、思ったより幸せだった話
 
+![mikuproject: WBS 作成を生成AIに手伝ってもらったら、思ったより幸せだった話](images-mikuproject-agent-skills-wbs-planning/000.png)
+
 ## はじめに
+
+![はじめに](images-mikuproject-agent-skills-wbs-planning/001.png)
+
 
 今回は、生成AI を使って `WBS` 作成を少し幸せにしてみた話です。
 
@@ -52,6 +57,9 @@ release_date: 2026-04-10
 
 ## 生成AI に WBS の叩き台を作ってもらう
 
+![生成AI に WBS の叩き台を作ってもらう](images-mikuproject-agent-skills-wbs-planning/003.png)
+
+
 そこで、生成AI に `WBS` の叩き台を作ってもらいました。
 
 やりたいことや制約を自然文で伝えて、「この前提で `WBS` を作って」とお願いする感じです。
@@ -74,6 +82,9 @@ release_date: 2026-04-10
 この差は、思っていたより大きいです。
 
 ## WBS を会話で直せると、だいぶ楽
+
+![WBS を会話で直せると、だいぶ楽](images-mikuproject-agent-skills-wbs-planning/004.png)
+
 
 今回いちばんうれしかったのは、叩き台を作るところだけではありませんでした。
 
@@ -109,6 +120,9 @@ Excel や Markdown など、扱いやすい形にする。
 そういう流れが、意外なほど会話の中に溶け込んでいました。
 
 ## `Agent Skills` すごいね、と思った
+
+![`Agent Skills` すごいね、と思った](images-mikuproject-agent-skills-wbs-planning/006.png)
+
 
 今回やってみて、素直に「`Agent Skills` すごいね」と思いました。
 
@@ -155,6 +169,9 @@ Excel や Markdown など、扱いやすい形にする。
 生成AI を使って `WBS` を作ってみて、そのあたりをあらためて感じました。
 
 ## まとめ
+
+![まとめ](images-mikuproject-agent-skills-wbs-planning/008.png)
+
 
 今回、生成AI と `mikuproject` の `Agent Skills` を使って、`WBS` の叩き台作成と変更を試してみました。
 
