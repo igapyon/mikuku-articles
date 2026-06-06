@@ -10,6 +10,8 @@ release_date: 2026-04-12
 
 # [miku-abc-player] `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった
 
+![miku-abc-player: `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった](images-miku-abc-player-intro/000.png)
+
 ## はじめに
 
 `ABC` 記譜法の譜面を見つけることがあります。
@@ -51,6 +53,9 @@ release_date: 2026-04-12
 それから、これは少しおまけですが、生成AI が返した `ABC` を人間が確認する場所としても、わりと相性がよさそうでした。
 
 ## まとめ
+
+![まとめ](images-miku-abc-player-intro/005.png)
+
 
 `miku-abc-player` は、何でもできる譜面ツールというより、`ABC` 記譜法の譜面をちょっと見たい、ちょっと変換したい、ちょっと作りたい、というときの小さなアプリです。
 
