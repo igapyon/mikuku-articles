@@ -19,7 +19,7 @@ Use this path pattern:
 Example:
 
 ```text
-2026/20260605/20260605-general-mcp-magic-circle-outline.md
+2026/06/20260605/20260605-general-mcp-magic-circle-outline.md
 ```
 
 The date directory should match the article date or the date encoded in the source
@@ -50,7 +50,7 @@ file name.
    Example:
 
    ```sh
-   mkdir -p 2026/20260605
+   mkdir -p 2026/06/20260605
    ```
 
 4. Copy the Markdown file into the destination directory.
@@ -59,7 +59,7 @@ file name.
 
    ```sh
    cp /Users/igapyon/Documents/git/igapyon-agent-skills/skills/igapyon-note-writer/references/magic-metaphors/20260605-general-mcp-magic-circle-outline.md \
-     2026/20260605/20260605-general-mcp-magic-circle-outline.md
+     2026/06/20260605/20260605-general-mcp-magic-circle-outline.md
    ```
 
 5. Verify that the copied file matches the source.
@@ -68,7 +68,7 @@ file name.
 
    ```sh
    cmp -s /Users/igapyon/Documents/git/igapyon-agent-skills/skills/igapyon-note-writer/references/magic-metaphors/20260605-general-mcp-magic-circle-outline.md \
-     2026/20260605/20260605-general-mcp-magic-circle-outline.md
+     2026/06/20260605/20260605-general-mcp-magic-circle-outline.md
    ```
 
    A successful `cmp -s` exits with status `0`.
@@ -84,7 +84,7 @@ file name.
 ## Front Matter And Opening Title
 
 Normalize imported articles to match the existing article style in this repository.
-Use `2026/20260606/20260606-general-ai-agent-fairies-outline.md` as the current
+Use `2026/06/20260606/20260606-general-ai-agent-fairies-outline.md` as the current
 reference shape.
 
 Recommended front matter keys and order:
@@ -291,7 +291,7 @@ that section, use the shared related-articles image:
 ```md
 ## 関連する記事
 
-![関連する記事](../images/relatedArticles.png)
+![関連する記事](../../images/relatedArticles.png)
 ```
 
 The shared image is stored at:
@@ -306,7 +306,7 @@ section, use the shared Mikuku author image:
 ```md
 ## 執筆担当
 
-![執筆担当](../images/byMikuku-3.png)
+![執筆担当](../../images/byMikuku-3.png)
 ```
 
 If the article has `## 使用ツール` and no article-specific image is assigned for
@@ -315,7 +315,7 @@ that section, use the shared tools image:
 ```md
 ## 使用ツール
 
-![使用ツール](../images/useTools-3.png)
+![使用ツール](../../images/useTools-3.png)
 ```
 
 The shared images are stored at:
@@ -409,7 +409,7 @@ git ls-files '**/.DS_Store' '.DS_Store'
 The article below was imported using this procedure:
 
 ```text
-2026/20260605/20260605-general-mcp-magic-circle-outline.md
+2026/06/20260605/20260605-general-mcp-magic-circle-outline.md
 ```
 
 Source:
@@ -421,7 +421,7 @@ Source:
 The Markdown file was copied first. Image files were then added under:
 
 ```text
-2026/20260605/images/
+2026/06/20260605/images/
 ```
 
 The current image set uses:
@@ -444,7 +444,7 @@ opening-title style:
 Another imported image example is:
 
 ```text
-2026/20260603/images/
+2026/06/20260603/images/
 ```
 
 This package was extracted from a graphic-recording workplace. Only the cover image,

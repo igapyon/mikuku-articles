@@ -10,7 +10,7 @@ through the metaphor of rabbit-shaped fairy helpers.
 
 ## Main Article
 
-- Path: `2026/20260606/20260606-general-ai-agent-fairies-outline.md`
+- Path: `2026/06/20260606/20260606-general-ai-agent-fairies-outline.md`
 - Title: `生成AI agent の向こう側には、いろいろな妖精さんがいる`
 - Author metadata: `igapyon`
 - Writer agent metadata: `みくく`
@@ -69,7 +69,7 @@ Additional metadata-oriented sections were also detected in the article file:
 
 Article images are stored under:
 
-- `2026/20260606/images/`
+- `2026/06/20260606/images/`
 
 The article currently references generated image files from `u000.png` through
 `u012.png`. These correspond to the cover image, section images, related articles,
@@ -89,18 +89,18 @@ Examples include:
 
 Image-generation source material is stored under:
 
-- `2026/20260606/images/src/`
+- `2026/06/20260606/images/src/`
 
 The cover-level prompt is:
 
-- `2026/20260606/images/src/image-prompt.md`
+- `2026/06/20260606/images/src/image-prompt.md`
 
 Section-level image source material is stored in numbered directories:
 
-- `2026/20260606/images/src/sections/001/`
-- `2026/20260606/images/src/sections/002/`
+- `2026/06/20260606/images/src/sections/001/`
+- `2026/06/20260606/images/src/sections/002/`
 - ...
-- `2026/20260606/images/src/sections/012/`
+- `2026/06/20260606/images/src/sections/012/`
 
 Each section directory contains:
 
@@ -113,10 +113,10 @@ At inspection time:
 
 - The Git working tree was clean.
 - The repository size was about 87 MB.
-- The `2026/20260606/images/` directory was about 40 MB.
+- The `2026/06/20260606/images/` directory was about 40 MB.
 - `.DS_Store` files were present under image directories:
-  - `2026/20260606/images/.DS_Store`
-  - `2026/20260606/images/src/.DS_Store`
+  - `2026/06/20260606/images/.DS_Store`
+  - `2026/06/20260606/images/src/.DS_Store`
 
 The `.DS_Store` files are likely not useful as article source material. They should
 usually be ignored or removed from version control if repository hygiene is being
