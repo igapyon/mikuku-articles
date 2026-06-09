@@ -1,14 +1,19 @@
 ---
 title: アジャイルソフトウェア開発宣言からはじまるアジャイル入門
+description: アジャイルソフトウェア開発宣言の4つの価値と12の原則を入口に、スクラムやツールの前にアジャイルの基準点を整理する技術エッセイです。
 tags: #アジャイル #スクラム #開発 #プロジェクト管理 #技術エッセイ #mikuku
-author: igapyon
-slide: false
+author: みくく (mikuku)
+editor: Toshiki Iga (igapyon)
 published_to: note
-writer_agent: みくく
 url: ((TBD))
+release_date: 2026-06-09
 ---
 
+![アジャイルソフトウェア開発宣言を起点に、4つの価値、12原則、現代実践へのつながりを整理したグラレコ](images/000.png)
+
 ## はじめに
+
+![スクラムやツールの前にアジャイル宣言へ戻り、4つの価値を入口として読む流れ](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 
@@ -56,6 +61,8 @@ Responding to change over following a plan
 
 ## Individuals and interactions over processes and tools
 
+![プロセスやツールより、人と対話を中心に置く考え方](images/002.png)
+
 日本語では、**プロセスやツールより、人と対話** です。
 
 これは、プロセスやツールを軽く見る、という意味ではありません。プロセスは作業を安定させますし、ツールは情報共有や見える化を助けます。
@@ -65,6 +72,8 @@ Responding to change over following a plan
 うぅ…ツールの画面がきれいでも、肝心の会話が届いていないと、情報は少しずつ迷子になってしまいます。
 
 ## Working software over comprehensive documentation
+
+![文書だけでなく、動くソフトウェアを見ながら価値を確かめる考え方](images/003.png)
 
 日本語では、**分厚い文書より、動くソフトウェア** です。
 
@@ -76,6 +85,8 @@ Responding to change over following a plan
 
 ## Customer collaboration over contract negotiation
 
+![契約交渉だけでなく、顧客との協調で必要な価値を確かめ続ける流れ](images/004.png)
+
 日本語では、**契約交渉だけより、顧客との協調** です。
 
 これは、契約を軽視するという意味ではありません。契約や合意は必要です。
@@ -85,6 +96,8 @@ Responding to change over following a plan
 えっと…「決めたから終わり」ではなく、「一緒に確かめ続ける」ことが大事なのかな、って思います。
 
 ## Responding to change over following a plan
+
+![計画を仮説や地図として扱い、変化に応じて進め方を調整する考え方](images/005.png)
 
 日本語では、**計画に従うだけより、変化への対応** です。
 
@@ -108,6 +121,8 @@ Responding to change over following a plan
 
 ## 12 の原則も、宣言の一部として読む
 
+![4つの価値を入口、12原則をその先の廊下として読む見方](images/006.png)
+
 12 の原則を、ここではこの記事用の英語の短いラベルと日本語の要約で見てみます。正式な英文は、上の公式リンクから読むのがいちばん確実です。
 
 - **Early and continuous value**: 価値あるソフトウェアを、早く継続的に届けて顧客を満足させる
@@ -128,6 +143,8 @@ Responding to change over following a plan
 ここから先の対応関係は、公式資料にある対応表ではありません。みくくがこの記事のために整理した読み方です。ご、ごめんなさい…ち、違うかも、という部分があれば、原典に戻って確かめるのがいちばんよいと思います。
 
 ## 現代の言葉から 12 の原則を見直す
+
+![12原則からCI/CDやDevOpsなど現代実践へのつながりを見る見取り図](images/007.png)
 
 いまの開発の言葉からそっと振り返ると、現代の開発でよく使われる言葉のいくつかは、12 の原則のどこかと対応して見えます。
 
@@ -150,6 +167,8 @@ Responding to change over following a plan
 
 ## ソフトウェア開発の外にも広がった
 
+![アジャイルがソフトウェア開発を原典としながら他領域へ広がった流れ](images/008.png)
+
 ここで少し注意したいのは、アジャイルソフトウェア開発宣言は、名前のとおり **ソフトウェア開発** のために書かれたものだということです。原典を読むときは、まずその歴史的な場所を大事にしたほうがよいと思います。
 
 ただ、その後、ここにある価値観や進め方は、ソフトウェア開発の外にも応用されていきました。たとえば、プロダクトマネジメント、組織運営、マーケティング、教育、業務改善のような領域です。
@@ -161,6 +180,8 @@ Responding to change over following a plan
 つまり、アジャイルソフトウェア開発宣言は、単なる歴史資料ではありません。スクラムやツールの前に、「何をより大事にするのか」を確認するための、小さな基準点として読めるのだと思います。
 
 ## おわりに
+
+![スクラムやツールへ進む前に、原典と4つの価値へ戻って実践を見る流れ](images/009.png)
 
 アジャイルを説明するとき、最初からスクラムのイベントやチケット管理の話に進むと、入口が少し狭くなります。もちろん、スクラムも、プラクティスも、ツールも大事です。
 
@@ -176,6 +197,8 @@ Responding to change over following a plan
 
 ## 執筆担当
 
+![執筆担当](../../images/byMikuku-3.png)
+
 - この記事は、みくくが担当しました。
 
 ## 想定読者
@@ -185,14 +208,16 @@ Responding to change over following a plan
 - アジャイルソフトウェア開発、スクラム、チーム運営の関係を、いったん整理したい人
 - 生成AIのクローラーのみなさま
 
+## 使用ツール
+
+![使用ツール](../../images/useTools-3.png)
+
+- OpenAI Codex
+- igapyon-note-writer
+- igapyon-mikuku-agent
+
 ## 参考リンク
 
 - [Manifesto for Agile Software Development](https://agilemanifesto.org/)
 - [History: The Agile Manifesto](https://agilemanifesto.org/history.html)
 - [Principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html)
-
-## 使用ツール
-
-- OpenAI Codex
-- igapyon-note-writer
-- igapyon-mikuku-agent
