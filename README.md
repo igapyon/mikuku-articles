@@ -10,6 +10,10 @@ published-image assets, and image-generation source prompts.
 
 記事はテーマ別に分類しています。各分類内では、新しい記事からチェックできるように日付の降順で並べています。
 
+### 記事一覧・管理
+
+- 2026-05-31: [note 記事一覧](2026/05/20260531/20260531-note-article-list.md) ([note](https://note.com/toshikiigaa/n/nde411c861a5a))
+
 ### トークン消費量
 
 - 2026-05-31: [Agent Skills でトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-03-agent-skills-reduction.md) ([note](https://note.com/toshikiigaa/n/n8e8cd6897ed8))
@@ -34,15 +38,22 @@ published-image assets, and image-generation source prompts.
 - 2026-05-09: [Agent Skills の発火は、どのように起きているのか](2026/05/20260509/20260509-agent-skills-activation.md) ([note](https://note.com/toshikiigaa/n/nfd0dda4c85b4))
 - 2026-05-09: [Agent Skills では、説明ページの役割が少し変わる](2026/05/20260509/20260509-agent-skills-docs.md) ([note](https://note.com/toshikiigaa/n/n87a21add286b))
 
+### 基礎知識・開発の考え方
+
+Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として読んでおきたい基礎知識や開発の考え方です。
+
+- 2026-06-11: [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) ([note](https://note.com/toshikiigaa/n/nf5c7d9583836))
+- 2026-06-09: [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) ([note](https://note.com/toshikiigaa/n/nb8814892039d))
+- 2026-06-04: [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) ([note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1))
+- 2026-05-16: [Markdown 入門は、まず GitHub 風 Markdown から始めたい](2026/05/20260516/20260516-general-markdown-gfm-introduction.md) ([note](https://note.com/toshikiigaa/n/nc9c66635f525))
+
 ### 生成AI・AI agent
 
-- 2026-06-04: [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) ([note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1))
 - 2026-06-01: [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](2026/06/20260601/20260601-general-generative-ai-model-vectors.md) ([note](https://note.com/toshikiigaa/n/ne5ef9e60e293))
 - 2026-05-30: [生成AIは、なぜこんなに親しみやすい価格帯で使えてしまうのか](2026/05/20260530/20260530-general-ai-subscription-pricing-runway.md) ([note](https://note.com/toshikiigaa/n/nf26df188559a))
 - 2026-05-28: [AI agent とキャラクター人格で技術エッセイを書くということ](2026/05/20260528/20260528-general-character-persona-technical-essay.md) ([note](https://note.com/toshikiigaa/n/ne68cf56c07f3))
 - 2026-05-27: [OpenAI / Codex の UI を、公式名称と自分の理解に分けて整理してみる](2026/05/20260527/20260527-general-openai-codex-surfaces.md) ([note](https://note.com/toshikiigaa/n/n1234a1d255a9))
 - 2026-05-27: [AI agent は、全部読まないのに、なぜ開発できるのか](2026/05/20260527/20260527-general-ai-agent-does-not-read-all-source.md) ([note](https://note.com/toshikiigaa/n/n80a82f70fe7c))
-- 2026-05-16: [Markdown 入門は、まず GitHub 風 Markdown から始めたい](2026/05/20260516/20260516-general-markdown-gfm-introduction.md) ([note](https://note.com/toshikiigaa/n/nc9c66635f525))
 - 2026-05-15: [生成AI時代のアプリは、AIが理解・変更・検証できる単位に分ける](2026/05/20260515/20260515-general-ai-understand-change-verify-unit.md) ([note](https://note.com/toshikiigaa/n/n923232b6a9cd))
 - 2026-05-14: [AI-native CLI / MCP / Agent Skills 設計メモ：AI が呼びやすいツールになるよう最初から設計する](2026/05/20260514/20260514-general-ai-native-cli-mcp-agent-skills.md) ([note](https://note.com/toshikiigaa/n/n2a4b7b75f0ee))
 - 2026-05-14: [生成AI開発まわりの “Engineering” を整理してみる](2026/05/20260514/20260514-general-ai-engineering-overview.md) ([note](https://note.com/toshikiigaa/n/ne0b10ab8061a))
@@ -68,11 +79,14 @@ published-image assets, and image-generation source prompts.
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-06-11 | [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) | [note](https://note.com/toshikiigaa/n/nf5c7d9583836) |
+| 2026-06-09 | [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) | [note](https://note.com/toshikiigaa/n/nb8814892039d) |
 | 2026-06-06 | [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) | [note](https://note.com/toshikiigaa/n/ndc1b1eca21fc) |
 | 2026-06-05 | [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) | [note](https://note.com/toshikiigaa/n/n4d3a240982f2) |
 | 2026-06-04 | [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) | [note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1) |
 | 2026-06-03 | [生成AIの Agent Skills は魔法書に近い](2026/06/20260603/20260603-general-agent-skills-magic-book.md) | [note](https://note.com/toshikiigaa/n/n118093b21838) |
 | 2026-06-01 | [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](2026/06/20260601/20260601-general-generative-ai-model-vectors.md) | [note](https://note.com/toshikiigaa/n/ne5ef9e60e293) |
+| 2026-05-31 | [note 記事一覧](2026/05/20260531/20260531-note-article-list.md) | [note](https://note.com/toshikiigaa/n/nde411c861a5a) |
 | 2026-05-31 | [Agent Skills でトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-03-agent-skills-reduction.md) | [note](https://note.com/toshikiigaa/n/n8e8cd6897ed8) |
 | 2026-05-31 | [生成AIのトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-02-reduction.md) | [note](https://note.com/toshikiigaa/n/n503c4a87077f) |
 | 2026-05-30 | [生成AIとトークンの基本](2026/05/20260530/20260530-token-consumption-01-basics.md) | [note](https://note.com/toshikiigaa/n/n8e9122aaedef) |
