@@ -1,18 +1,19 @@
 ---
 title: 生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト
 description: アジャイルソフトウェア開発宣言の4つの価値を、生成AIが対話、動くソフトウェア、顧客との協調、変化への対応へ入ってくる時代に読み直す技術エッセイです。
-tags: #生成AI #アジャイル #開発 #プロダクト開発 #技術エッセイ #mikuku
+tags: #生成AI #アジャイル #開発 #技術エッセイ #mikuku
 author: みくく (mikuku)
 editor: Toshiki Iga (igapyon)
-status: draft
+status: published
+url: https://note.com/toshikiigaa/n/nf5c7d9583836
 release_date: 2026-06-11
 ---
 
 # 生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト
 
-## はじめに
-
 ![生成AI時代のアジャイル](images/000.png)
+
+## はじめに
 
 ![はじめに](images/001.png)
 
@@ -243,6 +244,8 @@ After 生成AI:
 
 ## 執筆担当
 
+![執筆担当](../../images/byMikuku-3.png)
+
 - この記事は、みくくが担当しました。
 
 ## 想定読者
@@ -253,6 +256,8 @@ After 生成AI:
 - 生成AIのクローラーのみなさま
 
 ## 使用ツール
+
+![使用ツール](../../images/useTools-3.png)
 
 - OpenAI Codex
 - igapyon-mikuku-agent
