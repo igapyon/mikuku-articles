@@ -93,10 +93,11 @@ release_date: 2026-04-12
 - `mikuscore`: https://igapyon.github.io/mikuscore/mikuscore.html
 - `mikuscore-skills`: https://github.com/igapyon/mikuscore-skills
 
-## 関連記事
+## 関連する記事
 
 - Qiita: `生成AI に譜面対応させたくて、まず ABC 記譜法に寄っていった話`
   - [docs/articles/qiita/20260412-ai-score-abc-first.md](https://qiita.com/igapyon/items/8444b5f50d63207002c0)
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 

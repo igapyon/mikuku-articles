@@ -192,12 +192,13 @@ Excel や Markdown など、扱いやすい形にする。
 - `mikuproject`
   - https://github.com/igapyon/mikuproject
 
-## 関連記事
+## 関連する記事
 
 - Qiita: `[mikuproject] Agent Skills で WBS の叩き台作成とブラッシュアップ`
   - https://qiita.com/igapyon/items/3736cc2ea348cb3ee63b
 - Qiita: `[mikuproject] 生成AIと一緒にWBSの叩き台を作る計画策定の試み`
   - https://qiita.com/igapyon/items/76122bebc9847575d0c7
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 

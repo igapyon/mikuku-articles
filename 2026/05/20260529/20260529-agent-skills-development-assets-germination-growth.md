@@ -287,6 +287,7 @@ AI agent と Agent Skills を使った開発では、人間が詳細な仕様を
   Agent Skills を「自然言語で書く再利用可能な実行方針」と見る話なので、概念的に近い記事です。
 - [生成AI agent と開発するとき、README・docs・TODO は会話の外の記憶になる](https://note.com/toshikiigaa/n/n5dcb66e47151)  
   README、docs、TODO が次回作業の文脈になる話で、「開発資産が次の資産を育てる」という流れと相性がよい記事です。
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 執筆担当
 
