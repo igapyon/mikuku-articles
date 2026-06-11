@@ -65,12 +65,13 @@ release_date: 2026-04-12
 
 - https://igapyon.github.io/miku-abc-player/miku-abc-player.html
 
-## 関連記事
+## 関連する記事
 
 - Qiita: [miku-abc-player] `ABC` を貼ると譜面を見て再生できる `miku-abc-player` を作りました
   - https://qiita.com/igapyon/items/74c896c7dab9a78ba2f4
 - Qiita: `[mikuscore-skills] 生成AI に譜面対応させたくて、まず ABC 記譜法に寄っていった話`
   - https://qiita.com/igapyon/items/8444b5f50d63207002c0
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 

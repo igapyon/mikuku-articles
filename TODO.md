@@ -1,5 +1,49 @@
 # TODO
 
+## Skill Example Promotion TODO
+
+- [ ] Copy `2026/06/20260612/20260612-general-ai-conversation-dynamics.md` to an
+  `igapyon-mikuku-agent` article example after the article is finalized.
+  - Purpose: preserve it as a representative Mikuku-authored technical essay
+    about AI conversation dynamics, feedback, common ground, and the soft
+    boundary around "heart" without making it a technical claim.
+  - Candidate destination:
+    `/Users/igapyon/.codex/skills/igapyon-mikuku-agent/examples/articles/`
+  - Do this after final publication edits and URL metadata are settled.
+
+## Note Update TODO: Related Articles Section
+
+This list tracks local Markdown changes that still need to be reflected on the
+published Note pages.
+
+Change set:
+
+- Rename `## 関連記事` to `## 関連する記事`.
+- Keep `## 関連リンク` as a separate section.
+- Always include the Note article index link in `## 関連する記事`:
+  - `[note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)`
+
+Status legend:
+
+- Local: whether the Markdown in this repository has been updated.
+- Note: whether the corresponding published Note article has been updated and checked.
+
+| Local | Note | Article | Note URL |
+| --- | --- | --- | --- |
+| [x] | [ ] | `2026/03/20260320/20260320-gpt54-app-dev.md` | https://note.com/toshikiigaa/n/ncc28f9a0fcbd |
+| [x] | [ ] | `2026/03/20260326/20260326-xlsx2md-grid-bug-diary.md` | https://note.com/toshikiigaa/n/ne63f03142852 |
+| [x] | [ ] | `2026/03/20260327/20260327-xlsx2md-strike-meaning.md` | https://note.com/toshikiigaa/n/nc0f61d0f1bb2 |
+| [x] | [ ] | `2026/03/20260330/20260330-mikuproject-ai-wbs-draft.md` | https://note.com/toshikiigaa/n/nf5b9674d2cad |
+| [x] | [ ] | `2026/03/20260330/20260330-mikuproject-intro.md` | https://note.com/toshikiigaa/n/n20f5ee782358 |
+| [x] | [ ] | `2026/04/20260410/20260410-mikuproject-agent-skills-wbs-planning.md` | https://note.com/toshikiigaa/n/n87fd2d87bdf5 |
+| [x] | [ ] | `2026/04/20260412/20260412-ai-score-abc-first.md` | https://note.com/toshikiigaa/n/n5362ea076328 |
+| [x] | [ ] | `2026/04/20260412/20260412-miku-abc-player-intro.md` | https://note.com/toshikiigaa/n/n5be1d51d336a |
+| [x] | [ ] | `2026/04/20260428/20260428-general.md` | https://note.com/toshikiigaa/n/nca7cdb17f5db |
+| [x] | [ ] | `2026/04/20260428/20260428-miku-indexgen-intro.md` | https://note.com/toshikiigaa/n/n5b0ac55dce0a |
+| [x] | [ ] | `2026/04/20260430/20260430-general-ai-dev-docs-todo.md` | https://note.com/toshikiigaa/n/n5dcb66e47151 |
+| [x] | [ ] | `2026/05/20260529/20260529-agent-skills-development-assets-germination-growth.md` | https://note.com/toshikiigaa/n/ne9593f75fccd |
+| [x] | n/a | `2026/draft/2026XXXX-mikuscore-skills-intro.md` | draft, `url: ((TBD))` |
+
 ## Article Image Recovery Status
 
 This list tracks article-specific cover and section image recovery. Shared images

@@ -103,10 +103,11 @@ release_date: 2026-03-30
 
 - https://igapyon.github.io/mikuproject/mikuproject.html
 
-## 関連記事
+## 関連する記事
 
 - Qiita: `[mikuproject] 生成AIに WBS の叩き台を作らせてみた`
   - https://qiita.com/igapyon/items/0318f9a02b3a7dfa04f4
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 

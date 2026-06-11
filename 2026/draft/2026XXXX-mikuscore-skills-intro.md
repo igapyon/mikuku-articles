@@ -109,10 +109,11 @@ url: ((TBD))
 
 - `mikuscore` 実行ページ: （未記入）
 
-## 関連記事
+## 関連する記事
 
 - Qiita: `mikuscore-skills` の責務や設計を技術寄りに整理した記事
   - `docs/articles/qiita/2026XXXX-mikuscore-skills-intro.md`
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 

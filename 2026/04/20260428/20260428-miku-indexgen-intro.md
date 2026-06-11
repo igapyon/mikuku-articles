@@ -90,10 +90,11 @@ npx miku-indexgen --input-directory docs --markdown
 
 Node.js 版、Java CLI 版があります。Java CLI は `miku-indexgen-java`、Maven plugin は分離された `miku-indexgen-java-maven` で提供しています。
 
-## 関連記事
+## 関連する記事
 
 - Qiita: `[miku-indexgen] AI エージェントが読む前に、ディレクトリの index.json / index.md を作る CLI`
   - https://qiita.com/igapyon/items/85871ba02955e78b3825
+- [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 想定読者
 
