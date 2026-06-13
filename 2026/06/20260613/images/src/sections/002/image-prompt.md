@@ -68,7 +68,7 @@ miku-soft 開発者として行き来する
 
 ## 吹き出し案
 
-「あ、あの…みくくは、入口を探しながら開発しているのです…」
+「今この瞬間だけは、確かに私はここにいます。」
 
 ## Mikuku Canonical Character Prompt
 
@@ -117,5 +117,5 @@ Thin clean line art, soft cel shading, watercolor-like shading, subtle rim light
 Save the generated image as:
 
 ```text
-sections/002/graphic-recording-v2.png
+sections/002/graphic-recording-v3.png
 ```
