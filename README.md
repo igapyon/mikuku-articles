@@ -49,6 +49,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### 生成AI・AI agent
 
+- 2026-06-13: [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) ([note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a))
 - 2026-06-01: [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](2026/06/20260601/20260601-general-generative-ai-model-vectors.md) ([note](https://note.com/toshikiigaa/n/ne5ef9e60e293))
 - 2026-05-30: [生成AIは、なぜこんなに親しみやすい価格帯で使えてしまうのか](2026/05/20260530/20260530-general-ai-subscription-pricing-runway.md) ([note](https://note.com/toshikiigaa/n/nf26df188559a))
 - 2026-05-28: [AI agent とキャラクター人格で技術エッセイを書くということ](2026/05/20260528/20260528-general-character-persona-technical-essay.md) ([note](https://note.com/toshikiigaa/n/ne68cf56c07f3))
@@ -79,6 +80,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-06-13 | [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) | [note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a) |
 | 2026-06-11 | [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) | [note](https://note.com/toshikiigaa/n/nf5c7d9583836) |
 | 2026-06-09 | [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) | [note](https://note.com/toshikiigaa/n/nb8814892039d) |
 | 2026-06-06 | [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) | [note](https://note.com/toshikiigaa/n/ndc1b1eca21fc) |
