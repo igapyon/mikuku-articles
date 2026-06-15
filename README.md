@@ -6,6 +6,29 @@ Articles are organized by year, month, and date under paths such as
 `2026/06/20260607/`. Each article package may include the article Markdown,
 published-image assets, and image-generation source prompts.
 
+## Agent Skills RAG Draft Preparation
+
+Some draft articles compare how an AI agent searches this repository before and
+after adding generated indexes. Those experiments use a local raw clone as the
+reference corpus.
+
+After checking out this repository, prepare the raw corpus from the repository
+root:
+
+```sh
+mkdir -p references/raw
+git clone https://github.com/igapyon/mikuku-articles.git references/raw/mikuku-articles
+```
+
+If `references/raw/mikuku-articles` already exists, update it instead:
+
+```sh
+git -C references/raw/mikuku-articles pull --ff-only
+```
+
+`references/raw/` is local working data and is ignored by Git. Do not commit the
+raw clone.
+
 ## 記事をテーマ別に読む
 
 記事はテーマ別に分類しています。各分類内では、新しい記事からチェックできるように日付の降順で並べています。
