@@ -7,7 +7,7 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/nbacb4098147a
 release_date: 2026-06-15
 ---
 
