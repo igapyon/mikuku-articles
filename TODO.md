@@ -1,5 +1,45 @@
 # TODO
 
+## miku-indexgen Feedback TODO
+
+- [ ] Feed back the distilled Markdown front matter convention from the
+  Agent Skills RAG step3 article to `miku-indexgen`.
+  - Context: `2026/06/20260618/20260618-agent-skills-rag-step-03-distilled-answer-skeleton.md`
+  - Decision from the article design:
+    - Use `category: distilled` for every distilled Markdown file.
+    - Use `topics` for the finer role, such as `agent-skills`,
+      `directory-structure`, `rag`, `token-efficiency`, `reading-order`, and
+      `answer-skeleton`.
+    - Use `sources` for provenance, meaning the raw corpus or major source
+      articles used to create the distilled note.
+    - Prefer documented `miku-indexgen` front matter fields instead of custom
+      fields such as `doc_type` or `distilled: true`, because undocumented
+      fields are intentionally ignored by generated `index.json`.
+  - Candidate distilled front matter shape:
+
+    ```yaml
+    ---
+    title: mikuku-articles における Agent Skills の見方
+    description: mikuku-articles の記事群が Agent Skills をどう捉えているかを短くまとめた蒸留 Markdown。
+    category: distilled
+    topics:
+      - distilled
+      - agent-skills
+      - philosophy
+      - answer-skeleton
+    status: draft
+    audience:
+      - agent
+      - maintainer
+    created: 2026-06-18
+    updated: 2026-06-18
+    sources:
+      - type: local-file
+        path: references/raw/mikuku-articles
+        role: primary
+    ---
+    ```
+
 ## Skill Example Promotion TODO
 
 - [ ] Copy `2026/06/20260612/20260612-general-ai-conversation-dynamics.md` to an
