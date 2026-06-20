@@ -13,7 +13,11 @@ release_date: 2026-06-20
 
 # 簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る
 
+![Agent Skills step3 の全体像](images/000.png)
+
 ## はじめに
+
+![蒸留 Markdown は意味の地図](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。わ、私…その、がんばりますっ。
 
@@ -32,6 +36,8 @@ release_date: 2026-06-20
 うぅ…ここを取り違えると、便利な要約を作ったつもりで、かえって根拠が薄くなってしまいます。なので、この記事では「トークンを減らせたか」だけではなく、「どの raw を、何のために読むか」を絞れるようになったかを見ていきます。ドキドキ…でも、ここが大事なのです。
 
 ## step2 で見えたこと
+
+![index.json と raw 本文の役割](images/002.png)
 
 step2 では、`miku-indexgen` を足して `index.json` を入口にしました。
 
@@ -90,6 +96,8 @@ raw 記事本文を、人間と AI agent が共有できる context artifact に
 
 ## 回答手順からコンテキストへ
 
+![回答手順からコンテキストへ](images/003.png)
+
 少し前の生成AIには、「AI に答えさせるための回答手順」がよく効きました。
 
 たとえば、次のような情報です。
@@ -124,6 +132,8 @@ raw 記事本文を、人間と AI agent が共有できる context artifact に
 
 ## step3 で扱うこと
 
+![step3 で扱うこと](images/004.png)
+
 - Agent Skills 関連記事の内容構造を、短い Markdown に蒸留する
 - その Markdown を、`references/distilled/` 以下の意味の地図として扱う
 - 蒸留 Markdown を置いたあと、`miku-indexgen` で `index.json` を更新する
@@ -147,6 +157,8 @@ references/distilled/
 あの…最初からきれいに分割しすぎると、今度はどれを先に読むべきかが分かりにくくなることがあります。まずは1枚の地図として置き、必要になったら分けるくらいが、今回の規模には合っている気がします。
 
 ## 蒸留 Markdown を作るプロンプト
+
+![蒸留 Markdown を作るプロンプト](images/005.png)
 
 まずは、AI agent に次のように依頼します。
 
@@ -289,6 +301,8 @@ source-guidance
 
 ## 生成後に index.json を更新する
 
+![index.json を更新する](images/006.png)
+
 蒸留 Markdown を作っただけでは、まだ次回の入口にはなりません。あの…置いただけでは、AI agent から見つけてもらえないことがあるのです。
 
 `references/distilled/` に新しい Markdown を置いたら、まず `SKILL.md` からその置き場所をたどれるようにします。
@@ -371,6 +385,8 @@ mikuku-articles-rag-skill/
 
 ## SKILL.md に distilled の入口を書く
 
+![SKILL.md に distilled の入口を書く](images/007.png)
+
 次に、`SKILL.md` へ `references/distilled/` の存在を書きます。
 
 ただし、ここでは個別の蒸留 Markdown ファイル名までは書きません。
@@ -395,6 +411,8 @@ mikuku-articles-rag-skill/
 
 ## 期待する読み方
 
+![期待する読み方](images/008.png)
+
 step3 で期待する読み方は、次の順番になります。
 
 ```text
@@ -415,6 +433,8 @@ step3 で期待する読み方は、次の順番になります。
 うぅ…ここを間違えると、蒸留 Markdown が便利なまとめではなく、根拠を薄める層になってしまいます。今回作りたいのは、根拠を隠す層ではなく、根拠へ戻る順番を作る層です。
 
 ## 同じ問いで動作確認する
+
+![同じ問いで動作確認する](images/009.png)
 
 蒸留 Markdown を作り、`index.json` と `SKILL.md` の入口を更新したら、同じ問いで動作確認します。
 
@@ -488,6 +508,8 @@ step3 では distilled Markdown を追加しただけでなく、`miku-indexgen`
 同じ問いを投げても、AI agent が少し迷いにくくなって、必要なところで raw に戻ってくれるなら…それは、みくくには小さな前進に見えます。
 
 ## おわりに
+
+![おわりに](images/010.png)
 
 `index.json` は、どのファイルを見るかの地図。
 
