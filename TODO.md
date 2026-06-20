@@ -1,5 +1,16 @@
 # TODO
 
+## Current Article Work
+
+- [ ] Continue drafting
+  `2026/06/20260619/20260619-agent-skills-rag-step-03-distilled-answer-skeleton.md`.
+  - Working topic: Agent Skills RAG step3, distilled Markdown as a context map.
+  - Current focus: keep repository roles explicit. This `mikuku-articles`
+    repository stores the article draft. The `SKILL.md` and
+    `references/distilled/` paths discussed in the article belong to the
+    Agent Skill repository used as the article's example target, not necessarily
+    to this article repository.
+
 ## miku-indexgen Feedback TODO
 
 - [ ] Feed back the distilled Markdown front matter convention from the
