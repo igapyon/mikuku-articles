@@ -227,6 +227,8 @@ See `docs/root-index-maintenance.md` for maintenance details.
 ## Repository Hygiene
 
 - Do not commit `.DS_Store`.
+- Use `workplace/` as a local scratch area for generated files, external clones,
+  and verification artifacts. Git tracks only `workplace/.gitkeep` there.
 - Do not manually edit generated `index.json`.
 - Keep image-generation prompts under each article's `images/src/` directory when
   they are part of the article package.
