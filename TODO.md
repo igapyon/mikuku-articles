@@ -1,5 +1,59 @@
 # TODO
 
+## AI Agent Current Tasks
+
+This section tracks active work items for AI agents.
+Update this section while working. Do not rewrite unrelated TODO items.
+
+### Tasks
+
+- [x] Re-check `igapyon-agent-state-management` after starting a new Codex
+  thread or reloading/restarting Codex.
+  - Current finding, 2026-06-23: the skill exists at
+    `/Users/igapyon/.codex/skills/igapyon-agent-state-management/SKILL.md`,
+    with `index.json`, `references/`, and `templates/`.
+  - Earlier finding: that conversation's loaded skill list did not include it,
+    so it appeared to be a session skill-list snapshot issue rather than a
+    missing local file.
+  - The same earlier pattern was observed for `igapyon-miku-text-bundle` and
+    `igapyon-skill-compactor`: local `SKILL.md` files existed under
+    `/Users/igapyon/.codex/skills`, but those skills were not listed in that
+    session's available skills.
+  - `com.apple.quarantine` is present, but it is also present on skills that
+    are visible in the session, so it is probably not the primary cause.
+  - Earlier open question: why did Codex omit these local skills from the
+    loaded skill list?
+  - Earlier re-check result, 2026-06-23: after explicitly naming the skill in a
+    new conversation, the skill was still absent from the loaded skill list, but
+    the local `SKILL.md` could be read and applied manually.
+- [x] If the skills are still missing after a new thread or app restart,
+  investigate Codex's local skill discovery path, cache files, and any install
+  or enablement step that may be required beyond placing files in
+  `/Users/igapyon/.codex/skills`.
+  - Investigation result, 2026-06-23: the three locally installed skills that
+    are absent from the loaded skill list (`igapyon-agent-state-management`,
+    `igapyon-skill-compactor`, and `igapyon-miku-text-bundle`) all contain
+    `policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
+  - Visible hard-trigger skills such as `igapyon-miku-prompt-lint` and
+    `igapyon-ffmpeg-helper` do not use that policy field. The likely cause is
+    that Codex excludes skills with `allow_implicit_invocation: false` from the
+    session's always-available skill list, even though the local `SKILL.md`
+    files exist.
+  - Verification result, 2026-06-23: in the current fresh session,
+    `igapyon-agent-state-management`, `igapyon-skill-compactor`, and
+    `igapyon-miku-text-bundle` are all visible in the available-skills list.
+  - Follow-up result, 2026-06-23:
+    `/Users/igapyon/Documents/git/miku-text-bundle-skills/TODO.md` was updated
+    to mark fresh-session verification complete.
+
+### Blockers
+
+- None currently.
+
+### Retry Log
+
+- No repeated failure yet.
+
 ## Current Article Work
 
 - [ ] Continue drafting
