@@ -1,6 +1,6 @@
 ---
 purpose: ai-agent-handoff
-updated: 2026-06-23
+updated: 2026-06-24
 ---
 
 # HANDOFF
@@ -8,6 +8,28 @@ updated: 2026-06-23
 This file summarizes the current AI agent work state for resuming later.
 
 ## Current Topic
+
+Pre-publication review of
+`2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md`.
+
+The current focus is to keep the article technically correct while preserving
+the Mikuku-authored technical essay tone.
+
+There is an active uncommitted diff in the article. The prior commit was:
+
+- `16f57f7 Refine technical caveats in Qwen skills article`
+
+The current uncommitted article edits soften wording around:
+
+- title/description: from "optimal/different" to "looks different"
+- Qwen3 framing: from stronger judgment to personal observation
+- summary: from "stable" to "looks like it may be stable"
+
+The user then asked for a "みくくチェッカー". The next correct workflow is
+likely `igapyon-mikuku-agent` with its text-characteristics/self-review
+reference, not just ordinary article-writing tone guidance.
+
+## Earlier Topic
 
 Codex skill discovery issue for locally installed Agent Skills under
 `/Users/igapyon/.codex/skills`.
@@ -76,16 +98,21 @@ Fresh-session verification result, 2026-06-23:
 
 ## Next Resume Steps
 
-1. No further local skill-discovery investigation is currently needed unless a
+1. Continue with the Mikuku checker request by reading
+   `/Users/igapyon/.codex/skills/igapyon-mikuku-agent/references/text-characteristics-classification.md`.
+2. Review the current article against that checklist.
+3. Make only scoped wording changes if the checker finds issues.
+4. Commit the article changes if the user asks.
+5. No further local skill-discovery investigation is currently needed unless a
    later session regresses.
-2. For `miku-text-bundle-skills`, only the explicit release follow-ups remain:
+6. For `miku-text-bundle-skills`, only the explicit release follow-ups remain:
    push tag, create GitHub Release, and upload release assets if requested.
 
 ## Local Working Trees At Handoff
 
 At handoff time:
 
-- current repository `/Users/igapyon/Documents/git/mikuku-articles` has
-  modified `TODO.md` and this newly added `HANDOFF.md`.
+- current repository `/Users/igapyon/Documents/git/mikuku-articles` has a
+  modified article plus these state-file updates.
 - `igapyon-agent-skills` appeared clean by `git status --short`.
 - `miku-text-bundle-skills` appeared clean by `git status --short`.

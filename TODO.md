@@ -7,6 +7,14 @@ Update this section while working. Do not rewrite unrelated TODO items.
 
 ### Tasks
 
+- [ ] Finish pre-publication checks for
+  `2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md`.
+  - Current state, 2026-06-24: article wording has been softened for technical
+    correctness and hypothesis framing.
+  - Active uncommitted diff: title/description, Qwen3 framing, summary wording.
+  - Next intended check: apply the appropriate Mikuku article checker workflow,
+    likely `igapyon-mikuku-agent` text-characteristics/self-review reference,
+    before final commit.
 - [x] Re-check `igapyon-agent-state-management` after starting a new Codex
   thread or reloading/restarting Codex.
   - Current finding, 2026-06-23: the skill exists at
