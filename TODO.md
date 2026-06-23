@@ -7,14 +7,28 @@ Update this section while working. Do not rewrite unrelated TODO items.
 
 ### Tasks
 
+- [ ] Prepare the new 2026-06-25 Note article draft:
+  `2026/06/20260625/20260625-general-agent-state-management-skill.md`.
+  - Topic: follow-up to the 2026-06-22 AI-agent state-management article,
+    focused on making the GOAL/TODO/DECISIONS/HANDOFF workflow into the
+    `igapyon-agent-state-management` Agent Skill.
+  - Current state, 2026-06-25: initial draft created.
+  - Next intended check: review wording, metadata, related links, and whether
+    the article should receive graphic-recording images before publication.
 - [ ] Finish pre-publication checks for
   `2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md`.
-  - Current state, 2026-06-24: article wording has been softened for technical
-    correctness and hypothesis framing.
-  - Active uncommitted diff: title/description, Qwen3 framing, summary wording.
-  - Next intended check: apply the appropriate Mikuku article checker workflow,
-    likely `igapyon-mikuku-agent` text-characteristics/self-review reference,
-    before final commit.
+  - Current state, 2026-06-24: before this state-management refresh,
+    `git status --short` was clean.
+  - The article remains `status: draft` with `url: ((TBD))`.
+  - Next intended check: when continuing this article, apply the appropriate
+    Mikuku article checker workflow, likely `igapyon-mikuku-agent`
+    text-characteristics/self-review reference, before publication.
+- [x] Refresh AI agent state-management files for the current repository state.
+  - Current finding, 2026-06-24: before this refresh, `git status --short`
+    was clean; after the refresh, only state-management files are changed.
+  - Added lightweight `GOAL.md` and `DECISIONS.md`.
+  - Updated `HANDOFF.md` so it no longer reports an active uncommitted article
+    diff.
 - [x] Re-check `igapyon-agent-state-management` after starting a new Codex
   thread or reloading/restarting Codex.
   - Current finding, 2026-06-23: the skill exists at
