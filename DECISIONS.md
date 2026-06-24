@@ -33,3 +33,14 @@ Reason:
 Impact:
 When pausing or resuming work, update `HANDOFF.md` with the current topic,
 status, and next steps instead of turning `TODO.md` into a long work log.
+
+## 2026-06-25: Use the current article as the prompt example
+
+Reason:
+The article needs to show the operating feel of `igapyon-agent-state-management`,
+not just describe the file convention abstractly.
+
+Impact:
+The prompt-example section should use this article's own workflow: publishing a
+mostly Mikuku-drafted article on Note, setting that goal first, then resuming
+work and updating state from that goal.
