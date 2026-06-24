@@ -12,17 +12,51 @@ Update this section while working. Do not rewrite unrelated TODO items.
   - Topic: follow-up to the 2026-06-22 AI-agent state-management article,
     focused on making the GOAL/TODO/DECISIONS/HANDOFF workflow into the
     `igapyon-agent-state-management` Agent Skill.
-  - Current state, 2026-06-25: initial draft created.
-  - Next intended check: review wording, metadata, related links, and whether
-    the article should receive graphic-recording images before publication.
-- [ ] Finish pre-publication checks for
+  - Goal, 2026-06-25: publish this Mikuku-drafted article on Note.
+  - Current state, 2026-06-25: final wording review is in progress; the user
+    wants the article to show the concrete prompt/operator feel of using
+    `igapyon-agent-state-management` for this article's own publication flow.
+  - Next intended check: refine the prompt-example section around the concrete
+    goal "publish this article on Note", then review metadata, related links,
+    and whether the article should receive graphic-recording images before
+    publication.
+  - Observed current workflow for the article text:
+    - Create a temporary image-work folder under `Downloads`.
+    - Current folder:
+      `Downloads/20260625-general-agent-state-management-skill-images`.
+    - Copy the article Markdown into that folder:
+      `20260625-general-agent-state-management-skill.md`.
+    - Graphic-recording execution steps observed so far:
+      - Read `igapyon-mikuku-agent` and its `graphic-recording.md` workflow.
+      - Read the copied article Markdown from the `Downloads` temporary folder.
+      - Create a run directory under the temporary folder's `workplace/`.
+      - Create `run-state.md`, `graphic-recording-text.md`, and
+        `image-prompt.md`.
+      - Run `image_gen` using the generated image prompt.
+      - Find the generated PNG under `.codex/generated_images/`.
+      - Create `copy-generated-image.md` before copying the PNG into the run
+        directory as `graphic-recording.png`.
+    - Result: generated PNG was copied to the run directory as
+      `graphic-recording.png`, verified as a 1536 x 1024 PNG, and visually
+      checked as usable for the article's graphic-recording material.
+    - Next step: decide how to bring the generated PNG back into the main
+      article package.
+    - Use this concrete workflow as source material for the article's
+      `## この記事で使うなら` section.
+  - GitHub handling:
+    - Use GitHub as an intermediate save point while the article is still being
+      finalized, when requested.
+    - At completion, ensure the fully prepared article content is stored in
+      GitHub.
+    - Treat commands such as `git add`, `git commit`, and `git pull` as means,
+      not as the goal itself.
+- [x] Finish pre-publication checks for
   `2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md`.
-  - Current state, 2026-06-24: before this state-management refresh,
-    `git status --short` was clean.
+  - Current state, 2026-06-24: user clarified this file is already after the
+    intended Mikuku article checker application.
+  - Verification result, 2026-06-24: article footer was completed; local
+    image/link references were checked after the footer update.
   - The article remains `status: draft` with `url: ((TBD))`.
-  - Next intended check: when continuing this article, apply the appropriate
-    Mikuku article checker workflow, likely `igapyon-mikuku-agent`
-    text-characteristics/self-review reference, before publication.
 - [x] Refresh AI agent state-management files for the current repository state.
   - Current finding, 2026-06-24: before this refresh, `git status --short`
     was clean; after the refresh, only state-management files are changed.

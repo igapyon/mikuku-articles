@@ -1,6 +1,6 @@
 ---
 purpose: ai-agent-handoff
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # HANDOFF
@@ -9,7 +9,7 @@ This file summarizes the current AI agent work state for resuming later.
 
 ## Current Topic
 
-Drafting a new 2026-06-25 Note article:
+Final-checking a new 2026-06-25 Note article for publication:
 `2026/06/20260625/20260625-general-agent-state-management-skill.md`.
 
 The article is a follow-up to:
@@ -19,6 +19,36 @@ The article is a follow-up to:
 
 The new topic is making the GOAL/TODO/DECISIONS/HANDOFF state-management
 workflow into the `igapyon-agent-state-management` Agent Skill.
+
+Current user-stated goal:
+
+- Publish this article on Note.
+- The article was mostly drafted by Mikuku.
+- The current work is the final pre-publication check.
+- The section about Agent Skills usage should use this article itself as the
+  concrete prompt example: setting the goal, resuming work, and updating state
+  while preparing the article for Note publication.
+
+Observed concrete workflow to use in the article:
+
+- Create a temporary image-work folder under `Downloads`.
+- Current folder:
+  `Downloads/20260625-general-agent-state-management-skill-images`.
+- Copy the article Markdown into that folder:
+  `20260625-general-agent-state-management-skill.md`.
+- `igapyon-mikuku-agent` graphic-recording workflow was started.
+- Run directory:
+  `Downloads/20260625-general-agent-state-management-skill-images/workplace/20260624185546-graphic-recording`.
+- Created so far: `run-state.md`, `graphic-recording-text.md`,
+  `image-prompt.md`, and `copy-generated-image.md`.
+- `image_gen` was run with the generated prompt.
+- Generated PNG source identified under `.codex/generated_images/`.
+- Generated PNG was copied into the run directory as `graphic-recording.png`.
+- Verified file: PNG image data, 1536 x 1024, about 2.9 MB.
+- Visual check: usable whole-article graphic-recording image; no obvious major
+  character/hand failure observed.
+- Next expected step is to decide how to bring this generated PNG back into the
+  main article package.
 
 Relevant source:
 
@@ -78,10 +108,9 @@ Relevant source repositories:
 
 Current repository state:
 
-- Branch is ahead of origin by one local commit from the prior state-file
-  commit: `fa1ce26 Add AI agent state files`.
-- Expected uncommitted changes from the current article work include the new
-  2026-06-25 article plus `TODO.md` and `HANDOFF.md` updates.
+- Branch has local commits ahead of `origin/devel`.
+- Current uncommitted changes include the 2026-06-25 article and AI-agent
+  state files updated during the final-check discussion.
 - `TODO.md` has an `## AI Agent Current Tasks` section.
 - `GOAL.md` and `DECISIONS.md` were added on 2026-06-24 for the lightweight
   AI-agent state-management convention.
@@ -110,15 +139,18 @@ Fresh-session verification result, 2026-06-23:
 
 ## Next Resume Steps
 
-1. Review the new 2026-06-25 article for flow, metadata, and link correctness.
-2. Decide whether to add Note publication graphic-recording images.
-3. If continuing the 2026-06-24 article later, read
+1. Continue editing the `## この記事で使うなら` / prompt-example section so it
+   starts from the goal: publishing this Mikuku-drafted article on Note.
+2. Review the full article for flow, metadata, related links, and link
+   correctness.
+3. Decide whether to add Note publication graphic-recording images.
+4. If continuing the 2026-06-24 article later, read
    `/Users/igapyon/.codex/skills/igapyon-mikuku-agent/references/text-characteristics-classification.md`
    before doing the Mikuku checker pass.
-4. Commit or publish only if the user asks.
-5. No further local skill-discovery investigation is currently needed unless a
+5. Commit or publish only if the user asks.
+6. No further local skill-discovery investigation is currently needed unless a
    later session regresses.
-6. For `miku-text-bundle-skills`, only the explicit release follow-ups remain:
+7. For `miku-text-bundle-skills`, only the explicit release follow-ups remain:
    push tag, create GitHub Release, and upload release assets if requested.
 
 ## Local Working Trees At Handoff
