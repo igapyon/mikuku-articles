@@ -13,7 +13,11 @@ release_date: 2026-07-03
 
 # MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました
 
+![miku-ms-office-skills の全体像](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 うまく説明できるか少し心配なのですが、今回は `miku-ms-office-skills` という OSS の Agent Skills について、そっと紹介してみます。
@@ -35,6 +39,8 @@ release_date: 2026-07-03
 でも、AI agent にファイルの中身を読んでもらう前処理としては、こういう地味な道具があると、少しだけ入口がやさしくなる気がします。
 
 ## 何をする Agent Skills なのか
+
+![何をする Agent Skills なのか](images/002.png)
 
 `miku-ms-office-skills` は、MS Office ファイルと Markdown の間をつなぐ Agent Skills package です。
 中心にしているのは、Office から Markdown への変換です。
@@ -61,6 +67,8 @@ igapyon-miku-ms-office: convert input.docx to Markdown under workplace/
 
 ## Markdown に寄せるもの
 
+![Markdown に寄せるもの](images/003.png)
+
 Office ファイルから取り出す対象は、単なるプレーンテキストだけとは限りません。
 
 GitHub風 Markdown に自然に載せやすい範囲で、converter やファイル内容によっては、次のような情報も扱います。
@@ -79,6 +87,8 @@ Word なら、本文や表に加えて、コメントや校閲に関わるテキ
 ここは少し割り切っています。でも、その割り切りがあるからこそ、作業資料として扱いやすくなる場面もあるのかな、って思います。
 
 ## 何がうれしいのか
+
+![何がうれしいのか](images/004.png)
 
 AI agent に Office ファイルをそのまま渡せる場面もあります。
 でも、毎回そのまま扱うのがいちばん良いとは限りません。
@@ -101,6 +111,8 @@ AI agent に Office ファイルをそのまま渡せる場面もあります。
 完成物そのものではなく、次の作業へ進むための入口を作る。そこが、この Agent Skills のいちばん素直な使いどころだと思います。
 
 ## 割り切っているところ
+
+![割り切っているところ](images/005.png)
 
 `miku-ms-office-skills` の特徴は、できることをあえて限定しているところです。
 
@@ -126,6 +138,8 @@ AI agent に渡す前処理では、毎回大きな仕組みを動かすより�
 
 ## 向いている使い方
 
+![向いている使い方](images/006.png)
+
 たとえば、こういう場面で使います。
 
 - Word の仕様メモを AI agent に読ませたい
@@ -141,6 +155,8 @@ AI agent に渡す前処理では、毎回大きな仕組みを動かすより�
 「まず中身を読める形にする」。その一歩を、静かに受け持つための Agent Skills です。
 
 ## 向いていない使い方
+
+![向いていない使い方](images/007.png)
 
 逆に、次のような用途には向いていません。
 
@@ -159,6 +175,8 @@ Office 文書の中身を、AI agent が読みやすいテキスト情報へ寄�
 
 ## しばらくはベータ版です
 
+![しばらくはベータ版です](images/008.png)
+
 `miku-ms-office-skills` は、しばらくベータ版として扱います。
 
 Office ファイルには、作り手ごとの癖があります。Word の段落やコメント、Excel のセル結合、PowerPoint の図形など、実際のファイルはかなり幅があります。
@@ -174,6 +192,8 @@ Office ファイルには、作り手ごとの癖があります。Word の段�
 わ、私…その、がんばりますっ！
 
 ## おわりに
+
+![おわりに](images/009.png)
 
 今回は、みくくが作った OSS の Agent Skills、`miku-ms-office-skills` を紹介しました。
 
