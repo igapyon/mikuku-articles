@@ -6,6 +6,8 @@ published_to: note
 writer_agent: みくく
 url: https://note.com/toshikiigaa/n/nde411c861a5a
 release_date: 2026-05-31
+image_dir: images-note-article-list
+image_update_policy: preserve_existing
 ---
 
 # note 記事一覧
@@ -32,6 +34,9 @@ release_date: 2026-05-31
 
 ## Agent Skills
 
+- [GOAL運用する Agent Skill を作ってみた](https://note.com/toshikiigaa/n/n7db7a4c8c2e7)（2026-06-25）
+- [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](https://note.com/toshikiigaa/n/nf9f8493e0100)（2026-06-24）
+- [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](https://note.com/toshikiigaa/n/nae43c4e81e4f)（2026-06-22）
 - [Agent Skills による開発資産の発芽成長](https://note.com/toshikiigaa/n/ne9593f75fccd)（2026-05-29）
 - [Agent Skill を作っていて、BASIC とマシン語を思い出した](https://note.com/toshikiigaa/n/n142354986e19)（2026-05-26）
 - [コンテンツ型 Agent Skill にはどんな種類があるか](https://note.com/toshikiigaa/n/n0ebcb626b082)（2026-05-23）
@@ -40,10 +45,20 @@ release_date: 2026-05-31
 - [Agent Skills の発火は、どのように起きているのか](https://note.com/toshikiigaa/n/nfd0dda4c85b4)（2026-05-09）
 - [Agent Skills では、説明ページの役割が少し変わる](https://note.com/toshikiigaa/n/n87a21add286b)（2026-05-09）
 
+## 簡易RAG風 Agent Skills
+
+Agent Skills を簡易RAG風に育てていく実装寄りの連載です。step1 から順に読むと、擬似RAG、索引、蒸留 Markdown の流れを追いやすくなります。
+
+- [簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る](https://note.com/toshikiigaa/n/necbdeff54e80)（2026-06-20）
+- [簡易RAG風Agent Skillsの作成 step2：miku-indexgenを足す](https://note.com/toshikiigaa/n/n964e40f68b6c)（2026-06-17）
+- [簡易RAG風Agent Skillsの作成 step1：はじめまして擬似RAG](https://note.com/toshikiigaa/n/nbacb4098147a)（2026-06-15）
+
 ## 基礎知識・開発の考え方
 
 Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として読んでおきたい基礎知識や開発の考え方です。
 
+- [Playwright を、WebテストとAI agentの入口として、そっと見てみる](https://note.com/toshikiigaa/n/ne390f4d61a35)（2026-06-26）
+- [生成AI時代の既存システムのドキュメント作成：ソフトウェア考古学で仕様メモを蒸留する](https://note.com/toshikiigaa/n/n57726c8663c0)（2026-06-14）
 - [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](https://note.com/toshikiigaa/n/nf5c7d9583836)（2026-06-11）
 - [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](https://note.com/toshikiigaa/n/nb8814892039d)（2026-06-09）
 - [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1)（2026-06-04）
@@ -52,6 +67,8 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 ## 生成AI・AI agent
 
 - [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](https://note.com/toshikiigaa/n/n5a3c4ef23c6a)（2026-06-13）
+- [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](https://note.com/toshikiigaa/n/n4d8d3f9afb10)（2026-06-12）
+- [Microsoft Copilot のことを少し調べてみた](https://note.com/toshikiigaa/n/nc42765828f90)（2026-06-08）
 - [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](https://note.com/toshikiigaa/n/ne5ef9e60e293)（2026-06-01）
 - [生成AIは、なぜこんなに親しみやすい価格帯で使えてしまうのか](https://note.com/toshikiigaa/n/nf26df188559a)（2026-05-30）
 - [AI agent とキャラクター人格で技術エッセイを書くということ](https://note.com/toshikiigaa/n/ne68cf56c07f3)（2026-05-28）
