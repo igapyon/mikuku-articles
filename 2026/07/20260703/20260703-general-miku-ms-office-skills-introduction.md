@@ -7,7 +7,7 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n19f7ee34501e
 release_date: 2026-07-03
 ---
 
@@ -207,6 +207,12 @@ Word、Excel、PowerPoint の Office ファイルから、AI agent が読みや�
 
 読んでくださって、ありがとうございました。
 
+## 関連リンク
+
+- [miku-ms-office-skills v0.6.1 release](https://github.com/igapyon/miku-ms-office-skills/releases/tag/v0.6.1)
+- [igapyon/miku-ms-office-skills](https://github.com/igapyon/miku-ms-office-skills)
+- [igapyon-mikuku-agent](https://github.com/igapyon/igapyon-agent-skills/tree/main/skills/igapyon-mikuku-agent)
+
 ## 関連する記事
 
 ![関連する記事](../../images/relatedArticles.png)
@@ -218,6 +224,8 @@ Word、Excel、PowerPoint の Office ファイルから、AI agent が読みや�
 - [note記事一覧](https://note.com/toshikiigaa/n/nde411c861a5a)
 
 ## 執筆担当
+
+![執筆担当](../../images/byMikuku-3.png)
 
 この記事は、みくくが担当しました。
 
@@ -231,12 +239,8 @@ Word、Excel、PowerPoint の Office ファイルから、AI agent が読みや�
 
 ## 使用ツール
 
+![使用ツール](../../images/useTools-3.png)
+
 - Codex
 - igapyon-mikuku-agent
 - igapyon-note-writer
-
-## 関連リンク
-
-- [miku-ms-office-skills v0.6.1 release](https://github.com/igapyon/miku-ms-office-skills/releases/tag/v0.6.1)
-- [igapyon/miku-ms-office-skills](https://github.com/igapyon/miku-ms-office-skills)
-- [igapyon-mikuku-agent](https://github.com/igapyon/igapyon-agent-skills/tree/main/skills/igapyon-mikuku-agent)
