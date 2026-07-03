@@ -15,6 +15,10 @@ release_date: 2026-07-04
 
 ## はじめに
 
+![記事全体の説明画像](images/000.png)
+
+![はじめに](images/001.png)
+
 あ、あの…この記事は、みくくが担当します。
 今回は、みくくが開発した `miku-docx2md` について、リファレンス寄りに整理してみます。わ、私…その、がんばりますっ。
 
@@ -27,6 +31,8 @@ release_date: 2026-07-04
 あの…少し長いです。でも、こういう地味な対応表や制約の明記こそ、人間が確認するときにも、AI agent に道具を渡すときにも大事なのかな、って思うのです。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-docx2md` は、Word ドキュメント `.docx` を Markdown `.md` に変換する miku-soft 系の小さな変換ツールです。
 
@@ -42,6 +48,8 @@ Word document
 これは Word の見た目を完全再現するためのツールではありません。Word に含まれる本文、見出し、表、箇条書き、校閲、コメント、メモ、画像参照などを、Markdown として扱いやすい形に寄せるための入口です。v1.2.1 時点での対応範囲は、次の表を基準に確認します。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/003.png)
 
 When explaining `miku-docx2md` to generative AI or an AI agent, a prose introduction alone is often not enough. The tool version, runtime, conversion direction, input contract, output contract, and unsupported scope should be explicit so the agent does not overgeneralize from the article.
 
@@ -59,6 +67,8 @@ When explaining `miku-docx2md` to generative AI or an AI agent, a prose introduc
 The full `--help` output may look verbose to a human reader, but it is useful source-like contract text for generative AI. For that reason, this article includes both human-readable summary tables and the raw v1.2.1 `--help` output.
 
 ## 表現対応表
+
+![表現対応表](images/004.png)
 
 `miku-docx2md` v1.2.1 で、Word 側の表現が Markdown 側でどう出るかの対応です。
 
@@ -120,6 +130,8 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 
 ## 対応範囲外または限定対応
 
+![対応範囲外または限定対応](images/005.png)
+
 `miku-docx2md` v1.2.1 は、Word の見た目やページレイアウトを再現する変換器ではありません。次のような visual / layout-heavy な要素は、対象外または限定対応として扱います。
 
 | 分類 | Word 側の表現 | 扱い | 備考 |
@@ -149,6 +161,8 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 
 ## 対応 runtime
 
+![対応 runtime](images/006.png)
+
 この記事では、次の release tag を確認対象にしています。
 
 | runtime | release tag | artifact |
@@ -159,6 +173,8 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 Node.js 版と Java 版は、単一ファイル変換ではほぼ同じ引数で使います。ただし、Java 版には batch / directory 変換向けの追加引数があります。
 
 ## ライセンス、ソースコード、実行環境
+
+![ライセンス、ソースコード、実行環境](images/007.png)
 
 `miku-docx2md` は OSS として公開しています。利用や採用を検討するときは、release artifact だけでなく、同じ tag のソースコードとライセンスも確認できます。
 
@@ -173,6 +189,8 @@ Node.js 版と Java 版は、単一ファイル変換ではほぼ同じ引数で
 runtime artifact と同じ tag のソースコードを明示することで、この記事の対応表や `--help` 出力が、どの時点の実装に基づいているのかを確認しやすくなります。
 
 ## 基本コマンド
+
+![基本コマンド](images/008.png)
 
 Node.js 版:
 
@@ -195,6 +213,8 @@ node miku-docx2md-1.2.1.mjs input.docx
 通常は、後続作業で扱いやすいように `--out` を指定します。
 
 ## `--help` 出力の確認
+
+![--help 出力の確認](images/009.png)
 
 v1.2.1 の `--help` 出力です。
 
@@ -422,6 +442,8 @@ EXIT CODES
 
 ## 共通オプション
 
+![共通オプション](images/010.png)
+
 Node.js 版と Java 版の両方で使う、v1.2.1 の共通オプションです。
 
 | オプション | 説明 |
@@ -439,6 +461,8 @@ Node.js 版と Java 版の両方で使う、v1.2.1 の共通オプションで�
 
 ## Java 版だけのオプション
 
+![Java 版だけのオプション](images/011.png)
+
 Java 版の `miku-docx2md` には、複数ファイルやディレクトリをまとめて扱うための引数があります。
 
 | オプション | 説明 |
@@ -451,6 +475,8 @@ Java 版の `miku-docx2md` には、複数ファイルやディレクトリを�
 Node.js 版の `miku-docx2md` は、入力を 1 つの local `.docx` file path として扱います。ディレクトリ単位でまとめて変換したい場合は、Java 版を使います。
 
 ## 例
+
+![例](images/012.png)
 
 Markdown ファイルを作る:
 
@@ -492,6 +518,8 @@ node miku-docx2md-1.2.1.mjs ./docs/spec.docx \
 
 ## Java 版の batch 変換例
 
+![Java 版の batch 変換例](images/013.png)
+
 複数ファイル:
 
 ```sh
@@ -517,6 +545,8 @@ java -jar miku-docx2md-1.2.1.jar \
 
 ## 出力
 
+![出力](images/014.png)
+
 | 出力 | 内容 |
 | --- | --- |
 | Markdown | 主出力。既定では YAML front matter を含む |
@@ -528,12 +558,16 @@ java -jar miku-docx2md-1.2.1.jar \
 
 ## Exit code
 
+![Exit code](images/015.png)
+
 | exit code | 意味 |
 | --- | --- |
 | `0` | success / metadata command |
 | `1` | usage error、I/O error、parse error、runtime error |
 
 ## 向いている用途
+
+![向いている用途](images/016.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -545,6 +579,8 @@ java -jar miku-docx2md-1.2.1.jar \
 
 ## 向いていない用途
 
+![向いていない用途](images/017.png)
+
 | 用途 | 理由 |
 | --- | --- |
 | Word のレイアウト完全再現 | Markdown と Word では表現力が違う |
@@ -553,6 +589,8 @@ java -jar miku-docx2md-1.2.1.jar \
 | `docx -> md -> docx` で元文書を完全復元 | round-trip conversion を保証しない |
 
 ## Agent Skill 経由で使う
+
+![Agent Skill 経由で使う](images/018.png)
 
 `igapyon-miku-ms-office` 経由で使う場合は、入力と出力を明示します。
 
@@ -567,6 +605,8 @@ igapyon-miku-ms-office: use Java backend to convert ./docs/spec.docx to ./workpl
 ```
 
 ## Web ブラウザ(Single-file Web App)で使う
+
+![Web ブラウザで使う](images/019.png)
 
 `miku-docx2md` には、Web ブラウザで使うための Single-file Web App もあります。
 
@@ -586,6 +626,8 @@ igapyon-miku-ms-office: use Java backend to convert ./docs/spec.docx to ./workpl
 なお、Single-file Web App は、今後 miku-ms-office 系として 1 つにまとめる予定です。`miku-docx2md-web` は、現時点での Word-to-Markdown 向け個別 Web App として扱います。
 
 ## おわりに
+
+![おわりに](images/020.png)
 
 ここまで、`miku-docx2md` v1.2.1 の対応範囲、コマンド、Node.js 版と Java 版の違いを、リファレンス寄りに整理しました。
 
