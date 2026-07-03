@@ -83,6 +83,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ## miku 系ツール
 
+- [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](https://note.com/toshikiigaa/n/n19f7ee34501e)（2026-07-03）
 - [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](https://note.com/toshikiigaa/n/na7fb76c52fda)（2026-05-29）
 - [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](https://note.com/toshikiigaa/n/n5b18c376b2f0)（2026-05-16）
 - [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](https://note.com/toshikiigaa/n/n5b0ac55dce0a)（2026-04-28）

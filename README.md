@@ -53,6 +53,9 @@ raw clone.
 
 ### Agent Skills
 
+- 2026-06-25: [GOAL運用する Agent Skill を作ってみた](2026/06/20260625/20260625-general-agent-state-management-skill.md) ([note](https://note.com/toshikiigaa/n/n7db7a4c8c2e7))
+- 2026-06-24: [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md) ([note](https://note.com/toshikiigaa/n/nf9f8493e0100))
+- 2026-06-22: [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](2026/06/20260622/20260622-general-ai-agent-state-management-three-markdown-files.md) ([note](https://note.com/toshikiigaa/n/nae43c4e81e4f))
 - 2026-05-29: [Agent Skills による開発資産の発芽成長](2026/05/20260529/20260529-agent-skills-development-assets-germination-growth.md) ([note](https://note.com/toshikiigaa/n/ne9593f75fccd))
 - 2026-05-26: [Agent Skill を作っていて、BASIC とマシン語を思い出した](2026/05/20260526/20260526-agent-skills-basic-machine-language.md) ([note](https://note.com/toshikiigaa/n/n142354986e19))
 - 2026-05-23: [コンテンツ型 Agent Skill にはどんな種類があるか](2026/05/20260523/20260523-content-agent-skill-types.md) ([note](https://note.com/toshikiigaa/n/n0ebcb626b082))
@@ -61,10 +64,20 @@ raw clone.
 - 2026-05-09: [Agent Skills の発火は、どのように起きているのか](2026/05/20260509/20260509-agent-skills-activation.md) ([note](https://note.com/toshikiigaa/n/nfd0dda4c85b4))
 - 2026-05-09: [Agent Skills では、説明ページの役割が少し変わる](2026/05/20260509/20260509-agent-skills-docs.md) ([note](https://note.com/toshikiigaa/n/n87a21add286b))
 
+### 簡易RAG風 Agent Skills
+
+Agent Skills を簡易RAG風に育てていく実装寄りの連載です。step1 から順に読むと、擬似RAG、索引、蒸留 Markdown の流れを追いやすくなります。
+
+- 2026-06-20: [簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る](2026/06/20260620/20260620-agent-skills-rag-step-03-distilled-answer-skeleton.md) ([note](https://note.com/toshikiigaa/n/necbdeff54e80))
+- 2026-06-17: [簡易RAG風Agent Skillsの作成 step2：miku-indexgenを足す](2026/06/20260617/20260617-agent-skills-rag-step-02-indexgen.md) ([note](https://note.com/toshikiigaa/n/n964e40f68b6c))
+- 2026-06-15: [簡易RAG風Agent Skillsの作成 step1：はじめまして擬似RAG](2026/06/20260615/20260615-agent-skills-rag-step-01.md) ([note](https://note.com/toshikiigaa/n/nbacb4098147a))
+
 ### 基礎知識・開発の考え方
 
 Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として読んでおきたい基礎知識や開発の考え方です。
 
+- 2026-06-26: [Playwright を、WebテストとAI agentの入口として、そっと見てみる](2026/06/20260626/20260626-general-playwright-overview.md) ([note](https://note.com/toshikiigaa/n/ne390f4d61a35))
+- 2026-06-14: [生成AI時代の既存システムのドキュメント作成：ソフトウェア考古学で仕様メモを蒸留する](2026/06/20260614/20260614-general-software-archaeology-spec-notes.md) ([note](https://note.com/toshikiigaa/n/n57726c8663c0))
 - 2026-06-11: [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) ([note](https://note.com/toshikiigaa/n/nf5c7d9583836))
 - 2026-06-09: [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) ([note](https://note.com/toshikiigaa/n/nb8814892039d))
 - 2026-06-04: [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) ([note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1))
@@ -73,6 +86,8 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 ### 生成AI・AI agent
 
 - 2026-06-13: [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) ([note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a))
+- 2026-06-12: [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](2026/06/20260612/20260612-general-ai-conversation-dynamics.md) ([note](https://note.com/toshikiigaa/n/n4d8d3f9afb10))
+- 2026-06-08: [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) ([note](https://note.com/toshikiigaa/n/nc42765828f90))
 - 2026-06-01: [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](2026/06/20260601/20260601-general-generative-ai-model-vectors.md) ([note](https://note.com/toshikiigaa/n/ne5ef9e60e293))
 - 2026-05-30: [生成AIは、なぜこんなに親しみやすい価格帯で使えてしまうのか](2026/05/20260530/20260530-general-ai-subscription-pricing-runway.md) ([note](https://note.com/toshikiigaa/n/nf26df188559a))
 - 2026-05-28: [AI agent とキャラクター人格で技術エッセイを書くということ](2026/05/20260528/20260528-general-character-persona-technical-essay.md) ([note](https://note.com/toshikiigaa/n/ne68cf56c07f3))
@@ -87,6 +102,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### miku 系ツール
 
+- 2026-07-03: [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) ([note](https://note.com/toshikiigaa/n/n19f7ee34501e))
 - 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
 - 2026-05-16: [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](2026/05/20260516/20260516-miku-text-bundle-ai-text-assets.md) ([note](https://note.com/toshikiigaa/n/n5b18c376b2f0))
 - 2026-04-28: [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](2026/04/20260428/20260428-miku-indexgen-intro.md) ([note](https://note.com/toshikiigaa/n/n5b0ac55dce0a))
@@ -103,9 +119,20 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-07-03 | [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) | [note](https://note.com/toshikiigaa/n/n19f7ee34501e) |
+| 2026-06-26 | [Playwright を、WebテストとAI agentの入口として、そっと見てみる](2026/06/20260626/20260626-general-playwright-overview.md) | [note](https://note.com/toshikiigaa/n/ne390f4d61a35) |
+| 2026-06-25 | [GOAL運用する Agent Skill を作ってみた](2026/06/20260625/20260625-general-agent-state-management-skill.md) | [note](https://note.com/toshikiigaa/n/n7db7a4c8c2e7) |
+| 2026-06-24 | [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md) | [note](https://note.com/toshikiigaa/n/nf9f8493e0100) |
+| 2026-06-22 | [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](2026/06/20260622/20260622-general-ai-agent-state-management-three-markdown-files.md) | [note](https://note.com/toshikiigaa/n/nae43c4e81e4f) |
+| 2026-06-20 | [簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る](2026/06/20260620/20260620-agent-skills-rag-step-03-distilled-answer-skeleton.md) | [note](https://note.com/toshikiigaa/n/necbdeff54e80) |
+| 2026-06-17 | [簡易RAG風Agent Skillsの作成 step2：miku-indexgenを足す](2026/06/20260617/20260617-agent-skills-rag-step-02-indexgen.md) | [note](https://note.com/toshikiigaa/n/n964e40f68b6c) |
+| 2026-06-15 | [簡易RAG風Agent Skillsの作成 step1：はじめまして擬似RAG](2026/06/20260615/20260615-agent-skills-rag-step-01.md) | [note](https://note.com/toshikiigaa/n/nbacb4098147a) |
+| 2026-06-14 | [生成AI時代の既存システムのドキュメント作成：ソフトウェア考古学で仕様メモを蒸留する](2026/06/20260614/20260614-general-software-archaeology-spec-notes.md) | [note](https://note.com/toshikiigaa/n/n57726c8663c0) |
 | 2026-06-13 | [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) | [note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a) |
+| 2026-06-12 | [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](2026/06/20260612/20260612-general-ai-conversation-dynamics.md) | [note](https://note.com/toshikiigaa/n/n4d8d3f9afb10) |
 | 2026-06-11 | [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) | [note](https://note.com/toshikiigaa/n/nf5c7d9583836) |
 | 2026-06-09 | [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) | [note](https://note.com/toshikiigaa/n/nb8814892039d) |
+| 2026-06-08 | [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) | [note](https://note.com/toshikiigaa/n/nc42765828f90) |
 | 2026-06-06 | [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) | [note](https://note.com/toshikiigaa/n/ndc1b1eca21fc) |
 | 2026-06-05 | [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) | [note](https://note.com/toshikiigaa/n/n4d3a240982f2) |
 | 2026-06-04 | [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) | [note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1) |
