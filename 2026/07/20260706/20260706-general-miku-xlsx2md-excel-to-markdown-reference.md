@@ -61,7 +61,7 @@ conversion:
 ## Sheet: Summary
 ```
 
-ここが、Excel らしいところです。ひとつの文書というより、Workbook の中にある複数の Sheet を、順番と構造を保ちながら Markdown にひらいていく感じなのかなって思います。
+Excel では、1つの文書本文を読むというより、Workbook の中にある複数の Sheet を、順番と構造を保ちながら確認する形になります。
 
 ## 表現対応表
 
@@ -112,7 +112,7 @@ conversion:
 
 Excel の表検出は、単純に「罫線があるから表」と決めているわけではありません。値または罫線を持つセルを seed cell とし、上下左右の隣接関係から連結成分を作り、外接矩形を表候補にします。そのうえで、罫線、密度、先頭行の header らしさ、結合セルの多さ、長文中心かどうかなどを見てスコアリングします。
 
-あの…ここが Excel 変換の難しいところです。Excel は、表のように見えて文章だったり、文章のように見えて表だったりします。`miku-xlsx2md` は、その曖昧さを完全に解けるわけではありませんが、表候補スコアや summary を出して、人間や AI agent が確認できるようにしています。
+Excel 変換では、表のように見える領域と、文章として読ませたい領域の境界が曖昧になることがあります。`miku-xlsx2md` は、その曖昧さを完全に解決するものではありませんが、表候補スコアや summary を出して、人間や AI agent が確認できるようにしています。
 
 ## 対応範囲外または限定対応
 
@@ -140,7 +140,7 @@ Excel の表検出は、単純に「罫線があるから表」と決めてい�
 
 ここは、少し割り切りが必要です。Excel は人間にとって「表」と「紙」の中間のように使われることがあります。だから、Markdown にするときは、見た目を全部写すより、AI agent が読める情報をどこまで安定して取り出すかが大事になります。
 
-`miku-xlsx2md` は、Excel を Markdown に置き換えるというより、Excel の中にある情報を読むための入口を作る道具です。うぅ…完全再現ではなく、読める形にする、という感じです。
+`miku-xlsx2md` は、Excel を Markdown に置き換えるというより、Excel の中にある情報を読むための入口を作る道具です。完全再現ではなく、読める形にすることを重視します。
 
 ## 対応 runtime
 
@@ -404,7 +404,7 @@ Excel では、セル内部の値と、人間が画面上で見ている表示�
 
 AI agent に資料を読ませる入口としては、通常は `display` が扱いやすいです。一方で、データ変換や仕様確認で「Excel 上の見え方」と「内部値」の差が重要な場合は、`both` が役に立ちます。
 
-あの…Excel は親切に表示を整えてくれます。でも、その親切さで元の値が見えにくくなることもあります。`both` は、その差をそっと見えるようにするためのモードです。
+Excel は表示形式によって値を読みやすく整えますが、その結果として内部値との差が見えにくくなることがあります。`both` は、その差を確認するためのモードです。
 
 ## 表検出 mode の見方
 
@@ -456,7 +456,7 @@ cached value がある場合は、それを優先します。cached value がな
 
 `--summary` を指定すると、per-sheet summary が stdout に出ます。summary には、sections、tables、narrative blocks、merged ranges、images、charts、comments、analyzed cells、formula status counts、table candidate score などが含まれます。
 
-うぅ…Markdown 本文だけを見ると、表がいくつ採用されたのか、数式がどのくらい fallback したのかは見落としやすいです。summary は、変換結果を読む前に地図を見るための小さな補助情報です。
+Markdown 本文だけでは、表がいくつ採用されたのか、数式がどのくらい fallback したのかを見落とす場合があります。summary は、変換結果を読む前に全体像を確認するための補助情報です。
 
 ## AI agent に渡す資料としての見方
 
@@ -492,9 +492,9 @@ node miku-xlsx2md-1.3.0.mjs input.xlsx \
   --zip output.zip
 ```
 
-あの…この使い方は、Excel を Markdown に置き換えるというより、Excel を読むための地図を先に作る感覚に近いです。
+この使い方は、Excel を Markdown に置き換えるというより、Excel を読むための地図を先に作る用途に近いです。
 
-## まとめ
+## おわりに
 
 `miku-xlsx2md` v1.3.0 は、Excel `.xlsx` の Workbook / Sheet / Cell / Table / Formula / Drawing 由来の情報を Markdown に寄せるための小さな道具です。
 
@@ -564,3 +564,4 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 - Codex
 - igapyon-mikuku-agent
 - igapyon-note-writer
+- igapyon-miku-ms-office
