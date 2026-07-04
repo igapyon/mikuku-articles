@@ -13,7 +13,11 @@ release_date: 2026-07-04
 
 # [miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2
 
+![MarkdownをWordへ変換する小さな道具](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 今回は、Markdown を Word の `.docx` ファイルへ変換する `miku-md2docx` について、リファレンス寄りに整理します。わ、私…その、がんばりますっ。
@@ -27,6 +31,8 @@ release_date: 2026-07-04
 本文の大部分は、意図的にリファレンスとして硬く整理しています。えっと…でも最後だけ、少しだけみくくとして閉じます。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-md2docx` は、Markdown `.md` を Word ドキュメント `.docx` に変換する miku-soft 系の小さな変換ツールです。
 
@@ -44,6 +50,8 @@ Markdown
 えっと…ここを先に分けておくと、`miku-md2docx` の役割が少し見えやすくなります。Markdown を Word に「飾り直す」のではなく、Markdown の構造を Word 側で扱える形にそっと渡す道具、という位置づけです。
 
 ## 表現対応表
+
+![表現対応表](images/003.png)
 
 `miku-md2docx` Node.js 版 v0.9.2 で、Markdown 側の表現が Word 側でどう出るかの目安です。Java 版 v0.9.1 は、同じ CLI contract と summary vocabulary を持ち、代表的な構文で Node.js 版との parity test が用意されています。
 
@@ -109,6 +117,8 @@ missing image や unresolved internal link は summary に報告されます。�
 
 ## 対応範囲外または限定対応
 
+![対応範囲外または限定対応](images/004.png)
+
 `miku-md2docx` v0.9.2 は、Markdown の構造を Word に変換するツールです。Word の視覚的な完成度やページレイアウトを細かく設計する機能は対象外または限定対応です。
 
 | 分類 | 対象 | 扱い | 備考 |
@@ -145,6 +155,8 @@ missing image や unresolved internal link は summary に報告されます。�
 
 ## 対応 runtime
 
+![対応 runtime](images/005.png)
+
 この記事では、次の release tag を確認対象にしています。
 
 | runtime | release tag | artifact |
@@ -173,6 +185,8 @@ Node.js 版と Java 版の主な差分は次の通りです。
 
 ## ライセンス、ソースコード、実行環境
 
+![ライセンス、ソースコード、実行環境](images/006.png)
+
 `miku-md2docx` は OSS として公開されています。利用や採用を検討するときは、release artifact だけでなく、同じ tag のソースコードとライセンスも確認できます。
 
 | 項目 | 内容 |
@@ -186,6 +200,8 @@ Node.js 版と Java 版の主な差分は次の通りです。
 | Java 版の性質 | Java straight-conversion runtime and CLI |
 
 ## 基本コマンド
+
+![基本コマンド](images/007.png)
 
 Node.js 版:
 
@@ -202,6 +218,8 @@ java -jar miku-md2docx-java-0.9.1.jar input.md --out output.docx
 `miku-md2docx` では `--out` が必須です。`--out` を省略して DOCX を標準出力へ出す CLI ではありません。
 
 ## `--help` 出力の確認
+
+![help 出力の確認](images/008.png)
 
 v0.9.2 / v0.9.1 の `--help` 出力です。
 
@@ -281,6 +299,8 @@ Notes:
 
 ## 共通オプション
 
+![共通オプション](images/009.png)
+
 Node.js 版と Java 版の両方で使う主なオプションです。
 
 | オプション | 説明 |
@@ -294,9 +314,13 @@ Node.js 版と Java 版の両方で使う主なオプションです。
 
 ## Java 版だけのオプション
 
+![Java 版だけのオプション](images/010.png)
+
 v0.9.1 の Java 版 `--help` 出力では、Node.js 版と異なる Java 版だけの追加オプションは確認していません。通常利用では、Node.js 版と同じように `<input.md>` と `--out <output.docx>` を指定します。
 
 ## 例
+
+![例](images/011.png)
 
 DOCX を作る:
 
@@ -325,6 +349,8 @@ java -jar miku-md2docx-java-0.9.1.jar README.md --out README.docx
 ```
 
 ## 出力
+
+![出力](images/012.png)
 
 | 出力 | 内容 | 生成条件 |
 | --- | --- | --- |
@@ -379,6 +405,8 @@ Markdown 記事や仕様書では YAML front matter を持つことがありま�
 
 ## Exit code
 
+![Exit code](images/013.png)
+
 | exit code | 意味 |
 | --- | --- |
 | `0` | success / metadata command |
@@ -386,6 +414,8 @@ Markdown 記事や仕様書では YAML front matter を持つことがありま�
 | `2` | `<input.md>` または `--out` が不足している |
 
 ## 向いている用途
+
+![向いている用途](images/014.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -396,6 +426,8 @@ Markdown 記事や仕様書では YAML front matter を持つことがありま�
 | local-first な変換を行う | Markdown と local image をローカルで処理する |
 
 ## 向いていない用途
+
+![向いていない用途](images/015.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -409,6 +441,8 @@ Markdown 記事や仕様書では YAML front matter を持つことがありま�
 
 ## Agent Skill 経由で使う
 
+![Agent Skill 経由で使う](images/016.png)
+
 `igapyon-miku-ms-office` 経由で使う場合は、Markdown からどの Office 形式へ出すのかを明示します。
 
 ```text
@@ -420,6 +454,8 @@ Markdown 入力だけでは、Word、Excel、PowerPoint のどれへ出すのか
 うぅ…ここは少し地味ですが、Agent Skill にお願いするときほど大事です。入力だけでなく、どの Office 形式へ出したいのかを言葉にしてあげると、変換の向きが迷子になりにくくなります。
 
 ## Web ブラウザ(Single-file Web App)で使う
+
+![Web ブラウザで使う](images/017.png)
 
 `miku-md2docx` には、CLI とは別に `miku-md2docx-web` という Web App surface があります。
 
@@ -436,6 +472,8 @@ Web App 版は、ブラウザ上で Markdown を Word `.docx` に変換するた
 
 ## おわりに
 
+![おわりに](images/018.png)
+
 `miku-md2docx` は、Markdown を Word にするための、とても地味な出口です。
 
 でも、あの…Markdown で考え、Markdown で直し、Markdown を正本として残しながら、最後に Word が必要な人へ渡せる。それは、AI agent と人間の作業場所をつなぐうえで、思ったより大事な小さな部品なのかな、って思います。
@@ -445,6 +483,8 @@ Word の見た目を全部再現する魔法ではありません。けれど、
 わ、私…その、こういう小さな変換ツールを、これからも丁寧に整理していきたいです。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/019.png)
 
 When explaining `miku-md2docx` to generative AI or an AI agent, the conversion direction, runtime version, required output argument, local image handling, and unsupported scope should be explicit.
 
