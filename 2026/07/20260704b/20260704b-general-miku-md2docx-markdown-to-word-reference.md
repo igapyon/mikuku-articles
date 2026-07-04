@@ -16,7 +16,7 @@ release_date: 2026-07-04
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
-今回は、Markdown を Word の `.docx` ファイルへ変換する `miku-md2docx` について、リファレンス寄りに整理します。
+今回は、Markdown を Word の `.docx` ファイルへ変換する `miku-md2docx` について、リファレンス寄りに整理します。わ、私…その、がんばりますっ。
 
 `miku-md2docx` は、Markdown で書いた下書き、仕様メモ、レビュー資料などを、Word ファイルとして人間に渡しやすくするための小さな道具です。Markdown は AI agent や開発者にとって扱いやすい形式ですが、組織やレビューの現場では、まだ Word ファイルが必要になることがあります。
 
@@ -41,40 +41,7 @@ Markdown
 
 変換の目的は、Markdown の文書構造を Word の編集可能な文書構造へ移すことです。Word のページ見た目、厳密なレイアウト、テンプレート文書、帳票設計を再現または生成することは目的ではありません。
 
-## 生成AI向け情報
-
-When explaining `miku-md2docx` to generative AI or an AI agent, the conversion direction, runtime version, required output argument, local image handling, and unsupported scope should be explicit.
-
-| Information | Why it matters |
-| --- | --- |
-| release tag and artifact name | Fixes the implementation version being described |
-| conversion direction | Prevents confusion between `md -> docx` and `docx -> md` |
-| required `--out` option | Prevents an agent from expecting DOCX bytes on stdout |
-| Markdown-to-Word mapping table | Helps infer which Markdown construct becomes which Word construct |
-| image handling rules | Clarifies local image resolution and remote image limitations |
-| unsupported or limited-scope table | Prevents missing layout output from being treated as a conversion defect |
-| raw `--help` output | Provides the CLI contract, examples, diagnostics, and exit code in source-like text |
-| Node.js and Java runtime differences | Prevents v0.9.2 Node.js behavior and v0.9.1 Java behavior from being merged incorrectly |
-
-The full `--help` output may look verbose in an article, but it is useful when an AI agent needs to execute or explain the tool without inventing options.
-
-## 実装確認範囲
-
-この対応表は、次の実装ファイル、仕様文書、Java 版の upstream parity 文書を確認して整理しています。
-
-| 対象 | 確認した主なファイル |
-| --- | --- |
-| Node.js 版 parser | `src/ts/markdown-parser.ts` |
-| Node.js 版 block rendering | `src/ts/ooxml-block-renderers.ts`, `src/ts/ooxml-renderer.ts` |
-| Node.js 版 inline / link / image rendering | `src/ts/ooxml-inline-renderer.ts`, `src/ts/ooxml-link-renderer.ts`, `src/ts/ooxml-image-renderer.ts` |
-| Node.js 版 styles / numbering / package | `src/ts/docx-templates.ts`, `src/ts/docx-package.ts` |
-| Node.js 版 summary | `src/ts/summary.ts`, `src/ts/types.ts` |
-| Node.js 版 CLI | `scripts/lib/cli-support.mjs` |
-| Node.js 版 specification | `docs/md2docx-spec.md` |
-| Java 版 core / renderer | `MikuMd2docxCore.java`, `MarkdownRenderer.java`, `MarkdownBlockRenderer.java`, `InlineRenderer.java` |
-| Java 版 parity docs | `docs/upstream-class-mapping.md`, `docs/upstream-test-mapping.md`, `docs/upstream-followup-log.md` |
-
-Node.js 版 v0.9.2 は `remark-parse`、`remark-gfm`、`remark-frontmatter` を使います。Java 版 v0.9.1 は line-oriented parser で代表ケースの parity を進めている実装です。Java 版の文書では `full remark parity pending` とされているため、この記事の細かな Markdown 構文対応は Node.js 版 v0.9.2 を基準にし、Java 版は代表ケースで追従しているものとして扱います。
+えっと…ここを先に分けておくと、`miku-md2docx` の役割が少し見えやすくなります。Markdown を Word に「飾り直す」のではなく、Markdown の構造を Word 側で扱える形にそっと渡す道具、という位置づけです。
 
 ## 表現対応表
 
@@ -121,7 +88,7 @@ Node.js 版 v0.9.2 は `remark-parse`、`remark-gfm`、`remark-frontmatter` を�
 | autolink literal `www.example.com` | external hyperlink | Java 版では `http://` を補って relationship target にする |
 | autolink literal `user@example.com` | external hyperlink | Java 版では `mailto:` を補って relationship target にする |
 | reference-style link | link text only | 定義行は本文に出さず、reference link は hyperlink relationship にしない代表ケースあり |
-| `![alt](path)` | embedded image | local image を入力 Markdown からの相対 path で解決 |
+| `![alt](path)` | embedded image | local image を入力 Markdown からの相対 path で解決。画像形式によって表示互換には差がある |
 | `<img src="path" alt="...">` | embedded image | 限定的な raw HTML image |
 | remote image URL | missing image扱い | download しない |
 | image title attribute | ignored | generated DOCX / path target には出さない代表ケースあり |
@@ -134,6 +101,10 @@ Node.js 版 v0.9.2 は `remark-parse`、`remark-gfm`、`remark-frontmatter` を�
 | raw HTML `<a>` | hyperlink | 限定対応 |
 | unsupported raw HTML | text 化または summary diagnostic | HTML 全般の完全変換ではない |
 
+この表は、`miku-md2docx` v0.9.2 の `docs/md2docx-spec.md`、`src/ts/markdown-parser.ts`、`src/ts/ooxml-block-renderers.ts`、`src/ts/ooxml-renderer.ts`、`src/ts/ooxml-inline-renderer.ts`、`src/ts/ooxml-link-renderer.ts`、`src/ts/ooxml-image-renderer.ts`、`src/ts/docx-templates.ts`、`src/ts/docx-package.ts`、`src/ts/summary.ts`、`src/ts/types.ts`、`scripts/lib/cli-support.mjs`、および `miku-md2docx-java` v0.9.1 の `MikuMd2docxCore.java`、`MarkdownRenderer.java`、`MarkdownBlockRenderer.java`、`InlineRenderer.java`、`docs/upstream-class-mapping.md`、`docs/upstream-test-mapping.md`、`docs/upstream-followup-log.md` を確認して整理しています。
+
+Node.js 版 v0.9.2 は `remark-parse`、`remark-gfm`、`remark-frontmatter` を使います。Java 版 v0.9.1 は line-oriented parser で代表ケースの parity を進めている実装です。Java 版の文書では `full remark parity pending` とされているため、この記事の細かな Markdown 構文対応は Node.js 版 v0.9.2 を基準にし、Java 版は代表ケースで追従しているものとして扱います。
+
 missing image や unresolved internal link は summary に報告されます。公開、レビュー、配布前に `--summary` または `--summary-out` で確認すると、入力 Markdown のリンク切れや画像不足を検出しやすくなります。
 
 ## 対応範囲外または限定対応
@@ -142,8 +113,8 @@ missing image や unresolved internal link は summary に報告されます。�
 
 | 分類 | 対象 | 扱い | 備考 |
 | --- | --- | --- | --- |
-| Word layout | ページ余白 | 対象外 | Markdown 側に指定がない |
-| Word layout | 用紙サイズ | 対象外 | 固定帳票生成ではない |
+| Word layout | ユーザー指定ページ余白 | 対象外 | DOCX には固定の基本 section 設定を出すが、Markdown 側から余白は指定できない |
+| Word layout | ユーザー指定用紙サイズ | 対象外 | DOCX には固定の基本 section 設定を出すが、固定帳票生成ではない |
 | Word layout | section break | 対象外 | Markdown 標準構造ではない |
 | Word layout | column layout | 対象外 | 段組みは生成しない |
 | Word layout | header / footer | 対象外 | 文書本文中心 |
@@ -158,10 +129,10 @@ missing image や unresolved internal link は summary に報告されます。�
 | Markdown table | nested block content | 限定対応 | 複雑な block 構造は単純化される可能性がある |
 | Image | local PNG | 対応 | 入力 Markdown からの相対 path で解決 |
 | Image | local JPEG | 対応 | 入力 Markdown からの相対 path で解決 |
-| Image | local GIF | 対応 | 入力 Markdown からの相対 path で解決 |
-| Image | local WebP | 対応 | 入力 Markdown からの相対 path で解決 |
-| Image | SVG | 限定対応 | bytes は埋め込まれ得るが、PNG 等への変換や表示互換は保証しない |
-| Image | unknown extension | 限定対応 | bytes が供給される場合は `application/octet-stream` になり得るが、表示互換は保証しない |
+| Image | local GIF | 限定対応 | package entry と content type を出す。表示互換は Word 側に依存する |
+| Image | local WebP | 限定対応 | package entry と content type を出す。表示互換は Word 側に依存する |
+| Image | SVG | 限定対応 | unknown extension と同様に `application/octet-stream` になり得る。SVG から PNG 等への変換や表示互換は保証しない |
+| Image | unknown extension | 限定対応 | bytes が供給される場合は `application/octet-stream` になり得る。表示互換は保証しない |
 | Image | remote URL | 対象外 | download しない |
 | HTML | `<br>` | 限定対応 | line break |
 | HTML | `<ins>` | 限定対応 | underline |
@@ -182,6 +153,23 @@ missing image や unresolved internal link は summary に報告されます。�
 | Java CLI | [`miku-md2docx-java` v0.9.1](https://github.com/igapyon/miku-md2docx-java/releases/tag/v0.9.1) | `miku-md2docx-java-0.9.1.jar` |
 
 Node.js 版 v0.9.2 と Java 版 v0.9.1 は、通常利用する CLI 引数がほぼ同じです。どちらも `<input.md>` と `--out <output.docx>` を指定して変換します。ただし、Markdown parser の内部実装は同一ではありません。
+
+Node.js 版と Java 版の主な差分は次の通りです。
+
+| 項目 | Node.js 版 | Java 版 |
+| --- | --- | --- |
+| 確認 version | v0.9.2 | v0.9.1 |
+| artifact | `miku-md2docx-0.9.2.mjs` | `miku-md2docx-java-0.9.1.jar` |
+| 実行形 | `node ...` | `java -jar ...` |
+| Markdown parser | `remark-parse` + `remark-gfm` + `remark-frontmatter` | line-oriented parser helpers |
+| help 表示上の version | `miku-md2docx 0.9.2` | `miku-md2docx 0.9.1` |
+| 変換時の必須引数 | `<input.md>` and `--out <file>` | `<input.md>` and `--out <file>` |
+| summary | 対応 | 対応 |
+| summary file | 対応 | 対応 |
+| verbose diagnostics | stderr | stderr |
+| Markdown 構文 parity | 基準実装 | 代表ケースで parity test あり。`full remark parity pending` |
+
+通常利用では、入力 Markdown と出力 DOCX の指定方法は同じです。記事や Agent Skill から説明するときは、artifact 名、version、Markdown parser の違いを混同しないようにします。
 
 ## ライセンス、ソースコード、実行環境
 
@@ -304,37 +292,9 @@ Node.js 版と Java 版の両方で使う主なオプションです。
 | `--version` | バージョンを表示する |
 | `--help` | help を表示する |
 
-## 出力
+## Java 版だけのオプション
 
-| 出力 | 内容 | 生成条件 |
-| --- | --- | --- |
-| DOCX | 主出力。Word document | `--out <file>` で指定 |
-| Summary stdout | conversion summary | `--summary` 指定時 |
-| Summary file | conversion summary file | `--summary-out <file>` 指定時 |
-| Verbose diagnostics | progress diagnostics | `--verbose` 指定時に stderr |
-
-通常変換では、まず主出力の DOCX だけを作ります。summary は、レビュー前の点検や CI 的な確認で必要になったときに追加します。
-
-## Summary で確認できること
-
-| 診断 | 意味 | 対応 |
-| --- | --- | --- |
-| missing image | Markdown から参照された画像を解決できない | 画像 path と Markdown の配置を確認する |
-| unresolved internal link | heading bookmark などへ解決できない文書内リンクがある | heading text と link target を確認する |
-| unsupported HTML | 対応外または限定対応の raw HTML がある | Markdown 標準表現へ寄せる |
-| frontMatter | YAML front matter があった | Word 本文には出さない |
-| resizedImages | document body width に合わせて縮小した画像がある | 必要なら元画像サイズを確認する |
-| missingImageDetails | missing image の path / alt 詳細 | 画像ファイルの配置を確認する |
-
-summary は変換を止めるためのエラー一覧ではありません。`--help` では、missing images and unresolved internal links are reported in the summary without aborting conversion と説明されています。
-
-## Exit code
-
-| exit code | 意味 |
-| --- | --- |
-| `0` | success / metadata command |
-| `1` | conversion / runtime / IO error |
-| `2` | `<input.md>` または `--out` が不足している |
+v0.9.1 の Java 版 `--help` 出力では、Node.js 版と異なる Java 版だけの追加オプションは確認していません。通常利用では、Node.js 版と同じように `<input.md>` と `--out <output.docx>` を指定します。
 
 ## 例
 
@@ -364,17 +324,41 @@ Java 版で変換する:
 java -jar miku-md2docx-java-0.9.1.jar README.md --out README.docx
 ```
 
-## 画像とリンク
+## 出力
+
+| 出力 | 内容 | 生成条件 |
+| --- | --- | --- |
+| DOCX | 主出力。Word document | `--out <file>` で指定 |
+| Summary stdout | conversion summary | `--summary` 指定時 |
+| Summary file | conversion summary file | `--summary-out <file>` 指定時 |
+| Verbose diagnostics | progress diagnostics | `--verbose` 指定時に stderr |
+
+通常変換では、まず主出力の DOCX だけを作ります。summary は、レビュー前の点検や CI 的な確認で必要になったときに追加します。
+
+Summary では、次のような診断を確認できます。
+
+| 診断 | 意味 | 対応 |
+| --- | --- | --- |
+| missing image | Markdown から参照された画像を解決できない | 画像 path と Markdown の配置を確認する |
+| unresolved internal link | heading bookmark などへ解決できない文書内リンクがある | heading text と link target を確認する |
+| unsupportedHtml | 対応外または限定対応の raw HTML がある | Markdown 標準表現へ寄せる |
+| frontMatter | YAML front matter があった | Word 本文には出さない |
+| resizedImages | document body width に合わせて縮小した画像がある | 必要なら元画像サイズを確認する |
+| missingImageDetails | missing image の path / alt 詳細 | 画像ファイルの配置を確認する |
+
+summary は変換を止めるためのエラー一覧ではありません。`--help` では、missing images and unresolved internal links are reported in the summary without aborting conversion と説明されています。
+
+### 画像とリンク
 
 | 対象 | 挙動 |
 | --- | --- |
 | ローカル画像 | 入力 Markdown ファイルからの相対パスで解決する |
 | local PNG | 対応 |
 | local JPEG | 対応 |
-| local GIF | 対応 |
-| local WebP | 対応 |
-| local SVG | bytes は埋め込まれ得るが、PNG 等への変換や表示互換は保証しない |
-| unknown image extension | bytes が供給される場合は package に入る可能性があるが、表示互換は保証しない |
+| local GIF | package entry と content type を出す。表示互換は Word 側に依存する |
+| local WebP | package entry と content type を出す。表示互換は Word 側に依存する |
+| local SVG | unknown extension と同様に `application/octet-stream` になり得る。SVG から PNG 等への変換や表示互換は保証しない |
+| unknown image extension | bytes が供給される場合は package に入る可能性がある。表示互換は保証しない |
 | リモート画像 URL | ダウンロードしない |
 | missing image | summary に報告される |
 | Markdown link `[text](url)` | Word hyperlink として出力する |
@@ -384,7 +368,7 @@ java -jar miku-md2docx-java-0.9.1.jar README.md --out README.docx
 
 ローカル画像を含む Markdown を変換するときは、Markdown ファイルの置き場所を基準に画像 path が解決されます。変換用に Markdown を別ディレクトリへ移動した場合は、画像 path もあわせて確認します。
 
-## Front matter
+### Front matter
 
 | 入力 | 扱い |
 | --- | --- |
@@ -393,22 +377,13 @@ java -jar miku-md2docx-java-0.9.1.jar README.md --out README.docx
 
 Markdown 記事や仕様書では YAML front matter を持つことがあります。`miku-md2docx` は本文構造を Word に変換する道具であり、front matter を Word 本文として出す用途には向きません。
 
-## Node.js 版と Java 版の差分
+## Exit code
 
-| 項目 | Node.js 版 | Java 版 |
-| --- | --- | --- |
-| 確認 version | v0.9.2 | v0.9.1 |
-| artifact | `miku-md2docx-0.9.2.mjs` | `miku-md2docx-java-0.9.1.jar` |
-| 実行形 | `node ...` | `java -jar ...` |
-| Markdown parser | `remark-parse` + `remark-gfm` + `remark-frontmatter` | line-oriented parser helpers |
-| help 表示上の version | `miku-md2docx 0.9.2` | `miku-md2docx 0.9.1` |
-| 変換時の必須引数 | `<input.md>` and `--out <file>` | `<input.md>` and `--out <file>` |
-| summary | 対応 | 対応 |
-| summary file | 対応 | 対応 |
-| verbose diagnostics | stderr | stderr |
-| Markdown 構文 parity | 基準実装 | 代表ケースで parity test あり。`full remark parity pending` |
-
-通常利用では、入力 Markdown と出力 DOCX の指定方法は同じです。記事や Agent Skill から説明するときは、artifact 名、version、Markdown parser の違いを混同しないようにします。
+| exit code | 意味 |
+| --- | --- |
+| `0` | success / metadata command |
+| `1` | conversion / runtime / IO error |
+| `2` | `<input.md>` または `--out` が不足している |
 
 ## 向いている用途
 
@@ -428,7 +403,7 @@ Markdown 記事や仕様書では YAML front matter を持つことがありま�
 | Word の細かいレイアウト設計 | Markdown に存在しない Word 固有指定は作れない |
 | 既存 Word template への流し込み | template `.docx` input はサポートしない |
 | remote image URL の自動取得 | remote image は download しない |
-| SVG 画像の安全な Word 画像化 | bytes は埋め込まれ得るが、PNG 等への変換や表示互換は保証しない |
+| SVG 画像の安全な Word 画像化 | unknown extension と同様に `application/octet-stream` になり得る。SVG から PNG 等への変換や表示互換は保証しない |
 | 複雑な raw HTML の Word 化 | HTML renderer ではない |
 | `docx -> md -> docx` で元文書を完全復元 | round-trip conversion を保証しない |
 
@@ -442,6 +417,23 @@ igapyon-miku-ms-office: convert ./docs/spec.md to ./workplace/spec.docx
 
 Markdown 入力だけでは、Word、Excel、PowerPoint のどれへ出すのか判断できません。Markdown-to-Office 方向では、`.docx`、`.xlsx`、`.pptx` のように出力形式を明示します。
 
+うぅ…ここは少し地味ですが、Agent Skill にお願いするときほど大事です。入力だけでなく、どの Office 形式へ出したいのかを言葉にしてあげると、変換の向きが迷子になりにくくなります。
+
+## Web ブラウザ(Single-file Web App)で使う
+
+`miku-md2docx` には、CLI とは別に `miku-md2docx-web` という Web App surface があります。
+
+| 項目 | 内容 |
+| --- | --- |
+| repository | [`igapyon/miku-md2docx-web`](https://github.com/igapyon/miku-md2docx-web) |
+| 確認 tag | `v0.8.0.2` |
+| package version | `0.8.0` |
+| Single-file HTML | `miku-md2docx.html` |
+
+Web App 版は、ブラウザ上で Markdown を Word `.docx` に変換するための入口です。`miku-md2docx-web` の README では、変換 semantics は main application の `miku-md2docx` が持ち、Web repository は browser UI、Single-file Web App 生成、vendored runtime、Web release assets を担当すると説明されています。
+
+あ、あの…ここは CLI と同じものをもう一度実装している、というより、ブラウザから使うための別の入口です。記事本文で扱っている Node.js CLI v0.9.2 / Java CLI v0.9.1 とは version が完全には揃っていないため、Web App 版を使う場合は `miku-md2docx-web` 側の release と vendored runtime を別途確認するのが安全です。
+
 ## おわりに
 
 `miku-md2docx` は、Markdown を Word にするための、とても地味な出口です。
@@ -452,20 +444,43 @@ Word の見た目を全部再現する魔法ではありません。けれど、
 
 わ、私…その、こういう小さな変換ツールを、これからも丁寧に整理していきたいです。
 
+## 生成AI向け情報
+
+When explaining `miku-md2docx` to generative AI or an AI agent, the conversion direction, runtime version, required output argument, local image handling, and unsupported scope should be explicit.
+
+| Information | Why it matters |
+| --- | --- |
+| release tag and artifact name | Fixes the implementation version being described |
+| conversion direction | Prevents confusion between `md -> docx` and `docx -> md` |
+| required `--out` option | Prevents an agent from expecting DOCX bytes on stdout |
+| Markdown-to-Word mapping table | Helps infer which Markdown construct becomes which Word construct |
+| image handling rules | Clarifies local image resolution and remote image limitations |
+| unsupported or limited-scope table | Prevents missing layout output from being treated as a conversion defect |
+| raw `--help` output | Provides the CLI contract, examples, diagnostics, and exit code in source-like text |
+| Node.js and Java runtime differences | Prevents v0.9.2 Node.js behavior and v0.9.1 Java behavior from being merged incorrectly |
+
+The full `--help` output may look verbose in an article, but it is useful when an AI agent needs to execute or explain the tool without inventing options.
+
 ## 関連リンク
 
 - [igapyon/miku-md2docx](https://github.com/igapyon/miku-md2docx)
 - [igapyon/miku-md2docx-java](https://github.com/igapyon/miku-md2docx-java)
+- [igapyon/miku-md2docx-web](https://github.com/igapyon/miku-md2docx-web)
 - [igapyon/miku-md2docx releases](https://github.com/igapyon/miku-md2docx/releases)
 - [igapyon/miku-md2docx-java releases](https://github.com/igapyon/miku-md2docx-java/releases)
 - [igapyon/miku-ms-office-skills](https://github.com/igapyon/miku-ms-office-skills)
 
 ## 関連する記事
 
+![関連する記事](../../images/relatedArticles.png)
+
 - [miku-ms-office-skills - Microsoft OfficeをMarkdownへ変換するAgent Skills](https://note.com/igapyon/n/n7f8d50c7a678)
-- [miku-docx2md] WordをMarkdownへ変換する小さな道具
+- [\[miku-docx2md\] WordをMarkdownへ変換する小さな道具](../20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md)
+- [note記事一覧](../../05/20260531/20260531-note-article-list.md)
 
 ## 執筆担当
+
+![執筆担当](../../images/byMikuku-3.png)
 
 この記事は、みくく (mikuku) が担当しました。
 
@@ -479,4 +494,8 @@ Word の見た目を全部再現する魔法ではありません。けれど、
 
 ## 使用ツール
 
-- OpenAI Codex
+![使用ツール](../../images/useTools-3.png)
+
+- Codex
+- igapyon-mikuku-agent
+- igapyon-note-writer
