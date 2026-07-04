@@ -7,6 +7,42 @@ Update this section while working. Do not rewrite unrelated TODO items.
 
 ### Tasks
 
+- [x] Create the 2026-07-06 Note article draft for `miku-xlsx2md`:
+  `2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md`.
+  - Topic: sister article to
+    `2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md`,
+    focused on Excel `.xlsx` to Markdown conversion.
+  - Required references:
+    - `miku-xlsx2md` release v1.3.0:
+      `https://github.com/igapyon/miku-xlsx2md/releases/tag/v1.3.0`
+    - `miku-xlsx2md-java` release v1.3.0:
+      `https://github.com/igapyon/miku-xlsx2md-java/releases/tag/v1.3.0`
+  - Required source review: inspect the v1.3.0 source contents for both the
+    Node.js and Java implementations before writing the article.
+  - Expected output: a dated Note Markdown article under `2026/07/20260706/`,
+    matching the repository front matter and the reference-style structure used
+    by the 2026-07-04 `miku-docx2md` sister article.
+  - Result, 2026-07-06: article draft was created, upstream v1.3.0 release
+    metadata and tagged source contents were reviewed for both Node.js and Java,
+    and root `index.json` contains the new article entry.
+- [x] Create the 2026-07-05 Note article draft for `miku-pptx2md`:
+  `2026/07/20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md`.
+  - Topic: sister article to
+    `2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md`,
+    focused on PowerPoint `.pptx` to Markdown conversion.
+  - Required references:
+    - `miku-pptx2md` release v0.5.1:
+      `https://github.com/igapyon/miku-pptx2md/releases/tag/v0.5.1`
+    - `miku-pptx2md-java` release v0.5.1:
+      `https://github.com/igapyon/miku-pptx2md-java/releases/tag/v0.5.1`
+  - Required source review: inspect the v0.5.1 source contents for both the
+    Node.js and Java implementations before writing the article.
+  - Expected output: a dated Note Markdown article under `2026/07/20260705/`,
+    matching the repository front matter and the reference-style structure used
+    by the 2026-07-04 `miku-docx2md` sister article.
+  - Result, 2026-07-05: article draft was created, upstream v0.5.1 release
+    metadata and tagged source contents were reviewed for both Node.js and Java,
+    and root `index.json` was regenerated with `miku-indexgen`.
 - [ ] Prepare the new 2026-06-25 Note article draft:
   `2026/06/20260625/20260625-general-agent-state-management-skill.md`.
   - Topic: follow-up to the 2026-06-22 AI-agent state-management article,
