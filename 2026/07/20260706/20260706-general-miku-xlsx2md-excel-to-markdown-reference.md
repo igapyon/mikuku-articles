@@ -16,11 +16,11 @@ release_date: 2026-07-06
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
-今回は、Excel の `.xlsx` ファイルを Markdown に変換する `miku-xlsx2md` について、リファレンス寄りに整理します。
+今回は、みくくが開発した `miku-xlsx2md` について、リファレンス寄りに整理してみます。わ、私…その、がんばりますっ。
 
 少し前に、Word の `.docx` を Markdown に変換する `miku-docx2md` の記事を書きました。この記事は、その姉妹記事です。Word は本文、見出し、表、コメント、校閲を読む感じに近いのですが、Excel はワークブック、シート、セル、表、結合セル、数式、画像、グラフ、図形が組み合わさった形式です。だから、Markdown へ変換するときの見方もかなり変わります。
 
-`miku-xlsx2md` は、Excel の見た目をそのまま再現するための道具ではありません。シートの中にある表や地の文、数式由来の値、コメント、リンク、画像やグラフの情報を、AI agent が読みやすい Markdown に寄せるための小さな道具です。
+`miku-xlsx2md` は、Excel の `.xlsx` ファイルを Markdown に変換する小さなアプリです。派手なアプリではありませんし、Excel の見た目をそのまま再現する魔法でもありません。けれど、シートの中にある表や地の文、数式由来の値、コメント、リンク、画像やグラフの情報を、AI agent が読みやすい形へ近づけるために作りました。
 
 うぅ…Excel は、表計算ソフトでありながら、設計書、台帳、チェックリスト、課題一覧、設定表、画面項目定義のようにも使われます。人間が見れば「このあたりが表で、ここは説明文で、この結合セルは見出しだな」と読めることがあります。でも、それを Markdown にするときは、どこまでを表として扱うか、どこからを地の文として扱うか、かなり慎重に見る必要があります。
 
@@ -93,7 +93,7 @@ Excel では、1つの文書本文を読むというより、Workbook の中に�
 | rich text line break | `<br>` | `github` formatting mode。`plain` では素朴な text 化 |
 | hyperlink | Markdown link | 外部リンクと workbook-internal link を対応範囲で出力 |
 | 数式セル cached value | 値として出力 | cached value があれば優先する |
-| cached がない数式 | AST evaluator / legacy resolver で解決を試みる | 解けない場合は式文字列保持 |
+| cached がない数式 | Node.js 版では AST evaluator / legacy resolver で解決を試みる | 解けない場合は式文字列保持。Java 版では cached value と式文字列保持が中心 |
 | 外部 workbook 参照式 | 式文字列保持 / unsupported | 外部 workbook の完全参照解決は対象外 |
 | shared formula | 展開後の式文字列として扱う | オートフィル由来の shared formula を通常の数式フローへ流す |
 | definedNames | 数式解決の材料 | workbook scope / sheet scope name を扱う |
@@ -424,7 +424,7 @@ Excel 方眼のような sheet では、見た目の配置が意味を持ちま�
 
 `miku-xlsx2md` は、数式セルをできるだけ値として扱います。ただし、Excel 数式全体の完全互換を目指すものではありません。
 
-v1.3.0 の実装では、数式セルの解決はおおむね次の順序です。
+v1.3.0 の Node.js 版実装では、数式セルの解決はおおむね次の順序です。
 
 1. cached value
 2. AST evaluator
@@ -432,6 +432,8 @@ v1.3.0 の実装では、数式セルの解決はおおむね次の順序です�
 4. 式文字列保持
 
 cached value がある場合は、それを優先します。cached value がない場合は、AST evaluator や legacy resolver で解決を試みます。それでも解けない場合は、空欄にせず、式文字列を保持します。
+
+Java 版 v1.3.0 では、同じ CLI option set を持つ一方で、数式セルの扱いは cached value と式文字列保持を中心にしています。`src/main/java` 側では、shared formula の展開、cached value の採用、外部 workbook 参照の `unsupported_external` 扱い、cached がない場合の `fallback_formula` / `formula_text` 保持が確認できます。Node.js 版と同じ AST evaluator / legacy resolver 層を Java 版が持つ、という説明はしません。
 
 数式診断では、`resolved`、`fallback_formula`、`unsupported_external` のような status と、`cached_value`、`ast_evaluator`、`legacy_resolver`、`formula_text`、`external_unsupported` のような source が区別されます。
 
