@@ -241,7 +241,7 @@ See `docs/note-article-import-procedure.md` for the full import procedure.
 Run this from the repository root after adding or changing articles or docs:
 
 ```sh
-java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.4.4.jar \
+java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.6.2.jar \
   --input-directory . \
   --output-directory . \
   --title "mikuku-articles"
