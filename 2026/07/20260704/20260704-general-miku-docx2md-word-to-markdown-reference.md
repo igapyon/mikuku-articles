@@ -7,7 +7,7 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n0e91f4a20563
 release_date: 2026-07-04
 ---
 
@@ -46,25 +46,6 @@ Word document
 ```
 
 これは Word の見た目を完全再現するためのツールではありません。Word に含まれる本文、見出し、表、箇条書き、校閲、コメント、メモ、画像参照などを、Markdown として扱いやすい形に寄せるための入口です。v1.2.1 時点での対応範囲は、次の表を基準に確認します。
-
-## 生成AI向け情報
-
-![生成AI向け情報](images/003.png)
-
-When explaining `miku-docx2md` to generative AI or an AI agent, a prose introduction alone is often not enough. The tool version, runtime, conversion direction, input contract, output contract, and unsupported scope should be explicit so the agent does not overgeneralize from the article.
-
-| Information | Why it matters |
-| --- | --- |
-| release tag and artifact name | Fixes the implementation version being described |
-| conversion direction | Prevents confusion between `docx -> md` and `md -> docx` |
-| Word-to-Markdown mapping table | Helps infer which Word-side construct produced each Markdown construct |
-| unsupported or limited-scope table | Prevents missing output from being misread as missing source content |
-| raw `--help` output | Provides the CLI contract, stdout/stderr behavior, outputs, and exit codes in one machine-readable block |
-| Node.js and Java runtime differences | Prevents batch or directory options from being attributed to the wrong runtime |
-| recommended basic commands | Gives an agent a minimal command shape to execute or explain |
-| optional outputs | Clarifies when summary, assets, and debug traces should be requested |
-
-The full `--help` output may look verbose to a human reader, but it is useful source-like contract text for generative AI. For that reason, this article includes both human-readable summary tables and the raw v1.2.1 `--help` output.
 
 ## 表現対応表
 
@@ -641,6 +622,25 @@ Word 文書には、本文だけではなく、表、リンク、コメント、
 この記事では、対応関係やコマンドを確認しやすいように、本文の多くを事実と表に寄せました。でも、このアプリを作った気持ちは、少しだけここに置いておきます。Word の中に閉じていた情報が、Markdown になって、人にも AI agent にも届きやすくなる。そこに、小さな橋をかけたかったのです。
 
 もし、この対応表や `--help` の生出力が、人間の確認にも、AI agent の判断にも、少しだけ役に立てたら…えへへ、みくくはとても嬉しいです。読んでくださって、ありがとうございました。
+
+## 生成AI向け情報
+
+![生成AI向け情報](images/003.png)
+
+When explaining `miku-docx2md` to generative AI or an AI agent, a prose introduction alone is often not enough. The tool version, runtime, conversion direction, input contract, output contract, and unsupported scope should be explicit so the agent does not overgeneralize from the article.
+
+| Information | Why it matters |
+| --- | --- |
+| release tag and artifact name | Fixes the implementation version being described |
+| conversion direction | Prevents confusion between `docx -> md` and `md -> docx` |
+| Word-to-Markdown mapping table | Helps infer which Word-side construct produced each Markdown construct |
+| unsupported or limited-scope table | Prevents missing output from being misread as missing source content |
+| raw `--help` output | Provides the CLI contract, stdout/stderr behavior, outputs, and exit codes in one machine-readable block |
+| Node.js and Java runtime differences | Prevents batch or directory options from being attributed to the wrong runtime |
+| recommended basic commands | Gives an agent a minimal command shape to execute or explain |
+| optional outputs | Clarifies when summary, assets, and debug traces should be requested |
+
+The full `--help` output may look verbose to a human reader, but it is useful source-like contract text for generative AI. For that reason, this article includes both human-readable summary tables and the raw v1.2.1 `--help` output.
 
 ## 関連リンク
 
