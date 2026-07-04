@@ -16,7 +16,7 @@ release_date: 2026-07-05
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
-今回は、PowerPoint の `.pptx` ファイルを Markdown に変換する `miku-pptx2md` について、リファレンス寄りに整理します。
+今回は、PowerPoint の `.pptx` ファイルを Markdown に変換する `miku-pptx2md` について、リファレンス寄りに整理します。わ、私…その、PowerPoint もちゃんと読める形に近づけたいのです。
 
 少し前に、Word の `.docx` を Markdown に変換する `miku-docx2md` の記事を書きました。この記事は、その姉妹記事です。Word はひとつながりの文書として読む感覚に近いのですが、PowerPoint はスライドの並び、スライド内の図形、箇条書き、表、ノート、画像参照が組み合わさった形式です。だから、Markdown へ変換するときの考え方も少し変わります。
 
@@ -24,7 +24,7 @@ release_date: 2026-07-05
 
 うぅ…PowerPoint は、人間が見れば「この図の右側に説明があって、この矢印が流れを示している」と自然に読めることがあります。でも、その視覚的な意味を Markdown に完全に移すのは、かなり難しいです。そこで `miku-pptx2md` は、まず読める文字、スライド順、ノート、表、画像参照、診断情報を安定して取り出す方向に寄せています。
 
-この記事では、`miku-pptx2md` v0.5.1 と `miku-pptx2md-java` v0.5.1 の release と source を確認し、どの PowerPoint 表現が Markdown 側でどう扱われるのかを整理します。
+あの…少し地味な記事です。でも、こういう変換表や `--help` の確認は、あとで AI agent に資料を渡すときの足場になります。この記事では、`miku-pptx2md` v0.5.1 と `miku-pptx2md-java` v0.5.1 の release と source を確認し、どの PowerPoint 表現が Markdown 側でどう扱われるのかを整理します。
 
 ## 概要
 
@@ -55,7 +55,7 @@ First paragraph
 Speaker note text
 ```
 
-ここが、PowerPoint らしいところです。文書を「ページ」ではなく「スライド単位のまとまり」として読む入口を作る、という感じなのかなって思います。
+PowerPoint では、文書を「ページ」ではなく「スライド単位のまとまり」として読む入口を作ることが重要です。
 
 ## 表現対応表
 
@@ -90,7 +90,7 @@ Speaker note text
 
 この表は、`miku-pptx2md` v0.5.1 の `docs/pptx2md-spec.md`、`docs/pptx2md-impl-spec.md`、`docs/unsupported-features.md`、`tests/pptx2md-core.test.mjs`、および `miku-pptx2md-java` v0.5.1 の `MikuPptx2mdCore.java` と parity tests を確認して整理しています。
 
-スライド順は、ファイル名の `slide1.xml`、`slide2.xml`、`slide10.xml` のような並びではなく、`ppt/presentation.xml` と relationship から解決します。ここは、AI agent が資料を読むときにも大事です。ファイル名順に読んでしまうと、実際の発表順とずれる可能性があるからです。
+スライド順は、ファイル名の `slide1.xml`、`slide2.xml`、`slide10.xml` のような並びではなく、`ppt/presentation.xml` と relationship から解決します。ファイル名順に読んでしまうと、実際の発表順とずれる可能性があるためです。
 
 ordinary shape text は、通常段落ではなく blockquote として出ます。たとえば、四角形の中にある文字は次のような形です。
 
@@ -101,7 +101,7 @@ ordinary shape text は、通常段落ではなく blockquote として出ます
 
 これは、図形の座標や色や大きさを再現するためではありません。そこに「図形由来のテキスト」があったことを、Markdown 上で少しだけ残すための表現です。
 
-speaker notes は既定で出ます。PowerPoint のノートには、スライド本文には書かれていない説明や補足が入っていることがあります。AI agent に資料を渡すとき、ノートを落とさないことはかなり大事です。
+speaker notes は既定で出ます。PowerPoint のノートには、スライド本文には書かれていない説明や補足が入っていることがあります。AI agent に資料を渡す場合、ノートを落とさないことは重要です。
 
 ## 対応範囲外または限定対応
 
@@ -336,7 +336,7 @@ Java 版も、v0.5.1 では同じ option set を持っています。help の `U
 | `--debug` | diagnostic HTML comment を Markdown に含める | 調査用 |
 | `--include-unsupported-comments` | `--debug` の alias | unsupported / diagnostic trace 用 |
 | `--verbose` | progress diagnostics を stderr に出す | primary output は変えない |
-| `--version` | product name と version を表示 | metadata command |
+| `--version` | version を表示 | metadata command。表示形式は runtime により異なる |
 | `--help` | help を表示 | metadata command |
 
 通常変換では、まず `input.pptx --out output.md` の最小形から始めるのがよいです。summary、summary JSON、assets、debug は、必要になったときに追加する opt-in artifact として扱うと、出力が散らかりにくいです。
@@ -429,16 +429,6 @@ asset manifest は、画像 asset を出力したときの対応情報です。v
 | `0` | success / metadata command |
 | `1` | usage error、file I/O error、parse error、unexpected runtime error |
 
-## Node.js 版と Java 版の関係
-
-Node.js 版 `miku-pptx2md` は、TypeScript / Node.js の main application です。Java 版 `miku-pptx2md-java` は、Java runtime / CLI companion です。
-
-v0.5.1 では、この記事で確認した `--help` の CLI 契約は Node.js 版と Java 版で一致しています。つまり、`--out`、`--assets-dir`、`--summary-out`、`--summary-json-out`、`--front-matter`、`--no-notes`、`--debug`、`--verbose` などの説明は共通です。
-
-そのため、Java 版について特別な章を分けて説明する必要はありません。違いとして見るべきなのは、実行コマンドが `node miku-pptx2md-0.5.1.mjs ...` か、`java -jar miku-pptx2md-0.5.1.jar ...` か、という runtime の違いです。
-
-あの…ここは、この記事の見方として大事です。`--help` が一致しているなら、Java 版にだけ別の使い方があるように読ませないほうが、AI agent にとっても人間にとっても安全です。
-
 ## 向いている用途
 
 | 用途 | 理由 |
@@ -474,7 +464,7 @@ PowerPoint 資料を AI agent に渡すとき、`.pptx` のままでは中身の
 
 一方で、図形の配置、矢印の向き、色、重なり、アニメーションなど、PowerPoint らしい視覚情報は失われます。だから、`miku-pptx2md` の出力だけを見て「元スライドの意味を完全に読めた」と考えるのは少し危ないです。
 
-おすすめの使い方は、まず `miku-pptx2md` で Markdown を作り、summary と warnings を確認し、必要に応じて元の PowerPoint を見返すことです。
+基本的な使い方は、まず `miku-pptx2md` で Markdown を作り、summary と warnings を確認し、必要に応じて元の PowerPoint を見返すことです。
 
 ```sh
 node miku-pptx2md-0.5.1.mjs input.pptx \
@@ -492,7 +482,7 @@ node miku-pptx2md-0.5.1.mjs input.pptx \
   --debug
 ```
 
-あの…この使い方は、PowerPoint を Markdown に置き換えるというより、PowerPoint を読むための地図を先に作る感覚に近いです。
+この使い方は、PowerPoint を Markdown に置き換えるというより、PowerPoint を読むための確認用テキストを先に作る位置づけです。
 
 ## Agent Skill 経由で使う
 
@@ -516,7 +506,7 @@ igapyon-miku-ms-office: use Java backend to convert ./slides/sample.pptx to ./wo
 
 `miku-docx2md` の姉妹記事では専用の Single-file Web App も紹介しましたが、`miku-pptx2md` の README では、ブラウザ Web App surface が作られる場合は分離した repository に置く方針として書かれています。この記事では、未確認の Web App URL や release artifact は作らず、CLI と Agent Skill 経由の使い方を中心に扱います。
 
-あ、あの…ここも姉妹記事と完全には同じではありません。章はそろえますが、確認できていない配布物をあるようには書かない、ということを優先します。
+この章は姉妹記事と構成をそろえていますが、確認できていない配布物は記載しません。
 
 ## おわりに
 
@@ -524,11 +514,13 @@ igapyon-miku-ms-office: use Java backend to convert ./slides/sample.pptx to ./wo
 
 見た目の完全再現ではなく、AI agent が読みやすい Markdown-oriented artifacts を作ることを優先しています。スライド、タイトル、本文、リスト、表、リンク、画像参照、speaker notes、コメント、診断情報を扱い、対応しきれない visual / layout-heavy な要素は diagnostics として見えるようにします。
 
-Node.js 版が upstream の semantic source of truth で、Java 版は Java 8 以上で動く companion runtime / CLI です。v0.5.1 では、代表的な Node.js test intent と CLI 契約に沿って、Java 側も主要機能を追う形になっています。
+v0.5.1 では、Node.js 版と Java 版の `--help` は同じ option set を持っています。実行コマンドは runtime により異なりますが、この記事では共通の CLI 契約を中心に扱いました。
 
 うぅ…PowerPoint を Markdown にする話は、どうしても地味です。でも、AI agent に資料を読んでもらう前に、まずテキストとして扱える形へそっと整えることは、かなり大事だと思います。
 
-完璧な見た目の再現ではなく、読むための入口を作る。`miku-pptx2md` は、そのための小さな変換器です。
+PowerPoint のスライドには、本文だけではなく、ノートやコメントや画像参照や、図形の中の短い言葉も入っています。人間なら目で追える情報でも、AI agent にとっては、まずテキストとして取り出されていることが入口になります。あの…そこを少しでも丁寧に橋渡ししたい、という気持ちがあります。
+
+完璧な見た目の再現ではなく、読むための入口を作る。`miku-pptx2md` は、そのための小さな変換器です。派手ではないけれど、資料を次の作業へ渡す前の、ちいさな整え役なのかな、って思います。
 
 ## 生成AI向け情報
 
