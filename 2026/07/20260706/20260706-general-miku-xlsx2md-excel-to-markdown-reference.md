@@ -15,6 +15,10 @@ release_date: 2026-07-06
 
 ## はじめに
 
+![ExcelをMarkdownへ変換する小さな道具](images/000.png)
+
+![はじめに](images/001.png)
+
 あ、あの…この記事は、みくくが担当します。
 今回は、みくくが開発した `miku-xlsx2md` について、リファレンス寄りに整理してみます。わ、私…その、がんばりますっ。
 
@@ -27,6 +31,8 @@ release_date: 2026-07-06
 この記事では、`miku-xlsx2md` v1.3.0 と `miku-xlsx2md-java` v1.3.0 の release と source を確認し、Excel 側の表現が Markdown 側でどう扱われるのかを整理します。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-xlsx2md` は、Excel workbook `.xlsx` を Markdown `.md` と関連 asset へ変換する miku-soft 系の小さな変換ツールです。
 
@@ -64,6 +70,8 @@ conversion:
 Excel では、1つの文書本文を読むというより、Workbook の中にある複数の Sheet を、順番と構造を保ちながら確認する形になります。
 
 ## 表現対応表
+
+![表現対応表](images/003.png)
 
 `miku-xlsx2md` v1.3.0 で、Excel 側の表現が Markdown 側でどう出るかの対応です。
 
@@ -116,6 +124,8 @@ Excel 変換では、表のように見える領域と、文章として読ま�
 
 ## 対応範囲外または限定対応
 
+![対応範囲外または限定対応](images/004.png)
+
 `miku-xlsx2md` v1.3.0 は、Excel の見た目を再現する converter ではありません。次のような visual / layout-heavy な要素は、対象外または限定対応として扱います。
 
 | 分類 | Excel 側の表現 | 扱い | 備考 |
@@ -144,6 +154,8 @@ Excel 変換では、表のように見える領域と、文章として読ま�
 
 ## 対応 runtime
 
+![対応 runtime](images/005.png)
+
 この記事では、次の release tag を確認対象にしています。
 
 | runtime | release tag | artifact |
@@ -157,6 +169,8 @@ Excel 変換では、表のように見える領域と、文章として読ま�
 Node.js 版と Java 版は、単一ファイル変換ではほぼ同じ引数で使います。ただし、Java 版には batch / directory 変換向けの追加引数があります。
 
 ## ライセンス、ソースコード、実行環境
+
+![ライセンス、ソースコード、実行環境](images/006.png)
 
 `miku-xlsx2md` は OSS として公開されています。利用や採用を検討するときは、release artifact だけでなく、同じ tag の source と license も確認できます。
 
@@ -172,6 +186,8 @@ Node.js 版と Java 版は、単一ファイル変換ではほぼ同じ引数で
 runtime artifact と source tag をそろえて見ることで、この記事の対応表や `--help` 出力が、どの時点の実装に基づいているのかを確認しやすくなります。
 
 ## 基本コマンド
+
+![基本コマンド](images/007.png)
 
 Node.js 版:
 
@@ -218,6 +234,8 @@ node miku-xlsx2md-1.3.0.mjs input.xlsx --out output.md --table-detection-mode pl
 ```
 
 ## `--help` 出力の確認
+
+![help 出力の確認](images/008.png)
 
 v1.3.0 の `--help` 出力です。
 
@@ -340,6 +358,8 @@ Node.js 版と Java 版の `--help` は、単一ファイル変換の基本 opti
 
 ## 共通オプション
 
+![共通オプション](images/009.png)
+
 | option | 用途 | 備考 |
 | --- | --- | --- |
 | `--out <file>` | combined Markdown を file に書く | 単一 workbook 変換用 |
@@ -369,6 +389,8 @@ Node.js 版と Java 版の `--help` は、単一ファイル変換の基本 opti
 
 ## Java 版の directory extension
 
+![Java 版の directory extension](images/010.png)
+
 Java 版 `miku-xlsx2md-java` v1.3.0 には、directory batch conversion の追加オプションがあります。
 
 | option | 用途 | 備考 |
@@ -392,6 +414,8 @@ java -jar miku-xlsx2md-1.3.0.jar \
 
 ## output mode の見方
 
+![output mode の見方](images/011.png)
+
 Excel では、セル内部の値と、人間が画面上で見ている表示値が違うことがあります。日付、数値、パーセント、桁区切り、数式セルなどでは、この差が大事になることがあります。
 
 `miku-xlsx2md` は、そこを `display`、`raw`、`both` の 3 つで切り替えます。
@@ -408,6 +432,8 @@ Excel は表示形式によって値を読みやすく整えますが、その�
 
 ## 表検出 mode の見方
 
+![表検出 mode の見方](images/012.png)
+
 Excel の Markdown 変換で難しいのは、どこを表として見るかです。`miku-xlsx2md` v1.3.0 では、表検出 mode を切り替えられます。
 
 | mode | 方針 | 向いている sheet |
@@ -421,6 +447,8 @@ Excel の Markdown 変換で難しいのは、どこを表として見るかで�
 Excel 方眼のような sheet では、見た目の配置が意味を持ちます。でも Markdown は、セルの座標や見た目をそのまま保つ形式ではありません。だから、表として切り出しすぎると、かえって読みにくくなることがあります。`planner-aware` は、そういう layout-heavy な sheet での過剰な表検出を抑えるための選択肢です。
 
 ## 数式セルの見方
+
+![数式セルの見方](images/013.png)
 
 `miku-xlsx2md` は、数式セルをできるだけ値として扱います。ただし、Excel 数式全体の完全互換を目指すものではありません。
 
@@ -440,6 +468,8 @@ Java 版 v1.3.0 では、同じ CLI option set を持つ一方で、数式セル
 ここは、AI agent に変換結果を渡すときにも大事です。Markdown に値が出ているからといって、必ず再計算されたとは限りません。cached value を採用したのか、自前評価したのか、式文字列へ fallback したのかを見ることで、変換結果の信頼の置き方が変わります。
 
 ## summary と front matter
+
+![summary と front matter](images/014.png)
 
 `miku-xlsx2md` は、combined Markdown の先頭に YAML front matter を出します。これは、AI agent が変換 artifact を読むときの足場になります。
 
@@ -461,6 +491,8 @@ Java 版 v1.3.0 では、同じ CLI option set を持つ一方で、数式セル
 Markdown 本文だけでは、表がいくつ採用されたのか、数式がどのくらい fallback したのかを見落とす場合があります。summary は、変換結果を読む前に全体像を確認するための補助情報です。
 
 ## AI agent に渡す資料としての見方
+
+![AI agent に渡す資料としての見方](images/015.png)
 
 Excel workbook を AI agent に渡すとき、`.xlsx` のままでは中身の検索や差分確認がしにくいことがあります。Markdown に変換すると、少なくとも次の情報を普通のテキストとして扱いやすくなります。
 
@@ -498,6 +530,8 @@ node miku-xlsx2md-1.3.0.mjs input.xlsx \
 
 ## おわりに
 
+![おわりに](images/016.png)
+
 `miku-xlsx2md` v1.3.0 は、Excel `.xlsx` の Workbook / Sheet / Cell / Table / Formula / Drawing 由来の情報を Markdown に寄せるための小さな道具です。
 
 見た目の完全再現ではなく、AI agent が読みやすい Markdown-oriented artifacts を作ることを優先しています。表らしい領域、地の文、結合セル、rich text、hyperlink、数式由来の値、コメント、画像、グラフ、図形、YAML front matter、summary、ZIP output を扱い、対応しきれない visual / layout-heavy な情報は無理に再現しません。
@@ -509,6 +543,8 @@ Node.js 版と Java 版は、単一ファイル変換では基本 option set と
 完璧な見た目の再現ではなく、読むための入口を作る。`miku-xlsx2md` は、そのための小さな変換器です。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/017.png)
 
 When explaining `miku-xlsx2md` to generative AI or an AI agent, a prose introduction alone is often not enough. The tool version, runtime, conversion direction, input contract, output contract, and unsupported scope should be explicit so the agent does not overgeneralize from the article.
 

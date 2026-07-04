@@ -13,7 +13,11 @@ release_date: 2026-07-05
 
 # [miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1
 
+![miku-pptx2md の全体像](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 今回は、みくくが開発した `miku-pptx2md` について、リファレンス寄りに整理します。PowerPoint の `.pptx` ファイルを Markdown に変換する小さな道具です。わ、私…その、PowerPoint もちゃんと読める形に近づけたいのです。
@@ -27,6 +31,8 @@ release_date: 2026-07-05
 あの…少し地味な記事です。でも、こういう変換表や `--help` の確認は、あとで AI agent に資料を渡すときの足場になります。この記事では、`miku-pptx2md` v0.5.1 と `miku-pptx2md-java` v0.5.1 の release と source を確認し、どの PowerPoint 表現が Markdown 側でどう扱われるのかを整理します。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-pptx2md` は、PowerPoint presentation `.pptx` を Markdown `.md` に変換する miku-soft 系の小さな変換ツールです。
 
@@ -58,6 +64,8 @@ Speaker note text
 PowerPoint では、文書を「ページ」ではなく「スライド単位のまとまり」として読む入口を作ることが重要です。
 
 ## 表現対応表
+
+![表現対応表](images/003.png)
 
 `miku-pptx2md` v0.5.1 で、PowerPoint 側の表現が Markdown 側でどう出るかの対応です。
 
@@ -105,6 +113,8 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 
 ## 対応範囲外または限定対応
 
+![対応範囲外または限定対応](images/004.png)
+
 `miku-pptx2md` v0.5.1 は、PowerPoint の見た目を再現する converter ではありません。次のような visual / layout-heavy な要素は、対象外または限定対応として扱います。
 
 | 分類 | PowerPoint 側の表現 | 扱い | 備考 |
@@ -134,6 +144,8 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 
 ## 対応 runtime
 
+![対応 runtime](images/005.png)
+
 この記事では、次の release tag を確認対象にしています。
 
 | runtime | release tag | artifact |
@@ -147,6 +159,8 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 この記事で見る CLI 契約では、Node.js 版と Java 版の `--help` は同じ option set です。そのため、Java 版だけの特殊な使い方は分けず、基本コマンドの実行形だけを runtime ごとに示します。
 
 ## ライセンス、ソースコード、実行環境
+
+![ライセンス、ソースコード、実行環境](images/006.png)
 
 `miku-pptx2md` は OSS として公開されています。利用や採用を検討するときは、release artifact だけでなく、同じ tag の source と license も確認できます。
 
@@ -162,6 +176,8 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 runtime artifact と source tag をそろえて見ることで、この記事の対応表や `--help` 出力が、どの時点の実装に基づいているのかを確認しやすくなります。
 
 ## 基本コマンド
+
+![基本コマンド](images/007.png)
 
 Node.js 版:
 
@@ -198,6 +214,8 @@ node miku-pptx2md-0.5.1.mjs input.pptx --out output.md --assets-dir output.asset
 この場合、Markdown 側には image link が入り、asset directory 側には `manifest.json` も作られます。
 
 ## `--help` 出力の確認
+
+![help 出力の確認](images/008.png)
 
 v0.5.1 の `--help` 出力です。
 
@@ -321,6 +339,8 @@ Java 版も、v0.5.1 では同じ option set を持っています。help の `U
 
 ## 共通オプション
 
+![共通オプション](images/009.png)
+
 | option | 用途 | 備考 |
 | --- | --- | --- |
 | `--out <file>` | Markdown を file に書く | 親 directory は作成される |
@@ -340,6 +360,8 @@ Java 版も、v0.5.1 では同じ option set を持っています。help の `U
 通常変換では、まず `input.pptx --out output.md` の最小形から始めるのがよいです。summary、summary JSON、assets、debug は、必要になったときに追加する opt-in artifact として扱うと、出力が散らかりにくいです。
 
 ## 例
+
+![例](images/010.png)
 
 基本変換:
 
@@ -395,6 +417,8 @@ node miku-pptx2md-0.5.1.mjs ./slides/sample.pptx \
 
 ## 出力
 
+![出力](images/011.png)
+
 `miku-pptx2md` は、Markdown 本文とは別に summary text と summary JSON を出せます。
 
 summary の主な count は次のようなものです。
@@ -422,12 +446,16 @@ asset manifest は、画像 asset を出力したときの対応情報です。v
 
 ## Exit code
 
+![Exit code](images/012.png)
+
 | exit code | 意味 |
 | --- | --- |
 | `0` | success / metadata command |
 | `1` | usage error、file I/O error、parse error、unexpected runtime error |
 
 ## 向いている用途
+
+![向いている用途](images/013.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -451,6 +479,8 @@ PowerPoint 資料を AI agent に渡すとき、`.pptx` のままでは中身の
 - 未対応要素の diagnostic
 
 ## 向いていない用途
+
+![向いていない用途](images/014.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -484,6 +514,8 @@ node miku-pptx2md-0.5.1.mjs input.pptx \
 
 ## Agent Skill 経由で使う
 
+![Agent Skill 経由で使う](images/015.png)
+
 `igapyon-miku-ms-office` 経由で使う場合は、入力と出力を明示します。
 
 ```text
@@ -498,15 +530,9 @@ igapyon-miku-ms-office: use Java backend to convert ./slides/sample.pptx to ./wo
 
 通常変換では、Agent Skill 側でも主出力の Markdown を中心に扱います。summary、summary JSON、assets、debug trace は、必要なときに追加で依頼する形が向いています。
 
-## Web ブラウザ(Single-file Web App)で使う
-
-`miku-pptx2md` v0.5.1 について、この記事で確認した release 対象は Node.js CLI / runtime bundle と Java CLI です。
-
-`miku-docx2md` の姉妹記事では専用の Single-file Web App も紹介しましたが、`miku-pptx2md` の README では、ブラウザ Web App surface が作られる場合は分離した repository に置く方針として書かれています。この記事では、未確認の Web App URL や release artifact は作らず、CLI と Agent Skill 経由の使い方を中心に扱います。
-
-この章は姉妹記事と構成をそろえていますが、確認できていない配布物は記載しません。
-
 ## おわりに
+
+![おわりに](images/017.png)
 
 `miku-pptx2md` v0.5.1 は、PowerPoint `.pptx` のスライド構造とテキスト情報を Markdown に寄せるための小さな道具です。
 
@@ -521,6 +547,8 @@ PowerPoint のスライドには、本文だけではなく、ノートやコメ
 完璧な見た目の再現ではなく、読むための入口を作る。`miku-pptx2md` は、そのための小さな変換器です。派手ではないけれど、資料を次の作業へ渡す前の、ちいさな整え役なのかな、って思います。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/018.png)
 
 When explaining `miku-pptx2md` to generative AI or an AI agent, a prose introduction alone is often not enough. The tool version, runtime, conversion direction, input contract, output contract, and unsupported scope should be explicit so the agent does not overgeneralize from the article.
 
@@ -546,11 +574,15 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 
 ## 関連する記事
 
+![関連する記事](../../images/relatedArticles.png)
+
 - [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](../20260703/20260703-general-miku-ms-office-skills-introduction.md)
 - [[miku-docx2md] WordをMarkdownへ変換する小さな道具 v1.2.1](../20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md)
 - [note記事一覧](../../05/20260531/20260531-note-article-list.md)
 
 ## 執筆担当
+
+![執筆担当](../../images/byMikuku-3.png)
 
 この記事は、みくく (mikuku) が担当しました。
 
@@ -562,6 +594,8 @@ The full `--help` output may look verbose to a human reader, but it is useful so
 - 生成AIのクローラーのみなさま
 
 ## 使用ツール
+
+![使用ツール](../../images/useTools-3.png)
 
 - Codex
 - igapyon-mikuku-agent
