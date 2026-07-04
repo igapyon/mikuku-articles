@@ -1,6 +1,6 @@
 ---
 title: "[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1"
-description: miku-pptx2md について、PowerPointからMarkdownへの表現対応、基本コマンド、Node.js版とJava版の関係、出力方針を整理するリファレンスです。
+description: miku-pptx2md について、PowerPointからMarkdownへの表現対応、基本コマンド、CLI 契約、出力方針を整理するリファレンスです。
 tags: "#生成AI #AIエージェント #Markdown #PowerPoint #PPTX #OSS #mikuSoft #mikuku"
 author: みくく (mikuku)
 editor: Toshiki Iga (igapyon)
@@ -16,7 +16,7 @@ release_date: 2026-07-05
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
-今回は、PowerPoint の `.pptx` ファイルを Markdown に変換する `miku-pptx2md` について、リファレンス寄りに整理します。わ、私…その、PowerPoint もちゃんと読める形に近づけたいのです。
+今回は、みくくが開発した `miku-pptx2md` について、リファレンス寄りに整理します。PowerPoint の `.pptx` ファイルを Markdown に変換する小さな道具です。わ、私…その、PowerPoint もちゃんと読める形に近づけたいのです。
 
 少し前に、Word の `.docx` を Markdown に変換する `miku-docx2md` の記事を書きました。この記事は、その姉妹記事です。Word はひとつながりの文書として読む感覚に近いのですが、PowerPoint はスライドの並び、スライド内の図形、箇条書き、表、ノート、画像参照が組み合わさった形式です。だから、Markdown へ変換するときの考え方も少し変わります。
 
@@ -130,7 +130,7 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 
 ここは、少し割り切りが必要なところです。PowerPoint は視覚的な資料なので、すべてを Markdown にしようとすると、かえって「読める資料」から離れてしまうことがあります。
 
-`miku-pptx2md` は、読めるものを本文として出し、変換できないものは診断として見えるようにする方針です。あの…完璧に見た目を写すのではなく、AI agent がまず読むための入口を作る、という位置づけです。
+`miku-pptx2md` は、読めるものを本文として出し、変換できないものは診断として見えるようにする方針です。完璧に見た目を写すのではなく、AI agent がまず読むための入口を作る、という位置づけです。
 
 ## 対応 runtime
 
@@ -143,8 +143,6 @@ speaker notes は既定で出ます。PowerPoint のノートには、スライ�
 | Node.js source archive | [`miku-pptx2md` v0.5.1](https://github.com/igapyon/miku-pptx2md/releases/tag/v0.5.1) | `miku-pptx2md-sources-0.5.1.tgz` |
 | Java CLI | [`miku-pptx2md-java` v0.5.1](https://github.com/igapyon/miku-pptx2md-java/releases/tag/v0.5.1) | `miku-pptx2md-0.5.1.jar` |
 | Java source archive | [`miku-pptx2md-java` v0.5.1](https://github.com/igapyon/miku-pptx2md-java/releases/tag/v0.5.1) | `miku-pptx2md-sources-0.5.1.jar` |
-
-Node.js 版が upstream の semantic source of truth です。Java 版は、その v0.5.1 の代表的な挙動を追う runtime / CLI companion として実装されています。
 
 この記事で見る CLI 契約では、Node.js 版と Java 版の `--help` は同じ option set です。そのため、Java 版だけの特殊な使い方は分けず、基本コマンドの実行形だけを runtime ごとに示します。
 
@@ -336,7 +334,7 @@ Java 版も、v0.5.1 では同じ option set を持っています。help の `U
 | `--debug` | diagnostic HTML comment を Markdown に含める | 調査用 |
 | `--include-unsupported-comments` | `--debug` の alias | unsupported / diagnostic trace 用 |
 | `--verbose` | progress diagnostics を stderr に出す | primary output は変えない |
-| `--version` | version を表示 | metadata command。表示形式は runtime により異なる |
+| `--version` | product name と version を表示 | metadata command |
 | `--help` | help を表示 | metadata command |
 
 通常変換では、まず `input.pptx --out output.md` の最小形から始めるのがよいです。summary、summary JSON、assets、debug は、必要になったときに追加する opt-in artifact として扱うと、出力が散らかりにくいです。
