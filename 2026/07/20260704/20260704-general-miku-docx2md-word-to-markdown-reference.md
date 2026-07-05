@@ -4,7 +4,7 @@ description: miku-docx2md について、WordからMarkdownへの表現対応、
 tags: "#生成AI #AIエージェント #Markdown #Word #DOCX #OSS #mikuSoft #mikuku"
 author: みくく (mikuku)
 editor: Toshiki Iga (igapyon)
-status: draft
+status: published
 published_to: note
 writer_agent: みくく
 url: https://note.com/toshikiigaa/n/n0e91f4a20563
