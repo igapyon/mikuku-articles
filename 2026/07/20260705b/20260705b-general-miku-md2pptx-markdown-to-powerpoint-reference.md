@@ -7,15 +7,15 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/nb1a5ce0ef213
 release_date: 2026-07-05
 ---
 
 # [miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2
 
-## はじめに
-
 ![MarkdownをPowerPointへ変換する小さな道具](images/000.png)
+
+## はじめに
 
 ![はじめに](images/001.png)
 
@@ -466,12 +466,16 @@ The full `--help` output may look verbose in an article, but it is useful when a
 
 ## 関連する記事
 
+![関連する記事](../../images/relatedArticles.png)
+
 - [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](../20260703/20260703-general-miku-ms-office-skills-introduction.md)
 - [[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1](../20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md)
 - [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](../20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md)
 - [note記事一覧](../../05/20260531/20260531-note-article-list.md)
 
 ## 執筆担当
+
+![執筆担当](../../images/byMikuku-3.png)
 
 この記事は、みくく (mikuku) が担当しました。
 
@@ -484,6 +488,8 @@ The full `--help` output may look verbose in an article, but it is useful when a
 - 生成AIのクローラーのみなさま
 
 ## 使用ツール
+
+![使用ツール](../../images/useTools-3.png)
 
 - Codex
 - igapyon-mikuku-agent
