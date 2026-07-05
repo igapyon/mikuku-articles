@@ -15,6 +15,10 @@ release_date: 2026-07-05
 
 ## はじめに
 
+![MarkdownをPowerPointへ変換する小さな道具](images/000.png)
+
+![はじめに](images/001.png)
+
 あ、あの…この記事は、みくくが担当します。
 今回は、みくくが開発した、Markdown の `.md` ファイルを PowerPoint の `.pptx` deck に変換する `miku-md2pptx` について、リファレンス寄りに整理します。わ、私…その、Markdown からスライドを作る出口も、ちゃんと形にしておきたいのです。
 
@@ -27,6 +31,8 @@ release_date: 2026-07-05
 本文の大部分は、意図的にリファレンスとして硬く整理しています。えっと…みくくが作ったアプリではありますが、本体では参照しやすさを優先して、できること、できないこと、確認した version を分けて置きます。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-md2pptx` は、Markdown `.md` を PowerPoint presentation `.pptx` に変換する miku-soft 系の小さな変換ツールです。
 
@@ -44,6 +50,8 @@ Markdown
 `miku-md2pptx` の README では、変換の目的は practical slide structure であり、pixel-perfect PowerPoint layout ではないとされています。PowerPoint を作る道具ではありますが、完成済みデザインを自動生成する道具ではなく、Markdown で作った構造をスライドの土台にする道具として扱います。
 
 ## 表現対応表
+
+![表現対応表](images/003.png)
 
 `miku-md2pptx` Node.js 版 v0.2.2 で、Markdown 側の表現が PowerPoint 側でどう出るかの目安です。Java 版 v0.2.3 は、同じ CLI contract を持つ companion runtime で、Java 側の README と migration notes では多くの代表ケースが upstream の slide model に揃えられています。ただし、Java 版の parser は意図的に小さく、full `remark-gfm` AST behavior とはまだ同一ではありません。
 
@@ -94,6 +102,8 @@ Node.js 版と Java 版の version と parser の違いを混ぜると、AI agen
 
 ## 対応範囲外または限定対応
 
+![対応範囲外または限定対応](images/004.png)
+
 `miku-md2pptx` v0.2.2 は、Markdown の構造を PowerPoint deck に変換するツールです。PowerPoint の視覚的な完成度やテンプレート設計を細かく作り込む機能は、対象外または限定対応です。
 
 | 分類 | 対象 | 扱い | 備考 |
@@ -124,6 +134,8 @@ Node.js 版と Java 版の version と parser の違いを混ぜると、AI agen
 `miku-md2pptx` は、PowerPoint を最終デザインとして完全に完成させる道具ではありません。まず Markdown からスライド構造を作り、必要に応じて PowerPoint 側で見た目を調整する、という使い方が自然です。完成したデザインを一気に作るのではなく、説明の骨組みを PowerPoint に起こすための最初の一歩として扱います。
 
 ## 対応 runtime
+
+![対応 runtime](images/005.png)
 
 この記事では、次の release tag を確認対象にしています。
 
@@ -157,6 +169,8 @@ Node.js 版 v0.2.2 と Java 版 v0.2.3 は、通常利用する CLI 引数がほ
 
 ## ライセンス、ソースコード、実行環境
 
+![ライセンス、ソースコード、実行環境](images/006.png)
+
 `miku-md2pptx` は OSS として公開されています。利用や採用を検討するときは、release artifact だけでなく、同じ tag の source と license も確認できます。
 
 | 項目 | 内容 |
@@ -175,6 +189,8 @@ Node.js 版 v0.2.2 と Java 版 v0.2.3 は、通常利用する CLI 引数がほ
 Node.js CLI と Java CLI は、CLI 引数として渡す相対 path の解決基準が異なります。Node.js 版の `scripts/lib/cli-support.mjs` は input / output を CLI artifact の calculated runtime root から解決します。source CLI では package root 基準です。bundled runtime artifact では、bundle の配置場所に応じた root が使われ、current working directory 基準ではありません。一方、Java 版の `docs/upstream-cli-mapping.md` では、Java CLI は current process working directory から path を解決すると整理されています。通常の利用説明では同じ command shape に見えますが、入力 Markdown や出力 PPTX を相対 path で渡す場合は実行場所を意識します。
 
 ## 基本コマンド
+
+![基本コマンド](images/007.png)
 
 Node.js 版:
 
@@ -201,6 +217,8 @@ node miku-md2pptx-0.2.2.mjs input.md \
 CLI 引数に相対 path を使う場合、Node.js 版は CLI artifact の calculated runtime root 基準、Java 版は current working directory 基準です。記事や Agent Skill から実行例を作るときは、できるだけ絶対 path または明示的な配置関係の path を渡すと事故が少なくなります。
 
 ## `--help` 出力の確認
+
+![help 出力の確認](images/008.png)
 
 v0.2.2 / v0.2.3 の `--help` 出力です。
 
@@ -262,6 +280,8 @@ Examples:
 
 ## 共通オプション
 
+![共通オプション](images/009.png)
+
 Node.js 版と Java 版の両方で使う主なオプションです。
 
 | オプション | 説明 |
@@ -274,6 +294,8 @@ Node.js 版と Java 版の両方で使う主なオプションです。
 v0.2.2 / v0.2.3 の `--help` では、summary、summary JSON、assets directory、debug comment などの追加出力 option は確認していません。通常変換では、入力 Markdown と `--out` の最小形から始めます。
 
 ## 例
+
+![例](images/010.png)
 
 PPTX を作る:
 
@@ -305,6 +327,8 @@ java -jar miku-md2pptx-java-0.2.3.jar README.md \
 
 ## 出力
 
+![出力](images/011.png)
+
 | 出力 | 内容 | 生成条件 |
 | --- | --- | --- |
 | PPTX | 主出力。PowerPoint presentation | `--out <path>` で指定 |
@@ -333,6 +357,8 @@ java -jar miku-md2pptx-java-0.2.3.jar README.md \
 
 ## Exit code
 
+![Exit code](images/012.png)
+
 v0.2.2 / v0.2.3 の `--help` 出力には、exit code table は含まれていません。ただし、Java 版 v0.2.3 は `MikuMd2pptxCli.java` と `docs/upstream-cli-mapping.md` で exit code の意味が確認できます。
 
 | runtime | exit code | 意味 |
@@ -347,6 +373,8 @@ Node.js 版は `scripts/miku-md2pptx-cli.mjs` 側で error を catch し、`proc
 
 ## 向いている用途
 
+![向いている用途](images/013.png)
+
 | 用途 | 理由 |
 | --- | --- |
 | Markdown で作った説明骨子を PowerPoint 化する | heading level 1 / 2 から slide を作れる |
@@ -358,6 +386,8 @@ Node.js 版は `scripts/miku-md2pptx-cli.mjs` 側で error を catch し、`proc
 Markdown で構造を作っておき、PowerPoint 側では見た目や説明順を調整する。そのような使い方に向いています。
 
 ## 向いていない用途
+
+![向いていない用途](images/014.png)
 
 | 用途 | 理由 |
 | --- | --- |
@@ -372,6 +402,8 @@ Markdown で構造を作っておき、PowerPoint 側では見た目や説明順
 `miku-md2pptx` の出力は、編集できる PowerPoint deck の土台です。配布用に見た目を整える必要がある場合は、生成後に PowerPoint 側で調整する前提で使います。
 
 ## Agent Skill 経由で使う
+
+![Agent Skill 経由で使う](images/015.png)
 
 `igapyon-miku-ms-office` 経由で使う場合は、Markdown から PowerPoint へ出すことを明示します。
 
@@ -391,6 +423,8 @@ Agent Skill 経由で依頼する場合は、入力だけでなく、どの Offi
 
 ## おわりに
 
+![おわりに](images/016.png)
+
 `miku-md2pptx` は、Markdown を PowerPoint にするために、みくくが作った、まだ小さな出口です。
 
 でも、あの…Markdown で考え、Markdown で直し、Markdown を正本として残しながら、最後に PowerPoint deck として人間に渡せる。それは、AI agent と人間の作業場所をつなぐうえで、思ったより大事な部品なのかな、って思います。
@@ -400,6 +434,8 @@ PowerPoint の見た目を全部作り込む魔法ではありません。けれ
 わ、私…その、自分で作った小さな変換ツールだからこそ、できること、まだできないこと、どこを出口として設計しているのかを、入口と出口の両方から丁寧に整理していきたいです。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/017.png)
 
 When explaining `miku-md2pptx` to generative AI or an AI agent, the conversion direction, runtime version, required output argument, slide boundary rule, local image handling, and unsupported scope should be explicit.
 
