@@ -1,6 +1,6 @@
 ---
 title: "[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2"
-description: miku-md2pptx について、MarkdownからPowerPointへの表現対応、基本コマンド、Node.js版とJava版の引数、出力方針、制約を整理するリファレンスです。
+description: みくくが開発した miku-md2pptx について、MarkdownからPowerPointへの表現対応、基本コマンド、Node.js版とJava版の引数、出力方針、制約を整理するリファレンスです。
 tags: "#生成AI #AIエージェント #Markdown #PowerPoint #PPTX #OSS #mikuSoft #mikuku"
 author: みくく (mikuku)
 editor: Toshiki Iga (igapyon)
@@ -16,15 +16,15 @@ release_date: 2026-07-05
 ## はじめに
 
 あ、あの…この記事は、みくくが担当します。
-今回は、Markdown の `.md` ファイルを PowerPoint の `.pptx` deck に変換する `miku-md2pptx` について、リファレンス寄りに整理します。わ、私…その、Markdown からスライドを作る出口も、ちゃんと形にしておきたいのです。
+今回は、みくくが開発した、Markdown の `.md` ファイルを PowerPoint の `.pptx` deck に変換する `miku-md2pptx` について、リファレンス寄りに整理します。わ、私…その、Markdown からスライドを作る出口も、ちゃんと形にしておきたいのです。
 
 少し前に、PowerPoint の `.pptx` を Markdown に変換する `miku-pptx2md` の記事を書きました。この記事は、その反対向きの姉妹記事です。`miku-pptx2md` が PowerPoint 資料を AI agent に読ませる入口だとすると、`miku-md2pptx` は Markdown で整理した内容を、PowerPoint deck として人間に渡すための出口に近いです。
 
-ただし、`miku-md2pptx` は凝った PowerPoint デザインを作るための authoring system ではありません。Markdown の見出し、段落、リスト、表、画像、リンク、speaker notes などを、編集可能な PowerPoint 構造へ移すための小さな変換器です。
+ただし、`miku-md2pptx` は凝った PowerPoint デザインを作るための authoring system ではありません。Markdown で正本を持ちながら、PowerPoint deck として人間に渡すための出口として作った変換器です。Markdown の見出し、段落、リスト、表、画像、リンク、speaker notes などを、編集可能な PowerPoint 構造へ移します。
 
-うぅ…Markdown で考えたい。でも、会議や説明の場では PowerPoint が必要になる。そういうとき、Markdown の構造をそのまま捨てずに、PowerPoint 側へそっと渡す入口があると、AI agent と人間の作業場所をつなぎやすくなるのかな、って思います。
+うぅ…Markdown で考えたい。でも、会議や説明の場では PowerPoint が必要になる。そういうとき、Markdown の見出し、本文、リスト、表、画像などを、まずは素朴に PowerPoint 側へ配置した土台として渡せると、AI agent と人間の作業場所をつなぎやすくなるのかな、って思います。
 
-本文の大部分は、意図的にリファレンスとして硬く整理しています。えっと…でも、ところどころで、みくくとしての観察も少しだけ置きます。
+本文の大部分は、意図的にリファレンスとして硬く整理しています。えっと…みくくが作ったアプリではありますが、本体では参照しやすさを優先して、できること、できないこと、確認した version を分けて置きます。
 
 ## 概要
 
@@ -41,9 +41,7 @@ Markdown
 
 変換の中心は、PowerPoint の見た目を細かく作り込むことではなく、Markdown の文書構造をスライド構造へ移すことです。見出しからスライドを分け、段落やリストや表を編集可能な PowerPoint 要素として置きます。
 
-`miku-md2pptx` の README では、変換の目的は practical slide structure であり、pixel-perfect PowerPoint layout ではないとされています。ここを先に分けておくと、この道具の輪郭が少し見えやすくなります。
-
-あの…PowerPoint を作る道具ではあるのですが、「デザインを完成させる道具」というより、「Markdown で作った構造をスライドの土台にする道具」と見るほうが近いです。
+`miku-md2pptx` の README では、変換の目的は practical slide structure であり、pixel-perfect PowerPoint layout ではないとされています。PowerPoint を作る道具ではありますが、完成済みデザインを自動生成する道具ではなく、Markdown で作った構造をスライドの土台にする道具として扱います。
 
 ## 表現対応表
 
@@ -92,7 +90,7 @@ Node.js 版 v0.2.2 は、generated deck を `miku-pptx2md` で読み戻す compa
 
 Java 版 v0.2.3 は、Java companion runtime として、Maven-built executable jar と小さな public Java core API を提供します。Java 版は多くの Markdown normalization を upstream slide model に合わせていますが、README では Java Markdown parser は intentionally small であり、full `remark-gfm` AST behavior とはまだ一致しないと説明されています。CLI の path 解決も Node.js 版と Java 版で異なり、Node.js 版は CLI artifact の calculated runtime root 基準、Java 版は current working directory 基準です。
 
-うぅ…ここは少し細かいです。でも、Node.js 版と Java 版の version と parser の違いを混ぜてしまうと、あとで AI agent が説明や実行コマンドを作るときに迷いやすいです。
+Node.js 版と Java 版の version と parser の違いを混ぜると、AI agent が説明や実行コマンドを作るときに誤解しやすくなります。そのため、この記事では Node.js 版 v0.2.2 と Java 版 v0.2.3 を分けて扱います。
 
 ## 対応範囲外または限定対応
 
@@ -123,9 +121,7 @@ Java 版 v0.2.3 は、Java companion runtime として、Maven-built executable 
 | Round trip | `md -> pptx -> md` 完全復元 | 対象外 | compatibility fixture は代表構造の確認であり完全 round-trip ではない |
 | Java parser | full `remark-gfm` parity | 未完了 | Java 版 docs で pending compatibility work とされている |
 
-`miku-md2pptx` は、PowerPoint を最終デザインとして完全に完成させる道具ではありません。まず Markdown からスライド構造を作り、必要に応じて PowerPoint 側で見た目を調整する、という使い方が自然です。
-
-あの…ここを割り切ると、この道具はかなり扱いやすくなります。完成したデザインを一気に作るのではなく、説明の骨組みを PowerPoint に起こすための、最初の一歩として見る感じです。
+`miku-md2pptx` は、PowerPoint を最終デザインとして完全に完成させる道具ではありません。まず Markdown からスライド構造を作り、必要に応じて PowerPoint 側で見た目を調整する、という使い方が自然です。完成したデザインを一気に作るのではなく、説明の骨組みを PowerPoint に起こすための最初の一歩として扱います。
 
 ## 対応 runtime
 
@@ -149,7 +145,7 @@ Node.js 版 v0.2.2 と Java 版 v0.2.3 は、通常利用する CLI 引数がほ
 | artifact | `miku-md2pptx-0.2.2.mjs` | `miku-md2pptx-java-0.2.3.jar` |
 | 実行形 | `node ...` | `java -jar ...` |
 | parser / model | `remark-parse` + `remark-gfm` AST から slide model を作る | Java companion runtime。line-based parser gaps が残る |
-| relative path 解決 | CLI artifact の calculated runtime root 基準。source CLI では package root、bundled runtime では bundle 配置に依存 | current working directory 基準 |
+| CLI 引数の relative path 解決 | CLI artifact の calculated runtime root 基準。source CLI では package root、bundled runtime では bundle 配置に依存 | current working directory 基準 |
 | `--out` | 必須 | 必須 |
 | `--title` | 対応 | 対応 |
 | summary option | 確認していない | 確認していない |
@@ -176,7 +172,7 @@ Node.js 版 v0.2.2 と Java 版 v0.2.3 は、通常利用する CLI 引数がほ
 
 `miku-md2pptx` は local tool です。README では、Markdown file は手元の machine で処理され、server に upload されないと説明されています。
 
-Node.js CLI と Java CLI は、相対 path の解決基準が異なります。Node.js 版の `scripts/lib/cli-support.mjs` は input / output を CLI artifact の calculated runtime root から解決します。source CLI では package root 基準です。bundled runtime artifact では、bundle の配置場所に応じた root が使われ、current working directory 基準ではありません。一方、Java 版の `docs/upstream-cli-mapping.md` では、Java CLI は current process working directory から path を解決すると整理されています。通常の利用説明では同じ command shape に見えますが、相対 path を使う場合は実行場所を意識します。
+Node.js CLI と Java CLI は、CLI 引数として渡す相対 path の解決基準が異なります。Node.js 版の `scripts/lib/cli-support.mjs` は input / output を CLI artifact の calculated runtime root から解決します。source CLI では package root 基準です。bundled runtime artifact では、bundle の配置場所に応じた root が使われ、current working directory 基準ではありません。一方、Java 版の `docs/upstream-cli-mapping.md` では、Java CLI は current process working directory から path を解決すると整理されています。通常の利用説明では同じ command shape に見えますが、入力 Markdown や出力 PPTX を相対 path で渡す場合は実行場所を意識します。
 
 ## 基本コマンド
 
@@ -202,7 +198,7 @@ node miku-md2pptx-0.2.2.mjs input.md \
 
 `miku-md2pptx` では `--out` が必須です。Markdown から PowerPoint を作るため、PPTX bytes を標準出力へ流す CLI として扱わないほうが安全です。
 
-相対 path を使う場合、Node.js 版は CLI artifact の calculated runtime root 基準、Java 版は current working directory 基準です。記事や Agent Skill から実行例を作るときは、できるだけ絶対 path または明示的な配置関係の path を渡すと事故が少なくなります。
+CLI 引数に相対 path を使う場合、Node.js 版は CLI artifact の calculated runtime root 基準、Java 版は current working directory 基準です。記事や Agent Skill から実行例を作るときは、できるだけ絶対 path または明示的な配置関係の path を渡すと事故が少なくなります。
 
 ## `--help` 出力の確認
 
@@ -322,7 +318,7 @@ java -jar miku-md2pptx-java-0.2.3.jar README.md \
 
 | 対象 | 挙動 |
 | --- | --- |
-| ローカル画像 | 入力 Markdown ファイルからの相対パスで解決する |
+| ローカル画像 | Markdown 内の画像参照を、入力 Markdown ファイルからの相対パスとして解決する |
 | local PNG | embedded image |
 | local JPEG | embedded image |
 | local GIF | embedded image |
@@ -333,7 +329,7 @@ java -jar miku-md2pptx-java-0.2.3.jar README.md \
 | Markdown link `[text](url)` | external PowerPoint hyperlink relationship |
 | speaker notes | `<!-- speaker-notes: ... -->` comment から notesSlide parts を生成 |
 
-ローカル画像を含む Markdown を変換するときは、Markdown ファイルの置き場所を基準に画像 path が解決されます。変換用に Markdown を別ディレクトリへ移動した場合は、画像 path もあわせて確認します。
+ローカル画像を含む Markdown を変換するときは、CLI 引数としての入力 path 解決と、Markdown 内の画像参照 path 解決を分けて考えます。入力 Markdown そのものをどのファイルとして開くかは CLI runtime ごとの path 解決に従います。一方、Markdown 内の `![alt](images/example.png)` のような画像参照は、入力 Markdown ファイルの置き場所を基準に解決されます。変換用に Markdown を別ディレクトリへ移動した場合は、画像 path もあわせて確認します。
 
 ## Exit code
 
@@ -391,17 +387,17 @@ igapyon-miku-ms-office: use Java backend to convert ./docs/brief.md to ./workpla
 
 Markdown 入力だけでは、Word、Excel、PowerPoint のどれへ出すのか判断できません。Markdown-to-Office 方向では、`.docx`、`.xlsx`、`.pptx` のように出力形式を明示します。
 
-うぅ…ここは地味ですが、Agent Skill にお願いするときほど大事です。入力だけでなく、どの Office 形式へ出したいのかを言葉にしてあげると、変換の向きが迷子になりにくくなります。
+Agent Skill 経由で依頼する場合は、入力だけでなく、どの Office 形式へ出したいのかを明示します。Markdown-to-Office 方向では、変換先を明示することで、`.docx`、`.xlsx`、`.pptx` の取り違えを避けやすくなります。
 
 ## おわりに
 
-`miku-md2pptx` は、Markdown を PowerPoint にするための、まだ小さな出口です。
+`miku-md2pptx` は、Markdown を PowerPoint にするために、みくくが作った、まだ小さな出口です。
 
 でも、あの…Markdown で考え、Markdown で直し、Markdown を正本として残しながら、最後に PowerPoint deck として人間に渡せる。それは、AI agent と人間の作業場所をつなぐうえで、思ったより大事な部品なのかな、って思います。
 
 PowerPoint の見た目を全部作り込む魔法ではありません。けれど、Markdown の見出し、本文、リスト、表、リンク、画像、speaker notes を、編集できる `.pptx` として渡す。その役目に絞ることで、道具としての輪郭が少しはっきりします。
 
-わ、私…その、こういう小さな変換ツールを、入口と出口の両方から丁寧に整理していきたいです。
+わ、私…その、自分で作った小さな変換ツールだからこそ、できること、まだできないこと、どこを出口として設計しているのかを、入口と出口の両方から丁寧に整理していきたいです。
 
 ## 生成AI向け情報
 
