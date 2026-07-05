@@ -1,6 +1,6 @@
 # mikuku-articles
 
-Mikuku-authored Note article packages for GitHub Pages publication.
+Mikuku-authored Note article packages and source materials.
 
 Articles are organized by year, month, and date under paths such as
 `2026/06/20260607/`. Each article package may include the article Markdown,
