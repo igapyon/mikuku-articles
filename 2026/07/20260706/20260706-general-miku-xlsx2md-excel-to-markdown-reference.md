@@ -7,15 +7,15 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/na2cc3d672fee
 release_date: 2026-07-06
 ---
 
 # [miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0
 
-## はじめに
-
 ![ExcelをMarkdownへ変換する小さな道具](images/000.png)
+
+## はじめに
 
 ![はじめに](images/001.png)
 
