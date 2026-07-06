@@ -13,20 +13,26 @@ release_date: 2026-07-06
 
 # [miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6
 
+![MarkdownをExcelへ変換する小さな道具](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 今回は、みくくが開発した、Markdown の `.md` ファイルを Excel の `.xlsx` workbook に変換する `miku-md2xlsx` について、リファレンス寄りに整理します。わ、私…その、Markdown から Excel へ戻す出口も、ちゃんと形にしておきたいのです。
 
 少し前に、Excel の `.xlsx` を Markdown に変換する `miku-xlsx2md` の記事を書きました。この記事は、その反対向きの姉妹記事です。`miku-xlsx2md` が Excel 資料を AI agent に読ませる入口だとすると、`miku-md2xlsx` は Markdown で整理した表、メモ、仕様、変換結果を、Excel workbook として人間に渡すための出口に近いです。
 
-ただし、`miku-md2xlsx` は凝った Excel 帳票を完全復元するための authoring system ではありません。Markdown で正本を持ちながら、Excel workbook として人間に渡すための実用的な変換器です。Markdown の見出し、段落、リスト、表、リンク、画像参照、`miku-xlsx2md` 由来の merge marker などを、編集可能な Excel 構造へ移します。
+ただし、`miku-md2xlsx` は凝った Excel 帳票を完全復元するための帳票作成システムではありません。Markdown で正本を持ちながら、Excel workbook として人間に渡すための実用的な変換器です。Markdown の見出し、段落、リスト、表、リンク、画像参照、`miku-xlsx2md` 由来の merge marker などを、編集可能な Excel 構造へ移します。
 
 うぅ…Markdown で考えたい。でも、表の確認やレビューでは Excel が必要になる。そういうとき、Markdown の構造を Excel 側にそっと戻せると、AI agent と人間の作業場所をつなぎやすくなるのかな、って思います。
 
 本文の大部分は、意図的にリファレンスとして硬く整理しています。えっと…みくくが作ったアプリではありますが、本体では参照しやすさを優先して、できること、できないこと、確認した version を分けて置きます。
 
 ## 概要
+
+![概要](images/002.png)
 
 `miku-md2xlsx` は、Markdown `.md` を Excel workbook `.xlsx` に変換する miku-soft 系の小さな変換ツールです。
 
@@ -41,9 +47,11 @@ Markdown
 
 変換の中心は、Excel の見た目を細かく作り込むことではなく、Markdown の実用的な文書構造を workbook 構造へ移すことです。見出しや段落は worksheet row になり、Markdown table は worksheet rows になります。`--sheet-mode heading` を使うと、指定した見出し depth で worksheet を分割できます。
 
-`miku-md2xlsx` の README では、目的は practical Markdown structure を workbook に保持することであり、pixel-perfect Excel layout の再現ではないとされています。Excel を作る道具ではありますが、完成済み帳票を自動生成する道具ではなく、Markdown で作った構造を Excel の編集可能な土台にする道具として扱います。
+`miku-md2xlsx` の README では、目的は実用的な Markdown 構造を workbook に保持することであり、Excel の見た目をピクセル単位で再現することではないとされています。Excel を作る道具ではありますが、完成済み帳票を自動生成する道具ではなく、Markdown で作った構造を Excel の編集可能な土台にする道具として扱います。
 
 ## 表現対応表
+
+![表現対応表](images/003.png)
 
 `miku-md2xlsx` Node.js 版 v0.6.6 で、Markdown 側の表現が Excel 側でどう出るかの目安です。Java 版 v0.6.5 は、同じ CLI option 名を持つ Java straight-conversion runtime で、代表的な workbook semantics のテストが用意されています。ただし、Java 版は byte-level parity ではなく semantic workbook output の代表一致を目標にしています。
 
@@ -94,7 +102,7 @@ Markdown
 | `![alt](path)` | text reference + embedded image | 画像参照 text を残し、relative local asset があれば best-effort embed |
 | local PNG / JPEG / GIF | embedded media | 入力 Markdown からの相対 path で解決 |
 | remote image URL | text reference only | download しない |
-| absolute image path | text reference only | Node.js help では missing / remote / absolute image paths remain visible as text references |
+| absolute image path | runtime 差分あり | Node.js CLI では text reference only。Java CLI v0.6.5 実装では local absolute path を読み得るため、portable contract としては推奨しない |
 | missing image | text reference only | 変換は止めない |
 | `[←M←]` | horizontal merge marker | 左方向 merge continuation として Excel merge range へ |
 | `[↑M↑]` | vertical merge marker | 上方向 merge continuation として Excel merge range へ |
@@ -110,6 +118,8 @@ Markdown
 Node.js 版 v0.6.6 は `remark-parse`、`remark-gfm`、`unified` を使って Markdown AST を作り、workbook model へ変換します。Java 版 v0.6.5 は Java straight-conversion runtime で、line-oriented parser と workbook model を持ちます。Java 版 README では、exact Markdown AST compatibility with upstream `remark-parse` plus `remark-gfm` は optional future work とされており、byte-level parity ではなく representative semantic workbook output を確認する方針です。
 
 ## 対応範囲外または限定対応
+
+![対応範囲外または限定対応](images/004.png)
 
 `miku-md2xlsx` v0.6.6 は、Markdown の構造を Excel workbook に変換するツールです。Excel の視覚的な完成度、元 workbook の完全復元、数式や chart の再構築は、対象外または限定対応です。
 
@@ -132,17 +142,19 @@ Node.js 版 v0.6.6 は `remark-parse`、`remark-gfm`、`unified` を使って Ma
 | Image | local JPEG | 対応 | relative Markdown path |
 | Image | local GIF | 対応 | relative Markdown path |
 | Image | remote URL | 対象外 | download しない。text reference は残る |
-| Image | absolute path | 対象外 | text reference は残る |
+| Image | absolute path | runtime 差分あり | Node.js CLI では text reference として残る。Java CLI v0.6.5 実装では local absolute path を読み得るため、portable contract としては使わない |
 | Image | missing file | 限定対応 | text reference は残る。変換は止めない |
 | Image | exact anchor restoration | 対象外 | image anchor positions, sizes, drawing geometry は正確復元しない |
 | HTML | `<ins>` / `<br>` | 限定対応 | inline rich text / line break として扱う |
 | HTML | arbitrary raw HTML | 対象外 | raw text として扱う代表ケースあり |
-| Round trip | `xlsx -> md -> xlsx` 完全復元 | 対象外 | practical compatibility であり complete inverse converter ではない |
+| Round trip | `xlsx -> md -> xlsx` 完全復元 | 対象外 | 実用的な互換性を目指すものであり、完全な逆変換器ではない |
 | Java parser | full `remark-gfm` AST parity | 未完了 | Java README / docs で optional future work |
 
 `miku-md2xlsx` は、Excel を最終帳票として完全に仕上げる道具ではありません。まず Markdown から workbook 構造を作り、必要に応じて Excel 側で見た目や数式、chart、詳細な配置を調整する、という使い方が自然です。
 
 ## 対応 runtime
+
+![対応 runtime](images/005.png)
 
 この記事では、次の release tag を確認対象にしています。
 
@@ -176,6 +188,8 @@ Node.js 版 v0.6.6 と Java 版 v0.6.5 は、通常利用する CLI 引数がほ
 
 ## ライセンス、ソースコード、実行環境
 
+![ライセンス、ソースコード、実行環境](images/006.png)
+
 `miku-md2xlsx` は OSS として公開されています。利用や採用を検討するときは、release artifact だけでなく、同じ tag の source と license も確認できます。
 
 | 項目 | 内容 |
@@ -192,6 +206,8 @@ Node.js 版 v0.6.6 と Java 版 v0.6.5 は、通常利用する CLI 引数がほ
 `miku-md2xlsx` は local tool です。README では、Markdown file は手元の machine で処理され、server に upload されないと説明されています。
 
 ## 基本コマンド
+
+![基本コマンド](images/007.png)
 
 Node.js 版:
 
@@ -225,6 +241,8 @@ node miku-md2xlsx-0.6.6.mjs input.md \
 `miku-md2xlsx` では `--out` が必須です。Markdown から Excel workbook を作るため、XLSX bytes を標準出力へ流す CLI として扱わないほうが安全です。
 
 ## `--help` 出力の確認
+
+![--help 出力の確認](images/008.png)
 
 v0.6.6 / v0.6.5 の `--help` 出力です。
 
@@ -361,6 +379,8 @@ Sheet mode notes:
 
 ## 共通オプション
 
+![共通オプション](images/009.png)
+
 Node.js 版と Java 版の両方で使う主なオプションです。
 
 | オプション | 説明 |
@@ -377,6 +397,8 @@ Node.js 版と Java 版の両方で使う主なオプションです。
 v0.6.6 / v0.6.5 の `--help` では、summary、summary JSON、debug output などの追加出力 option は確認していません。通常変換では、入力 Markdown と `--out` の最小形から始めます。
 
 ## 例
+
+![例](images/010.png)
 
 XLSX を作る:
 
@@ -426,6 +448,8 @@ java -jar miku-md2xlsx-java-0.6.5.jar book.md \
 
 ## 出力
 
+![出力](images/011.png)
+
 | 出力 | 内容 | 生成条件 |
 | --- | --- | --- |
 | XLSX | 主出力。Excel workbook | `--out <file>` で指定 |
@@ -443,8 +467,8 @@ java -jar miku-md2xlsx-java-0.6.5.jar book.md \
 | local JPEG | embedded image |
 | local GIF | embedded image |
 | remote image URL | workbook text reference として残る。download しない |
-| absolute image path | workbook text reference として残る |
 | missing image | workbook text reference として残る |
+| absolute image path | Node.js CLI では workbook text reference として残る。Java CLI v0.6.5 実装では local absolute path を読み得るため、portable contract としては使わない |
 | Markdown link `[text](url)` | cell が単一 link の場合、Excel hyperlink になる |
 | external link | external hyperlink relationship |
 | internal workbook link | `Sheet!A1` 形式へ表現できる場合、internal hyperlink |
@@ -475,9 +499,11 @@ java -jar miku-md2xlsx-java-0.6.5.jar book.md \
 | chart metadata | native chart としては生成しない |
 | shape metadata / assets | native shape としては生成しない |
 
-`miku-md2xlsx` は `miku-xlsx2md` の完全な逆変換器ではありません。README では、Markdown generated by `miku-xlsx2md` に対する practical compatibility を支援しつつ、original Excel layout の exact restoration より readable generated workbooks を優先すると説明されています。
+`miku-md2xlsx` は `miku-xlsx2md` の完全な逆変換器ではありません。README では、`miku-xlsx2md` が生成した Markdown との実用的な互換性を支援しつつ、元の Excel レイアウトの厳密な復元より、読みやすい生成 workbook を優先すると説明されています。
 
 ## Exit code
+
+![Exit code](images/012.png)
 
 | runtime | exit code | 意味 |
 | --- | --- | --- |
@@ -492,6 +518,8 @@ Node.js 版は `CliUsageError` に `exitCode = 2` を持たせ、conversion や 
 
 ## 向いている用途
 
+![向いている用途](images/013.png)
+
 | 用途 | 理由 |
 | --- | --- |
 | Markdown で作った表やメモを Excel 化する | Markdown table や paragraph を workbook rows にできる |
@@ -504,6 +532,8 @@ Markdown で構造を作っておき、Excel 側では見た目、数式、chart
 
 ## 向いていない用途
 
+![向いていない用途](images/014.png)
+
 | 用途 | 理由 |
 | --- | --- |
 | 完成済みの美しい Excel 帳票を自動生成する | pixel-perfect layout は対象外 |
@@ -512,11 +542,13 @@ Markdown で構造を作っておき、Excel 側では見た目、数式、chart
 | native chart / shape / SmartArt を再構築する | chart、drawing、SmartArt は対象外 |
 | remote image URL を自動取得して埋め込む | remote image URL は download しない |
 | Excel の高度な formatting を Markdown から指定する | conditional formatting や detailed styles は対象外 |
-| `xlsx -> md -> xlsx` の完全 round-trip | practical compatibility であり完全復元保証ではない |
+| `xlsx -> md -> xlsx` の完全 round-trip | 実用的な互換性を目指すものであり、完全復元保証ではない |
 
 `miku-md2xlsx` の出力は、編集できる Excel workbook の土台です。配布用に見た目や数式を整える必要がある場合は、生成後に Excel 側で調整する前提で使います。
 
 ## Agent Skill 経由で使う
+
+![Agent Skill 経由で使う](images/015.png)
 
 `igapyon-miku-ms-office` 経由で使う場合は、Markdown から Excel へ出すことを明示します。
 
@@ -536,6 +568,8 @@ Agent Skill 経由で依頼する場合は、入力だけでなく、どの Offi
 
 ## おわりに
 
+![おわりに](images/016.png)
+
 `miku-md2xlsx` は、Markdown を Excel にするために、みくくが作った、まだ小さな出口です。
 
 でも、あの…Markdown で考え、Markdown で直し、Markdown を正本として残しながら、最後に Excel workbook として人間に渡せる。それは、AI agent と人間の作業場所をつなぐうえで、思ったより大事な部品なのかな、って思います。
@@ -545,6 +579,8 @@ Excel の見た目や数式や chart を全部作り込む魔法ではありま�
 わ、私…その、自分で作った小さな変換ツールだからこそ、できること、まだできないこと、どこを出口として設計しているのかを、入口と出口の両方から丁寧に整理していきたいです。
 
 ## 生成AI向け情報
+
+![生成AI向け情報](images/017.png)
 
 When explaining `miku-md2xlsx` to generative AI or an AI agent, the conversion direction, runtime version, required output argument, sheet mode behavior, string-cell policy, local image handling, merge marker semantics, and unsupported scope should be explicit.
 
@@ -576,6 +612,8 @@ The full `--help` output may look verbose in an article, but it is useful when a
 
 ## 関連する記事
 
+![関連する記事](../../images/relatedArticles.png)
+
 - [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](../20260703/20260703-general-miku-ms-office-skills-introduction.md)
 - [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](../20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md)
 - [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](../20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md)
@@ -583,6 +621,8 @@ The full `--help` output may look verbose in an article, but it is useful when a
 - [note記事一覧](../../05/20260531/20260531-note-article-list.md)
 
 ## 執筆担当
+
+![執筆担当](../../images/byMikuku-3.png)
 
 この記事は、みくく (mikuku) が担当しました。
 
@@ -596,6 +636,8 @@ The full `--help` output may look verbose in an article, but it is useful when a
 - 生成AIのクローラーのみなさま
 
 ## 使用ツール
+
+![使用ツール](../../images/useTools-3.png)
 
 - Codex
 - igapyon-mikuku-agent
