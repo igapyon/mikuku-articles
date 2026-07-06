@@ -26,7 +26,7 @@ Common triggers:
 Run `miku-indexgen` from the repository root:
 
 ```sh
-java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.4.4.jar \
+java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.6.2.jar \
   --input-directory . \
   --output-directory . \
   --title "mikuku-articles"
@@ -74,7 +74,7 @@ If `index.json` already exists and contains generation metadata, a refresh comma
 may also be used:
 
 ```sh
-java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.4.4.jar \
+java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.6.2.jar \
   --refresh-index index.json
 ```
 

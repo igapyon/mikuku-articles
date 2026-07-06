@@ -102,7 +102,21 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### miku 系ツール
 
+#### miku-ms-office および同梱 miku-soft
+
+2026-07-03 の `miku-ms-office-skills` 紹介記事から、Word / PowerPoint /
+Excel と Markdown の相互変換を扱う miku-soft シリーズが続きます。
+
+- 2026-07-06: [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) ([note](https://note.com/toshikiigaa/n/nb4c40d11d14c))
+- 2026-07-06: [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/na2cc3d672fee))
+- 2026-07-05: [[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2](2026/07/20260705b/20260705b-general-miku-md2pptx-markdown-to-powerpoint-reference.md) ([note](https://note.com/toshikiigaa/n/nb1a5ce0ef213))
+- 2026-07-05: [[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1](2026/07/20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/nf785326726a6))
+- 2026-07-04: [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](2026/07/20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md) ([note](https://note.com/toshikiigaa/n/nf764295a696f))
+- 2026-07-04: [[miku-docx2md] WordをMarkdownへ変換する小さな道具 v1.2.1](2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/n0e91f4a20563))
 - 2026-07-03: [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) ([note](https://note.com/toshikiigaa/n/n19f7ee34501e))
+
+#### それ以外の miku 系ツール
+
 - 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
 - 2026-05-16: [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](2026/05/20260516/20260516-miku-text-bundle-ai-text-assets.md) ([note](https://note.com/toshikiigaa/n/n5b18c376b2f0))
 - 2026-04-28: [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](2026/04/20260428/20260428-miku-indexgen-intro.md) ([note](https://note.com/toshikiigaa/n/n5b0ac55dce0a))
@@ -119,6 +133,12 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-07-06 | [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) | [note](https://note.com/toshikiigaa/n/nb4c40d11d14c) |
+| 2026-07-06 | [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/na2cc3d672fee) |
+| 2026-07-05 | [[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2](2026/07/20260705b/20260705b-general-miku-md2pptx-markdown-to-powerpoint-reference.md) | [note](https://note.com/toshikiigaa/n/nb1a5ce0ef213) |
+| 2026-07-05 | [[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1](2026/07/20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/nf785326726a6) |
+| 2026-07-04 | [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](2026/07/20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md) | [note](https://note.com/toshikiigaa/n/nf764295a696f) |
+| 2026-07-04 | [[miku-docx2md] WordをMarkdownへ変換する小さな道具 v1.2.1](2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/n0e91f4a20563) |
 | 2026-07-03 | [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) | [note](https://note.com/toshikiigaa/n/n19f7ee34501e) |
 | 2026-06-26 | [Playwright を、WebテストとAI agentの入口として、そっと見てみる](2026/06/20260626/20260626-general-playwright-overview.md) | [note](https://note.com/toshikiigaa/n/ne390f4d61a35) |
 | 2026-06-25 | [GOAL運用する Agent Skill を作ってみた](2026/06/20260625/20260625-general-agent-state-management-skill.md) | [note](https://note.com/toshikiigaa/n/n7db7a4c8c2e7) |
