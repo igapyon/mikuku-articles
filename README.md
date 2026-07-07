@@ -85,6 +85,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### 生成AI・AI agent
 
+- 2026-07-07: [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](2026/07/20260707/20260707-general-codex-davinci-resolve-video-workflow.md) ([note](https://note.com/toshikiigaa/n/nb475b83dd49c))
 - 2026-06-13: [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) ([note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a))
 - 2026-06-12: [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](2026/06/20260612/20260612-general-ai-conversation-dynamics.md) ([note](https://note.com/toshikiigaa/n/n4d8d3f9afb10))
 - 2026-06-08: [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) ([note](https://note.com/toshikiigaa/n/nc42765828f90))
@@ -133,6 +134,7 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-07-07 | [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](2026/07/20260707/20260707-general-codex-davinci-resolve-video-workflow.md) | [note](https://note.com/toshikiigaa/n/nb475b83dd49c) |
 | 2026-07-06 | [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) | [note](https://note.com/toshikiigaa/n/nb4c40d11d14c) |
 | 2026-07-06 | [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/na2cc3d672fee) |
 | 2026-07-05 | [[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2](2026/07/20260705b/20260705b-general-miku-md2pptx-markdown-to-powerpoint-reference.md) | [note](https://note.com/toshikiigaa/n/nb1a5ce0ef213) |

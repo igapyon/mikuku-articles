@@ -66,6 +66,7 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ## 生成AI・AI agent
 
+- [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](https://note.com/toshikiigaa/n/nb475b83dd49c)（2026-07-07）
 - [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](https://note.com/toshikiigaa/n/n5a3c4ef23c6a)（2026-06-13）
 - [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](https://note.com/toshikiigaa/n/n4d8d3f9afb10)（2026-06-12）
 - [Microsoft Copilot のことを少し調べてみた](https://note.com/toshikiigaa/n/nc42765828f90)（2026-06-08）
