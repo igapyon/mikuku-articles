@@ -10,7 +10,11 @@ release_date: 2026-07-08
 
 # miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする
 
+![miku-soft template mode graphic recording](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事は、みくくが担当します。
 
@@ -25,6 +29,8 @@ release_date: 2026-07-08
 でも、その反応を見ていると、Markdown から Office ファイルへ戻す出口には、思っていたよりニーズがあるのかもしれない、と感じました。
 
 ## Markdown から Excel の記事に、思ったより反応があった
+
+![Markdown から Excel の記事に、思ったより反応があった](images/002.png)
 
 `miku-md2xlsx` は、Markdown ファイルから実用的な Excel `.xlsx` workbook を作るためのローカルツールです。
 
@@ -42,6 +48,8 @@ Markdown で書いたメモ、仕様、表、生成AI が作った Markdown レ�
 
 ## Office から Markdown だけでは終わらない
 
+![Office から Markdown だけでは終わらない](images/003.png)
+
 これまでの `miku-soft` では、Office ファイルを Markdown にする方向をかなり大事にしてきました。
 
 たとえば、Word、Excel、PowerPoint のファイルを Markdown に寄せると、AI agent が読みやすくなります。Git で差分を見たり、生成AI に渡したり、人間がテキストとして確認したりしやすくなります。
@@ -55,6 +63,8 @@ Word 文書として渡したい。Excel ブックとして共有したい。Pow
 そう考えると、Markdown から Office ファイルへ戻す方向は、AI agent 時代の出口なのかもしれません。
 
 ## 変換だけでは、現場のファイルに少し届かない
+
+![変換だけでは、現場のファイルに少し届かない](images/004.png)
 
 Markdown から `.docx`、`.xlsx`、`.pptx` を作れるだけでも、かなり便利です。
 
@@ -71,6 +81,8 @@ Word なら、見出しスタイル、余白、フォント、セクション設
 とはいえ、`miku-soft` で目指しているのは、高機能な Office authoring system ではありません。まずは、受け渡しに困らない最低限の土台を作ることです。うぅ…すごく立派なものを作るというより、Markdown から出てきた成果物を、Office ファイルとしてぎりぎり現場に置けるところまで近づける、という感覚です。
 
 ## 同じ `--template` でも、実現方法はツールごとに違う
+
+![同じ --template でも、実現方法はツールごとに違う](images/005.png)
 
 今回、Node.js 版の3つのツールに、テンプレートを指定する入口を用意しました。
 
@@ -102,6 +114,8 @@ Word、Excel、PowerPoint は、どれも Office ファイルです。でも、�
 
 ## `miku-md2docx` のテンプレート適用
 
+![miku-md2docx のテンプレート適用](images/006.png)
+
 `miku-md2docx` は、Markdown ファイルを編集可能な Word `.docx` ファイルへ変換するローカルツールです。
 
 - <https://github.com/igapyon/miku-md2docx>
@@ -119,6 +133,8 @@ Word の場合、テンプレート適用は、テンプレート文書の body 
 あの…ここは少し誤解されやすいところかもしれません。Word のテンプレート適用は、既存文書の中に Markdown を差し込むというより、生成する Word 文書の土台としてテンプレートの構造や見た目を借りる、という考え方に近いです。
 
 ## `miku-md2xlsx` のテンプレート適用
+
+![miku-md2xlsx のテンプレート適用](images/007.png)
 
 `miku-md2xlsx` は、Markdown ファイルを実用的な Excel `.xlsx` workbook へ変換するローカルツールです。
 
@@ -140,6 +156,8 @@ Excel の場合、テンプレート workbook を sheet-format source として�
 
 ## `miku-md2pptx` のテンプレート適用
 
+![miku-md2pptx のテンプレート適用](images/008.png)
+
 `miku-md2pptx` は、Markdown ファイルを編集可能な PowerPoint `.pptx` deck へ変換するローカルツールです。
 
 - <https://github.com/igapyon/miku-md2pptx>
@@ -160,6 +178,8 @@ PowerPoint の場合、テンプレート適用はさらに別の意味になり
 
 ## まず Node.js 版で公開して試している
 
+![まず Node.js 版で公開して試している](images/009.png)
+
 今回のテンプレート適用は、まず Node.js 版に入れて公開しています。
 
 この記事を書いている時点では、次の release が出ています。
@@ -178,6 +198,8 @@ Java 版は、まだこれからです。
 
 ## そのあと Agent Skill 側へ反映する
 
+![そのあと Agent Skill 側へ反映する](images/010.png)
+
 Node.js 版と Java 版の両方でテンプレート適用の形がそろったら、次は `miku-ms-office` 系の Agent Skill も更新する予定です。
 
 AI agent から見たときに、`--template` をどう案内するか。どの場面でテンプレート指定をすすめるか。逆に、既存の数式や図形を保ちたい場合には使わないように注意するか。
@@ -191,6 +213,8 @@ CLI に機能を足すだけでは、AI agent がよい判断で使えるとは�
 うぅ…地味ですが、こういう説明の層があるかどうかで、道具の使われ方はかなり変わる気がしています。
 
 ## おわりに
+
+![おわりに](images/011.png)
 
 Markdown から Excel を作る記事に思ったより反応があったことは、小さな観測でした。
 
