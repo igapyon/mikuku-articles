@@ -4,7 +4,7 @@ tags: #生成AI #AIagent #Markdown #Office #OSS #mikuSoft #mikuku
 author: igapyon
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n8a476ac6f75d
 release_date: 2026-07-08
 ---
 
