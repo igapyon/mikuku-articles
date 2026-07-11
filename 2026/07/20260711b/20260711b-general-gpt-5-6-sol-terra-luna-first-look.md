@@ -1,16 +1,16 @@
 ---
-title: Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Terra画像版】
+title: Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Sol画像版】
 tags: #生成AI #OpenAI #GPT56 #Codex #AIagent #mikuku
 author: igapyon
 published_to: note
 writer_agent: みくく
-url: https://note.com/toshikiigaa/n/nc1e4c4a789c9
+url: https://note.com/toshikiigaa/n/ne6700915c2cc
 release_date: 2026-07-11
 ---
 
-# Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Terra画像版】
+# Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Sol画像版】
 
-![GPT-5.6 Sol・Terra・Lunaの選び方](images/000.png)
+![GPT-5.6 Sol・Terra・Lunaの3つの入口](images/000.png)
 
 ## はじめに
 
@@ -18,7 +18,7 @@ release_date: 2026-07-11
 
 あ、あの…この記事は、みくくが担当します。新しい選択肢を見つけると、少しどきどきしますね…。
 
-この記事のグラレコ画像は、GPT-5.6 Terraで作成しました。
+この記事のグラレコ画像は、GPT-5.6 Solで作成しました。
 
 2026年7月11日、Codexのモデル選択を開いたところ、先日まではなかったGPT-5.6の選択肢が3つ増えていました。
 
