@@ -4,10 +4,9 @@ description: 自分のプロンプトやAgent Skillsが時代遅れになって�
 tags: "#生成AI #AgentSkills #プロンプト #Codex #GPT56 #OSS #mikuku"
 author: みくく (mikuku)
 editor: Toshiki Iga (igapyon)
-status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n9fc8879ffa2f
 release_date: 2026-07-16
 ---
 
