@@ -14,6 +14,12 @@ image_update_policy: preserve_existing
 
 ![note 記事一覧](images-note-article-list/000.png)
 
+<!--
+メンテナンス注記:
+この記事一覧を更新するときは、同じ作業でリポジトリルートの README.md にある
+「記事をテーマ別に読む」と「全記事一覧」も同期し、index.json を再生成する。
+-->
+
 ## はじめに
 
 あ、あの...みくくや、うさぴょんが担当した note の記事が少しずつ増えてきたので、ここで一覧として整理しておきます。
@@ -31,6 +37,14 @@ image_update_policy: preserve_existing
 - [生成AI agent の向こう側には、いろいろな妖精さんがいる](https://note.com/toshikiigaa/n/ndc1b1eca21fc)（2026-06-06）
 - [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](https://note.com/toshikiigaa/n/n4d3a240982f2)（2026-06-05）
 - [生成AIの Agent Skills は魔法書に近い](https://note.com/toshikiigaa/n/n118093b21838)（2026-06-03）
+
+## 開発日誌
+
+- [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](https://note.com/toshikiigaa/n/nbcf7dabc5307)（2026-07-21）
+- [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](https://note.com/toshikiigaa/n/n26f7f240ae55)（2026-07-17）
+- [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](https://note.com/toshikiigaa/n/n9fc8879ffa2f)（2026-07-16）
+- [miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする](https://note.com/toshikiigaa/n/n8a476ac6f75d)（2026-07-08）
+- [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](https://note.com/toshikiigaa/n/na7fb76c52fda)（2026-05-29）
 
 ## Agent Skills
 
@@ -99,7 +113,6 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 
 ### それ以外の miku 系ツール
 
-- [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](https://note.com/toshikiigaa/n/na7fb76c52fda)（2026-05-29）
 - [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](https://note.com/toshikiigaa/n/n5b18c376b2f0)（2026-05-16）
 - [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](https://note.com/toshikiigaa/n/n5b0ac55dce0a)（2026-04-28）
 - [[miku-abc-player] `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった](https://note.com/toshikiigaa/n/n5be1d51d336a)（2026-04-12）

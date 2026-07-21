@@ -29,6 +29,16 @@ git -C references/raw/mikuku-articles pull --ff-only
 `references/raw/` is local working data and is ignored by Git. Do not commit the
 raw clone.
 
+## 記事一覧の更新ルール
+
+公開済み記事を追加または更新して `README.md` の記事一覧を変更するときは、
+同じ作業で [note 記事一覧](2026/05/20260531/20260531-note-article-list.md) の
+該当カテゴリも更新してください。逆に、note 記事一覧を変更するときも
+`README.md` の「記事をテーマ別に読む」と「全記事一覧」を同期してください。
+
+両方の Markdown を更新した後、リポジトリ指定の `miku-indexgen` を実行して
+`index.json` を再生成します。
+
 ## 記事をテーマ別に読む
 
 記事はテーマ別に分類しています。各分類内では、新しい記事からチェックできるように日付の降順で並べています。
@@ -50,6 +60,14 @@ raw clone.
 - 2026-06-06: [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) ([note](https://note.com/toshikiigaa/n/ndc1b1eca21fc))
 - 2026-06-05: [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) ([note](https://note.com/toshikiigaa/n/n4d3a240982f2))
 - 2026-06-03: [生成AIの Agent Skills は魔法書に近い](2026/06/20260603/20260603-general-agent-skills-magic-book.md) ([note](https://note.com/toshikiigaa/n/n118093b21838))
+
+### 開発日誌
+
+- 2026-07-21: [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](2026/07/20260721/20260721-general-miku-ai-assistant-builder-skills-v0-8-0-dev-diary.md) ([note](https://note.com/toshikiigaa/n/nbcf7dabc5307))
+- 2026-07-17: [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](2026/07/20260717/20260717-miku-text-bundle-development-diary-v1-5-1.md) ([note](https://note.com/toshikiigaa/n/n26f7f240ae55))
+- 2026-07-16: [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](2026/07/20260716/20260716-general-miku-prompt-lint-skills-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n9fc8879ffa2f))
+- 2026-07-08: [miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする](2026/07/20260708/20260708-general-miku-soft-template-mode-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n8a476ac6f75d))
+- 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
 
 ### Agent Skills
 
@@ -118,7 +136,6 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 
 #### それ以外の miku 系ツール
 
-- 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
 - 2026-05-16: [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](2026/05/20260516/20260516-miku-text-bundle-ai-text-assets.md) ([note](https://note.com/toshikiigaa/n/n5b18c376b2f0))
 - 2026-04-28: [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](2026/04/20260428/20260428-miku-indexgen-intro.md) ([note](https://note.com/toshikiigaa/n/n5b0ac55dce0a))
 - 2026-04-12: [[miku-abc-player] `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった](2026/04/20260412/20260412-miku-abc-player-intro.md) ([note](https://note.com/toshikiigaa/n/n5be1d51d336a))
@@ -134,6 +151,10 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-07-21 | [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](2026/07/20260721/20260721-general-miku-ai-assistant-builder-skills-v0-8-0-dev-diary.md) | [note](https://note.com/toshikiigaa/n/nbcf7dabc5307) |
+| 2026-07-17 | [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](2026/07/20260717/20260717-miku-text-bundle-development-diary-v1-5-1.md) | [note](https://note.com/toshikiigaa/n/n26f7f240ae55) |
+| 2026-07-16 | [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](2026/07/20260716/20260716-general-miku-prompt-lint-skills-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n9fc8879ffa2f) |
+| 2026-07-08 | [miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする](2026/07/20260708/20260708-general-miku-soft-template-mode-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n8a476ac6f75d) |
 | 2026-07-07 | [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](2026/07/20260707/20260707-general-codex-davinci-resolve-video-workflow.md) | [note](https://note.com/toshikiigaa/n/nb475b83dd49c) |
 | 2026-07-06 | [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) | [note](https://note.com/toshikiigaa/n/nb4c40d11d14c) |
 | 2026-07-06 | [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/na2cc3d672fee) |
