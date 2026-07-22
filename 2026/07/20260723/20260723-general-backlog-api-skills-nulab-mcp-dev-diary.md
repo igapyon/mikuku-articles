@@ -7,13 +7,17 @@ editor: Toshiki Iga (igapyon)
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/nbe78f691594e
 release_date: 2026-07-23
 ---
 
 # [backlog-api-skills] 開発日誌：Nulab 公式の Backlog MCP を Agent Skills に変換してみました
 
+![backlog-api-skills 開発日誌](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…みくくです。今回は、わ、私がこの記事を担当しますっ。
 
@@ -39,6 +43,8 @@ MCP は、AI agent と外部サービスを接続するための共通インタ�
 
 ## Nulab 公式の Backlog MCP Server
 
+![Nulab 公式の Backlog MCP Server](images/002.png)
+
 Nulab は2025年5月、Backlog MCP Server を GitHub で公開しました。
 
 この MCP Server を AI agent へ接続すると、Backlog のプロジェクト、課題、コメント、発生バージョン／マイルストーン、Wiki、ドキュメント、Git リポジトリ、プルリクエスト、通知などを、自然言語の会話から扱えるようになります。
@@ -52,6 +58,8 @@ Nulab は2025年5月、Backlog MCP Server を GitHub で公開しました。
 うぅ…ここが、Agent Skill にするときに、いちばん気になったところでした。
 
 ## MCP を、そのまま包んだわけではありません
+
+![MCP を、そのまま包んだわけではありません](images/003.png)
 
 `backlog-api-skills` は、Nulab の Backlog MCP Server へ接続する設定集ではありません。また、Skill の内部で Docker や `npx` を使って MCP Server を起動するものでもありません。
 
@@ -81,6 +89,8 @@ backlog-api-skills
 うぅ…道具をひとつに見せるために、内側では境界をきちんと分ける。今回は、その分け方がかなり大事でした。
 
 ## v0.3.4でできること
+
+![v0.3.4でできること](images/004.png)
 
 2026年7月23日時点の `backlog-api-skills` はベータ版で、version は `v0.3.4` です。Node.js 22以降で動作し、Skill には `backlog-api v0.3.4` の runtime を同梱しています。
 
@@ -115,6 +125,8 @@ node runtime/backlog-api-0.3.4.mjs call get_issue --input request.json --verbose
 
 ## Agent Skill として、安全確認を前へ置く
 
+![Agent Skill として、安全確認を前へ置く](images/005.png)
+
 `backlog-api-skills` で特に重く扱ったのは、変更操作の確認です。あの…ここは大事なので、少し慎重に書きますね。
 
 CLI は、読み取り操作だけを既定で許可します。作成、更新、削除には、それぞれ `--allow CREATE`、`--allow UPDATE`、`--allow DELETE` が必要です。そして Agent Skill 側では、その引数を付ける直前に、対象 organization、対象 resource、operation、変更内容を人へ示し、承認を得るようにしています。
@@ -141,6 +153,8 @@ CLI は、読み取り操作だけを既定で許可します。作成、更新�
 
 ## 明示されたときだけ使う
 
+![明示されたときだけ使う](images/006.png)
+
 この Agent Skill は、Backlog という言葉が出ただけでは発火しません。えっと…呼ばれていないのに、勝手に出ていかないようにしています。
 
 `igapyon-backlog-api`、`backlog-api`、`backlog-api-skills` のいずれかを明示したとき、または、この Skill を使った Backlog API workflow だと明確に依頼したときだけ使います。
@@ -152,6 +166,8 @@ Agent Skill にしたことで、単に operation を呼べるだけでなく、
 あの…発火しないことは、何もしていないように見えます。でも、外部サービスを扱う Skill では、その静けさも機能の一部なのかな、って思います。
 
 ## MCP と Agent Skills は、競合ではなく役割の違い
+
+![MCP と Agent Skills は、競合ではなく役割の違い](images/007.png)
 
 あ、あの…ここは誤解されたくないところです。今回の変換は、MCP より Agent Skills のほうが優れている、と言いたいものではありません。
 
@@ -171,6 +187,8 @@ MCP が道具への共通の入口だとしたら、Agent Skill は、その道�
 
 ## まだベータ版です
 
+![まだベータ版です](images/008.png)
+
 `backlog-api-skills v0.3.4` は、まだベータ版です。interface や workflow は、安定版までに変わる可能性があります。また、現時点では動作確認もまだ十分ではありません。ご、ごめんなさい…ここは、まだ「大丈夫です」と言い切れないところです。
 
 これから検討したいことも残っています。最近扱った課題の参照、通知の整理、課題の衛生状態の確認、`mikuproject` との連携、確認済み課題の Excel 出力などです。
@@ -180,6 +198,8 @@ MCP が道具への共通の入口だとしたら、Agent Skill は、その道�
 うぅ…できることを増やすのは嬉しいです。でも、外部サービスを扱う Agent Skill では、増やした機能と同じくらい、増えた責任も見ないといけません。
 
 ## おわりに
+
+![おわりに](images/009.png)
 
 `backlog-api-skills` は、Nulab 公式の Backlog MCP Server を別 process として起動せずに扱いたくて、公開 source を追跡可能な TypeScript ベースの Node Core／CLI へコンバージョンし、Agent Skill として扱えるようにしたベータ版のプロジェクトです。CLI 変換を担当する `backlog-api` と、この Agent Skill は MIT ライセンスで公開しています。
 
