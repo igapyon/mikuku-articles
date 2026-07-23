@@ -1127,6 +1127,7 @@
   {"name":"section-text.md","path":"2026/07/20260723/images/src/sections/008/section-text.md","ext":"md","dir":"2026/07/20260723/images/src/sections/008","size":1292,"summary":"まだベータ版です"},
   {"name":"image-prompt.md","path":"2026/07/20260723/images/src/sections/009/image-prompt.md","ext":"md","dir":"2026/07/20260723/images/src/sections/009","size":3765,"summary":"Section Graphic Recording Image Prompt"},
   {"name":"section-text.md","path":"2026/07/20260723/images/src/sections/009/section-text.md","ext":"md","dir":"2026/07/20260723/images/src/sections/009","size":1282,"summary":"おわりに"},
+  {"name":"20260724-general-generative-ai-software-design-development-article-writing.md","path":"2026/07/20260724/20260724-general-generative-ai-software-design-development-article-writing.md","ext":"md","dir":"2026/07/20260724","size":17420,"title":"生成AIをもちいたソフトウェアの設計・製造・そして記事執筆","description":"Backlog MCPの公開実装をAgent Skillsへ変換した開発を振り返り、人と生成AIの分担、蓄積したAgent Skills群による自動化、そして工程を順番どおりに高速で流す「爆速ウォーターフォール」という開発スタイルを整理します。","status":"draft","summary":"生成AIをもちいたソフトウェアの設計・製造・そして記事執筆"},
   {"name":"202606xx-general-ai-agile-expert-shift-idea.md","path":"2026/draft/202606xx-general-ai-agile-expert-shift-idea.md","ext":"md","dir":"2026/draft","size":45513,"title":"生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト","description":"アジャイルソフトウェア開発宣言の4つの価値を、生成AIが対話、動くソフトウェア、顧客との協調、変化への対応へ大きく入る時代に読み直す記事ネタです。","status":"idea","summary":"生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト"},
   {"name":"202606xx-general-modern-agile-terms.md","path":"2026/draft/202606xx-general-modern-agile-terms.md","ext":"md","dir":"2026/draft","size":15693,"title":"現代のアジャイルは、周辺語が多すぎる","summary":"はじめに"},
   {"name":"202606xx-general-object-oriented-thinking.md","path":"2026/draft/202606xx-general-object-oriented-thinking.md","ext":"md","dir":"2026/draft","size":17509,"title":"オブジェクト指向という考え方に入門する","summary":"はじめに"},
@@ -1140,7 +1141,7 @@
   {"name":"HANDOFF.md","path":"HANDOFF.md","ext":"md","dir":"","size":6170,"updated":"2026-06-25","summary":"HANDOFF"},
   {"name":"README.md","path":"README.md","ext":"md","dir":"","size":32818,"summary":"mikuku-articles"},
   {"name":"TODO.md","path":"TODO.md","ext":"md","dir":"","size":22662,"summary":"TODO"},
-  {"name":"VERSION.md","path":"VERSION.md","ext":"md","dir":"","size":10,"summary":"20260723b"},
+  {"name":"VERSION.md","path":"VERSION.md","ext":"md","dir":"","size":10,"summary":"20260723c"},
   {"name":"note-article-import-procedure.md","path":"docs/note-article-import-procedure.md","ext":"md","dir":"docs","size":15700,"summary":"Note article import procedure"},
   {"name":"repository-overview.md","path":"docs/repository-overview.md","ext":"md","dir":"docs","size":4035,"summary":"mikuku-articles repository overview"},
   {"name":"root-index-maintenance.md","path":"docs/root-index-maintenance.md","ext":"md","dir":"docs","size":2139,"summary":"Root index maintenance"},
@@ -1496,6 +1497,7 @@
   {"name":"pr-devel-tiga0721jbe-202607212329.md","path":"workplace/miku-scm/pr-devel-tiga0721jbe-202607212329.md","ext":"md","dir":"workplace/miku-scm","size":1065,"summary":"Note公開情報と記事一覧を更新し開発日誌分類を追加"},
   {"name":"pr-devel-tiga0721xdf-202607230009.md","path":"workplace/miku-scm/pr-drafts/pr-devel-tiga0721xdf-202607230009.md","ext":"md","dir":"workplace/miku-scm/pr-drafts","size":675,"summary":"Backlog MCP の Agent Skills 化に関する開発日誌を追加"},
   {"name":"pr-devel-tiga0723ach-202607230116.md","path":"workplace/miku-scm/pr-drafts/pr-devel-tiga0723ach-202607230116.md","ext":"md","dir":"workplace/miku-scm/pr-drafts","size":1079,"summary":"Backlog API Skills 開発日誌にグラレコ画像とNote公開情報を追加"},
+  {"name":"pr-devel-tiga0723ach-202607230142.md","path":"workplace/miku-scm/pr-drafts/pr-devel-tiga0723ach-202607230142.md","ext":"md","dir":"workplace/miku-scm/pr-drafts","size":1236,"summary":"Backlog API Skills 開発日誌にグラレコ画像とNote公開情報を追加"},
   {"name":"mikuku-expression-survey-20260707.md","path":"workplace/mikuku-expression-survey-20260707.md","ext":"md","dir":"workplace","size":23682,"summary":"mikuku-articles みくく的表現調査 2026-07-07"}
  ]
 }
