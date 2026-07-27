@@ -74,8 +74,8 @@ Agent Skills は、作っている間は一つずつ小さな道具に見えま�
 | [`igapyon-miku-ai-assistant-builder`](https://github.com/igapyon/miku-ai-assistant-builder-skills) | Microsoft 365 Copilot Agent Builder と Google Gemini Gem に投入する資料の準備 | 結構お世話になっている |
 | [`igapyon-miku-grep`](https://github.com/igapyon/miku-grep-skills) | `miku-grep` による構造化されたローカル検索 | — |
 | [`igapyon-miku-indexgen`](https://github.com/igapyon/miku-indexgen-skills) | `index.json` と `index.md` を生成する索引作成 | 頻繁に使っている |
-| [`igapyon-miku-json2xlsx`](https://github.com/igapyon/miku-json2xlsx-skills) | JSON / JSONL から XLSX への変換 | — |
-| [`miku-media-proc`](https://github.com/igapyon/miku-media-proc-skills) | 動画、音声、画像、字幕、metadata などのメディア加工 | — |
+| [`igapyon-miku-json2xlsx`](https://github.com/igapyon/miku-json2xlsx-skills) | JSON / JSONL から XLSX への変換 | 製造着手したところ |
+| [`miku-media-proc`](https://github.com/igapyon/miku-media-proc-skills) | DaVinci Resolve、VOICEVOX（ずんだもん）、FFmpeg を横断した動画・音声・画像・字幕・metadata のメディア加工 | — |
 | [`igapyon-miku-ms-office`](https://github.com/igapyon/miku-ms-office-skills) | Word、Excel、PowerPoint と Markdown の変換 tool 群 | 地味に使っている |
 | [`igapyon-miku-prompt-lint`](https://github.com/igapyon/miku-prompt-lint-skills) | prompt、context package、Agent Skill の品質リスク診断 | — |
 | [`miku-readfile`](https://github.com/igapyon/miku-readfile-skills) | UTF-8 / Shift_JIS のローカルテキストを構造化して読む | — |
