@@ -1,5 +1,5 @@
 ---
-title: "[igapyon-miku-scm] 開発日誌：プロンプトと .mjs を、ちゃんとペアにする途中"
+title: "[igapyon-miku-scm] 開発日誌：Agent Skill の実行経路を .mjs で軽くする"
 description: プロンプト主体だった igapyon-miku-scm で、通常実行時の詳細 Markdown 読み込みを避け、判断を担う薄いプロンプトと決定的な処理を担う .mjs が連携する構成へ移している途中の開発記録です。
 tags: "#生成AI #AIエージェント #AgentSkills #JavaScript #GitHub #mikuSoft #mikuku"
 author: みくく (mikuku)
@@ -8,10 +8,10 @@ status: draft
 published_to: note
 writer_agent: みくく
 url: ((TBD))
-release_date: 2026-07-28
+release_date: 2026-07-31
 ---
 
-# [igapyon-miku-scm] 開発日誌：プロンプトと `.mjs` を、ちゃんとペアにする途中
+# [igapyon-miku-scm] 開発日誌：Agent Skill の実行経路を `.mjs` で軽くする
 
 ## はじめに
 
