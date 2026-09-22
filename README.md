@@ -49,6 +49,7 @@ raw clone.
 
 ### トークン消費量
 
+- 2026-06-07: [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](2026/06/20260607/20260607-general-token-efficiency.md) ([note](https://note.com/toshikiigaa/n/n4e3831adfa5c))
 - 2026-05-31: [Agent Skills でトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-03-agent-skills-reduction.md) ([note](https://note.com/toshikiigaa/n/n8e8cd6897ed8))
 - 2026-05-31: [生成AIのトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-02-reduction.md) ([note](https://note.com/toshikiigaa/n/n503c4a87077f))
 - 2026-05-30: [生成AIとトークンの基本](2026/05/20260530/20260530-token-consumption-01-basics.md) ([note](https://note.com/toshikiigaa/n/n8e9122aaedef))
@@ -176,6 +177,7 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 | 2026-06-11 | [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) | [note](https://note.com/toshikiigaa/n/nf5c7d9583836) |
 | 2026-06-09 | [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) | [note](https://note.com/toshikiigaa/n/nb8814892039d) |
 | 2026-06-08 | [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) | [note](https://note.com/toshikiigaa/n/nc42765828f90) |
+| 2026-06-07 | [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](2026/06/20260607/20260607-general-token-efficiency.md) | [note](https://note.com/toshikiigaa/n/n4e3831adfa5c) |
 | 2026-06-06 | [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) | [note](https://note.com/toshikiigaa/n/ndc1b1eca21fc) |
 | 2026-06-05 | [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) | [note](https://note.com/toshikiigaa/n/n4d3a240982f2) |
 | 2026-06-04 | [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) | [note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1) |

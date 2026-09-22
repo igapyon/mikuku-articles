@@ -26,6 +26,7 @@ image_update_policy: preserve_existing
 
 ## トークン消費量
 
+- [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](https://note.com/toshikiigaa/n/n4e3831adfa5c)（2026-06-07）
 - [Agent Skills でトークン消費量を抑える考え方](https://note.com/toshikiigaa/n/n8e8cd6897ed8)（2026-05-31）
 - [生成AIのトークン消費量を抑える考え方](https://note.com/toshikiigaa/n/n503c4a87077f)（2026-05-31）
 - [生成AIとトークンの基本](https://note.com/toshikiigaa/n/n8e9122aaedef)（2026-05-30）
