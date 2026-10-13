@@ -6,13 +6,17 @@ author: igapyon
 status: draft
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n744ba61b7117
 release_date: 2026-10-10
 ---
 
 # GPT-5.6 Lunaも衝撃価格だったのに、GPT-6ではSolもLunaもさらに安い
 
+![GPT-5.6 Lunaも衝撃価格だったのに、GPT-6ではSolもLunaもさらに安い](images/000.png)
+
 ## はじめに
+
+![はじめに](images/001.png)
 
 あ、あの…この記事も、みくくが担当します。今回は価格のお話なのですが、数字を並べてみると、少しびっくりしてしまう変化がありました。
 
@@ -25,6 +29,8 @@ release_date: 2026-10-10
 あの…比較に入る前に、前提をひとつだけ。料金とモデル構成は、2026年10月10日時点の公式資料を基準にしています。この記事で比べるのは API の料金です。Codex や ChatGPT の定額プランでの利用枠とは分けて、ご覧いただければと思います。
 
 ## GPT-5.6の三つの価格帯は、段階的に値下げされた
+
+![GPT-5.6の三つの価格帯は、段階的に値下げされた](images/002.png)
 
 まずは、GPT-5.6 の価格がどう変わってきたのか、少しさかのぼってみます。
 
@@ -51,6 +57,8 @@ release_date: 2026-10-10
 
 ## GPT-6.1 Solは、キャッシュ入力と処理区分にも注目
 
+![GPT-6.1 Solは、キャッシュ入力と処理区分にも注目](images/003.png)
+
 えっと…先ほど、Sol の通常入力・出力の単価は同じ、と書きました。でも、キャッシュ入力まで見ると、違いがあるのです。
 
 Standard・短いコンテキストでは、GPT-6 Sol の $0.20 に対して GPT-6.1 Sol は $0.10。ここは半額になっています。キャッシュ書き込みは、どちらも $2.50 です。([GPT-6 Sol のAPI仕様](https://developers.openai.com/api/docs/models/gpt-6-sol)、[GPT-6.1 Sol のAPI仕様](https://developers.openai.com/api/docs/models/gpt-6.1-sol))
@@ -74,6 +82,8 @@ Standard・短いコンテキストでは、GPT-6 Sol の $0.20 に対して GPT
 
 ## Lunaの値下げは、作業費用に置き換えて考える
 
+![Lunaの値下げは、作業費用に置き換えて考える](images/004.png)
+
 ここで、最初にびっくりした Luna の価格へ戻ってみます。
 
 表の Luna を見ると、GPT-5.6 の値下げ後から GPT-6 へ、入力単価は $0.20 から $0.10、出力単価は $1.20 から $0.50 になっています。入力はちょうど半額、出力は約58%下がっています。OpenAI の発表では全体を「50%安い」とまとめていますが、入出力を分けて計算すると出力側の下げ幅は少し大きくなります。キャッシュ入力も、GPT-5.6 Luna の $0.02 から GPT-6 Luna の $0.01 へ半額です。([GPT-6の価格比較](https://openai.com/index/introducing-gpt-6-sol-and-luna/)、[GPT-5.6 Luna の API 仕様](https://developers.openai.com/api/docs/models/gpt-5.6-luna)、[GPT-6 Luna の API 仕様](https://developers.openai.com/api/docs/models/gpt-6-luna))
@@ -85,6 +95,8 @@ Standard・短いコンテキストでは、GPT-6 Sol の $0.20 に対して GPT
 うぅ…値下げ後の価格を出発点にしても、まだこれだけ差があるのですね。「もう十分安い」と思っていた基準を、また少し動かされる感じがします。
 
 ## トークン単価と、仕事を終えるまでの費用は別
+
+![トークン単価と、仕事を終えるまでの費用は別](images/005.png)
 
 ただ…安くなった数字に、少し気持ちが先走ってしまいそうなので、ここはいったん立ち止まりたいです。
 
@@ -102,6 +114,8 @@ OpenAI は、AutomationBench における GPT-6 Luna の `high` 設定につい�
 
 ## 価格とモデル構成を踏まえた、現在の想定
 
+![価格とモデル構成を踏まえた、現在の想定](images/006.png)
+
 えっと…ここまでの価格とモデルの並びを踏まえて、前回の仮説を少し見直してみます。
 
 前回の記事では、計画に Astra、計画の詳細化に Terra `high` / `xhigh`、普段の実行に Luna `xhigh` を使う、という仮説を置きました。GPT-6ではTerraの後継が示されていないことや価格差も踏まえ、現在は計画と詳細化には GPT-6.1 Sol の `xhigh` を使い、実行などは GPT-6 Luna の `xhigh` を中心に進める構成を想定しています。GPT-6.1 Sol は GPT-6 Sol の通常入力・出力の標準単価を据え置き、キャッシュ入力はさらに安くなった選択肢です。
@@ -117,6 +131,8 @@ OpenAI は、AutomationBench における GPT-6 Luna の `high` 設定につい�
 いきなり全部を任せるのは、少しどきどきします。価格表で気になった分担を、小さな仕事から試していけたらと思います。
 
 ## おわりに
+
+![おわりに](images/007.png)
 
 GPT-5.6では Sol、Terra、Luna それぞれに価格帯があり、三つとも値下げを経ました。GPT-6では9月3日に Astra、9月22日に Sol と Luna が登場し、Sol と Luna の単価は GPT-5.6 の値下げ後よりさらに下がりました。9月29日には GPT-6.1 Sol も登場し、通常入力・出力の標準単価は GPT-6 Sol と同じで、キャッシュ入力は半額です。10月8日には GPT-6.1 Sol にも Ultrafast が加わったので、速さと費用を比べるときは処理区分にも目を向けたいです。
 
