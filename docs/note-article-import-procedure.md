@@ -376,8 +376,8 @@ Repeat the section mapping for each section directory. Do not copy `section-sour
 unless there is a specific need to preserve full source excerpts; the current
 repository package shape keeps `section-text.md` and `image-prompt.md`.
 
-After copying, insert image links into the article Markdown and refresh `index.json`
-with `miku-indexgen`.
+After copying, insert image links into the article Markdown and confirm that each
+link points to the intended local image file.
 
 ## Local System Files
 
@@ -468,8 +468,8 @@ Before committing:
 - Confirm front matter values do not contain unsafe half-width colon-space
   sequences such as `title: ...: ...`; use full-width `：` in Japanese titles.
 - Confirm the article title appears as an H1 immediately after front matter.
-- Confirm `index.json` is regenerated after adding article Markdown, image prompt
-  Markdown, or docs.
+- If the article-list contents changed, synchronize the README and Note article
+  list as described in the README.
 
 Suggested commit message pattern:
 

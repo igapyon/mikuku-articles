@@ -7,6 +7,12 @@ Update this section while working. Do not rewrite unrelated TODO items.
 
 ### Tasks
 
+- [x] Stop maintaining the repository-wide generated `index.json`.
+  - Removed the root index and its maintenance guide.
+  - Updated the README and Note article import procedure to use curated lists
+    and scoped search without requiring index generation.
+  - Recorded the repository policy in `DECISIONS.md`; historical article
+    references to earlier indexgen work remain intact.
 - [x] Create the 2026-07-06 Note article draft for `miku-xlsx2md`:
   `2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md`.
   - Topic: sister article to
