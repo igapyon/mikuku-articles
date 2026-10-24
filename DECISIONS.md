@@ -15,6 +15,21 @@ update_when:
 This file records important decisions for the AI agent.
 Read this before making or revisiting decisions, especially when the work seems to loop.
 
+## 2026-10-24: Do not maintain a repository-wide generated index
+
+Reason:
+The repository already has curated article lists, direct links, and scoped
+filename or content search. A generated root index duplicates those discovery
+routes and must be kept synchronized with the growing article archive.
+
+Impact:
+Do not generate or refresh a root `index.json` during ordinary article, image,
+or documentation updates. Its absence is valid. Use the README lists and scoped
+search for discovery. Generate an index with `miku-indexgen` only when explicitly
+requested for a defined scope; never edit generated index files by hand. Preserve
+existing indexgen articles and other historical references as records of earlier
+work.
+
 ## 2026-06-24: Preserve the existing TODO.md structure
 
 Reason:
