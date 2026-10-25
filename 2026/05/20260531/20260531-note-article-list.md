@@ -17,7 +17,10 @@ image_update_policy: preserve_existing
 <!--
 メンテナンス注記:
 この記事一覧を更新するときは、同じ作業でリポジトリルートの README.md にある
-「記事をテーマ別に読む」と「全記事一覧」も同期し、index.json を再生成する。
+「記事をテーマ別に読む」と「全記事一覧」も同期する。
+更新は「生成AIが正本と README を更新 → 人間が Note の公開ページへ反映 →
+生成AIが公開ページを再取得して反映内容を確認」の順で進める。
+詳しい手順は README.md の「記事一覧の更新ルール」に従う。
 -->
 
 ## はじめに
@@ -26,6 +29,7 @@ image_update_policy: preserve_existing
 
 ## トークン消費量
 
+- [GPT-5.6 Lunaも衝撃価格だったのに、GPT-6ではSolもLunaもさらに安い](https://note.com/toshikiigaa/n/n744ba61b7117)（2026-10-10）
 - [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](https://note.com/toshikiigaa/n/n4e3831adfa5c)（2026-06-07）
 - [Agent Skills でトークン消費量を抑える考え方](https://note.com/toshikiigaa/n/n8e8cd6897ed8)（2026-05-31）
 - [生成AIのトークン消費量を抑える考え方](https://note.com/toshikiigaa/n/n503c4a87077f)（2026-05-31）
@@ -41,6 +45,10 @@ image_update_policy: preserve_existing
 
 ## 開発日誌
 
+- [開発日誌：MarkdownをちょっとHTMLで確認したくて、4形式を扱うAgent Skillを作ってみました。](https://note.com/toshikiigaa/n/n772f7c396f84)（2026-10-25）
+- [[igapyon-miku-scm] 開発日誌：Agent Skill の実行経路を .mjs で軽くする](https://note.com/toshikiigaa/n/ne1ce4e569ac8)（2026-09-22）
+- [AI agent が Shift_JIS を文字化けさせまくるので、仕方なく Agent Skills を作った](https://note.com/toshikiigaa/n/n5a6dd1d42dd0)（2026-07-31）
+- [[backlog-api-skills] 開発日誌：Nulab 公式の Backlog MCP を Agent Skills に変換してみました](https://note.com/toshikiigaa/n/nbe78f691594e)（2026-07-23）
 - [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](https://note.com/toshikiigaa/n/nbcf7dabc5307)（2026-07-21）
 - [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](https://note.com/toshikiigaa/n/n26f7f240ae55)（2026-07-17）
 - [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](https://note.com/toshikiigaa/n/n9fc8879ffa2f)（2026-07-16）
@@ -49,6 +57,8 @@ image_update_policy: preserve_existing
 
 ## Agent Skills
 
+- [規約・ルール・チェックシートを、Agent Skillsが「活きたドキュメント」にする](https://note.com/toshikiigaa/n/nb79393dbac78)（2026-10-10）
+- [みくくが作ってきた Agent Skills を、いったん28件、数えてみました](https://note.com/toshikiigaa/n/nab66caab2cf1)（2026-09-22）
 - [GOAL運用する Agent Skill を作ってみた](https://note.com/toshikiigaa/n/n7db7a4c8c2e7)（2026-06-25）
 - [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](https://note.com/toshikiigaa/n/nf9f8493e0100)（2026-06-24）
 - [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](https://note.com/toshikiigaa/n/nae43c4e81e4f)（2026-06-22）
@@ -81,6 +91,11 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ## 生成AI・AI agent
 
+- [義務教育の小学校国語をヒントに、生成AIとの会話を改善する](https://note.com/toshikiigaa/n/nb093c8b87b47)（2026-09-23）
+- [GPT-5.6 Luna xhigh は、モデル選択のゲームチェンジャーになるかもしれない](https://note.com/toshikiigaa/n/na306b8f40866)（2026-09-22）
+- [生成 AI をもちいたソフトウェアの設計・製造・そして記事執筆](https://note.com/toshikiigaa/n/n4da488faf4aa)（2026-07-24）
+- [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Terra画像版】](https://note.com/toshikiigaa/n/nc1e4c4a789c9)（2026-07-11）
+- [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Sol画像版】](https://note.com/toshikiigaa/n/ne6700915c2cc)（2026-07-11）
 - [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](https://note.com/toshikiigaa/n/nb475b83dd49c)（2026-07-07）
 - [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](https://note.com/toshikiigaa/n/n5a3c4ef23c6a)（2026-06-13）
 - [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](https://note.com/toshikiigaa/n/n4d8d3f9afb10)（2026-06-12）
@@ -114,6 +129,7 @@ Excel と Markdown の相互変換を扱う miku-soft シリーズが続きま�
 
 ### それ以外の miku 系ツール
 
+- [[igapyon-miku-daybook] 日々の予定とタスクを、AIに話しかけて整える](https://note.com/toshikiigaa/n/n0e8ea5bfc5a0)（2026-10-13）
 - [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](https://note.com/toshikiigaa/n/n5b18c376b2f0)（2026-05-16）
 - [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](https://note.com/toshikiigaa/n/n5b0ac55dce0a)（2026-04-28）
 - [[miku-abc-player] `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった](https://note.com/toshikiigaa/n/n5be1d51d336a)（2026-04-12）
