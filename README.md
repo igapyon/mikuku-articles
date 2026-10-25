@@ -1,10 +1,51 @@
 # mikuku-articles
 
-Mikuku-authored Note article packages for GitHub Pages publication.
+Mikuku-authored Note article packages and source materials.
 
 Articles are organized by year, month, and date under paths such as
 `2026/06/20260607/`. Each article package may include the article Markdown,
 published-image assets, and image-generation source prompts.
+
+## Agent Skills RAG Draft Preparation
+
+Some draft articles compare how an AI agent searches this repository before and
+after adding generated indexes. Those experiments use a local raw clone as the
+reference corpus.
+
+After checking out this repository, prepare the raw corpus from the repository
+root:
+
+```sh
+mkdir -p references/raw
+git clone https://github.com/igapyon/mikuku-articles.git references/raw/mikuku-articles
+```
+
+If `references/raw/mikuku-articles` already exists, update it instead:
+
+```sh
+git -C references/raw/mikuku-articles pull --ff-only
+```
+
+`references/raw/` is local working data and is ignored by Git. Do not commit the
+raw clone.
+
+## 記事一覧の更新ルール
+
+公開済み記事を追加または更新して `README.md` の記事一覧を変更するときは、
+同じ作業で [note 記事一覧](2026/05/20260531/20260531-note-article-list.md) の
+該当カテゴリも更新してください。逆に、note 記事一覧を変更するときも
+`README.md` の「記事をテーマ別に読む」と「全記事一覧」を同期してください。
+
+Note の公開ページへの反映は、次の順序で進めます。
+
+1. 生成AIが note 記事一覧の正本 Markdown と、上記の README の一覧を更新します。
+2. 人間が更新後の内容を [Note の記事一覧ページ](https://note.com/toshikiigaa/n/nde411c861a5a) に反映し、生成AIに更新したことを伝えます。
+3. 生成AIが公開ページを再取得し、追加・変更した記事のタイトル、日付、リンク先、カテゴリ、並び順を正本と照合して、確認結果を報告します。
+
+公開ページへの反映を生成AIが確認した時点で、一覧の更新作業を完了とします。
+公開ページを取得できない場合は、確認未了として伝えます。
+
+両方の Markdown の更新作業に `index.json` の生成は含めません。
 
 ## 記事をテーマ別に読む
 
@@ -16,6 +57,8 @@ published-image assets, and image-generation source prompts.
 
 ### トークン消費量
 
+- 2026-10-10: [GPT-5.6 Lunaも衝撃価格だったのに、GPT-6ではSolもLunaもさらに安い](2026/10/20261010b/20261010b-general-gpt6-luna-price-performance.md) ([note](https://note.com/toshikiigaa/n/n744ba61b7117))
+- 2026-06-07: [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](2026/06/20260607/20260607-general-token-efficiency.md) ([note](https://note.com/toshikiigaa/n/n4e3831adfa5c))
 - 2026-05-31: [Agent Skills でトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-03-agent-skills-reduction.md) ([note](https://note.com/toshikiigaa/n/n8e8cd6897ed8))
 - 2026-05-31: [生成AIのトークン消費量を抑える考え方](2026/05/20260531/20260531-token-consumption-02-reduction.md) ([note](https://note.com/toshikiigaa/n/n503c4a87077f))
 - 2026-05-30: [生成AIとトークンの基本](2026/05/20260530/20260530-token-consumption-01-basics.md) ([note](https://note.com/toshikiigaa/n/n8e9122aaedef))
@@ -28,8 +71,25 @@ published-image assets, and image-generation source prompts.
 - 2026-06-05: [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) ([note](https://note.com/toshikiigaa/n/n4d3a240982f2))
 - 2026-06-03: [生成AIの Agent Skills は魔法書に近い](2026/06/20260603/20260603-general-agent-skills-magic-book.md) ([note](https://note.com/toshikiigaa/n/n118093b21838))
 
+### 開発日誌
+
+- 2026-10-25: [開発日誌：MarkdownをちょっとHTMLで確認したくて、4形式を扱うAgent Skillを作ってみました。](2026/10/20261025a/20261025a-general-miku-md2formats-skills-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n772f7c396f84))
+- 2026-09-22: [[igapyon-miku-scm] 開発日誌：Agent Skill の実行経路を .mjs で軽くする](2026/09/20260922b/20260922b-general-miku-scm-prompt-mjs-pairing-dev-diary.md) ([note](https://note.com/toshikiigaa/n/ne1ce4e569ac8))
+- 2026-07-31: [AI agent が Shift_JIS を文字化けさせまくるので、仕方なく Agent Skills を作った](2026/07/20260731a/20260731a-general-miku-text-file-ops-skills-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n5a6dd1d42dd0))
+- 2026-07-23: [[backlog-api-skills] 開発日誌：Nulab 公式の Backlog MCP を Agent Skills に変換してみました](2026/07/20260723/20260723-general-backlog-api-skills-nulab-mcp-dev-diary.md) ([note](https://note.com/toshikiigaa/n/nbe78f691594e))
+- 2026-07-21: [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](2026/07/20260721/20260721-general-miku-ai-assistant-builder-skills-v0-8-0-dev-diary.md) ([note](https://note.com/toshikiigaa/n/nbcf7dabc5307))
+- 2026-07-17: [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](2026/07/20260717/20260717-miku-text-bundle-development-diary-v1-5-1.md) ([note](https://note.com/toshikiigaa/n/n26f7f240ae55))
+- 2026-07-16: [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](2026/07/20260716/20260716-general-miku-prompt-lint-skills-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n9fc8879ffa2f))
+- 2026-07-08: [miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする](2026/07/20260708/20260708-general-miku-soft-template-mode-dev-diary.md) ([note](https://note.com/toshikiigaa/n/n8a476ac6f75d))
+- 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
+
 ### Agent Skills
 
+- 2026-10-10: [規約・ルール・チェックシートを、Agent Skillsが「活きたドキュメント」にする](2026/10/20261010a/20261010a-general-agent-skills-living-documents.md) ([note](https://note.com/toshikiigaa/n/nb79393dbac78))
+- 2026-09-22: [みくくが作ってきた Agent Skills を、いったん28件、数えてみました](2026/09/20260922a/20260922a-general-agent-skills-inventory.md) ([note](https://note.com/toshikiigaa/n/nab66caab2cf1))
+- 2026-06-25: [GOAL運用する Agent Skill を作ってみた](2026/06/20260625/20260625-general-agent-state-management-skill.md) ([note](https://note.com/toshikiigaa/n/n7db7a4c8c2e7))
+- 2026-06-24: [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md) ([note](https://note.com/toshikiigaa/n/nf9f8493e0100))
+- 2026-06-22: [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](2026/06/20260622/20260622-general-ai-agent-state-management-three-markdown-files.md) ([note](https://note.com/toshikiigaa/n/nae43c4e81e4f))
 - 2026-05-29: [Agent Skills による開発資産の発芽成長](2026/05/20260529/20260529-agent-skills-development-assets-germination-growth.md) ([note](https://note.com/toshikiigaa/n/ne9593f75fccd))
 - 2026-05-26: [Agent Skill を作っていて、BASIC とマシン語を思い出した](2026/05/20260526/20260526-agent-skills-basic-machine-language.md) ([note](https://note.com/toshikiigaa/n/n142354986e19))
 - 2026-05-23: [コンテンツ型 Agent Skill にはどんな種類があるか](2026/05/20260523/20260523-content-agent-skill-types.md) ([note](https://note.com/toshikiigaa/n/n0ebcb626b082))
@@ -38,10 +98,20 @@ published-image assets, and image-generation source prompts.
 - 2026-05-09: [Agent Skills の発火は、どのように起きているのか](2026/05/20260509/20260509-agent-skills-activation.md) ([note](https://note.com/toshikiigaa/n/nfd0dda4c85b4))
 - 2026-05-09: [Agent Skills では、説明ページの役割が少し変わる](2026/05/20260509/20260509-agent-skills-docs.md) ([note](https://note.com/toshikiigaa/n/n87a21add286b))
 
+### 簡易RAG風 Agent Skills
+
+Agent Skills を簡易RAG風に育てていく実装寄りの連載です。step1 から順に読むと、擬似RAG、索引、蒸留 Markdown の流れを追いやすくなります。
+
+- 2026-06-20: [簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る](2026/06/20260620/20260620-agent-skills-rag-step-03-distilled-answer-skeleton.md) ([note](https://note.com/toshikiigaa/n/necbdeff54e80))
+- 2026-06-17: [簡易RAG風Agent Skillsの作成 step2：miku-indexgenを足す](2026/06/20260617/20260617-agent-skills-rag-step-02-indexgen.md) ([note](https://note.com/toshikiigaa/n/n964e40f68b6c))
+- 2026-06-15: [簡易RAG風Agent Skillsの作成 step1：はじめまして擬似RAG](2026/06/20260615/20260615-agent-skills-rag-step-01.md) ([note](https://note.com/toshikiigaa/n/nbacb4098147a))
+
 ### 基礎知識・開発の考え方
 
 Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として読んでおきたい基礎知識や開発の考え方です。
 
+- 2026-06-26: [Playwright を、WebテストとAI agentの入口として、そっと見てみる](2026/06/20260626/20260626-general-playwright-overview.md) ([note](https://note.com/toshikiigaa/n/ne390f4d61a35))
+- 2026-06-14: [生成AI時代の既存システムのドキュメント作成：ソフトウェア考古学で仕様メモを蒸留する](2026/06/20260614/20260614-general-software-archaeology-spec-notes.md) ([note](https://note.com/toshikiigaa/n/n57726c8663c0))
 - 2026-06-11: [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) ([note](https://note.com/toshikiigaa/n/nf5c7d9583836))
 - 2026-06-09: [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) ([note](https://note.com/toshikiigaa/n/nb8814892039d))
 - 2026-06-04: [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) ([note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1))
@@ -49,7 +119,15 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### 生成AI・AI agent
 
+- 2026-09-23: [義務教育の小学校国語をヒントに、生成AIとの会話を改善する](2026/09/20260923/20260923-general-elementary-school-speaking-listening.md) ([note](https://note.com/toshikiigaa/n/nb093c8b87b47))
+- 2026-09-22: [GPT-5.6 Luna xhigh は、モデル選択のゲームチェンジャーになるかもしれない](2026/09/20260922c/20260922c-general-gpt56-luna-xhigh-model-selection.md) ([note](https://note.com/toshikiigaa/n/na306b8f40866))
+- 2026-07-24: [生成 AI をもちいたソフトウェアの設計・製造・そして記事執筆](2026/07/20260724/20260724-general-generative-ai-software-design-development-article-writing.md) ([note](https://note.com/toshikiigaa/n/n4da488faf4aa))
+- 2026-07-11: [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Terra画像版】](2026/07/20260711/20260711-general-gpt-5-6-sol-terra-luna-first-look.md) ([note](https://note.com/toshikiigaa/n/nc1e4c4a789c9))
+- 2026-07-11: [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Sol画像版】](2026/07/20260711b/20260711b-general-gpt-5-6-sol-terra-luna-first-look.md) ([note](https://note.com/toshikiigaa/n/ne6700915c2cc))
+- 2026-07-07: [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](2026/07/20260707/20260707-general-codex-davinci-resolve-video-workflow.md) ([note](https://note.com/toshikiigaa/n/nb475b83dd49c))
 - 2026-06-13: [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) ([note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a))
+- 2026-06-12: [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](2026/06/20260612/20260612-general-ai-conversation-dynamics.md) ([note](https://note.com/toshikiigaa/n/n4d8d3f9afb10))
+- 2026-06-08: [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) ([note](https://note.com/toshikiigaa/n/nc42765828f90))
 - 2026-06-01: [生成AIモデルの仕組み入門：トークン、ベクトル、Attention、学習](2026/06/20260601/20260601-general-generative-ai-model-vectors.md) ([note](https://note.com/toshikiigaa/n/ne5ef9e60e293))
 - 2026-05-30: [生成AIは、なぜこんなに親しみやすい価格帯で使えてしまうのか](2026/05/20260530/20260530-general-ai-subscription-pricing-runway.md) ([note](https://note.com/toshikiigaa/n/nf26df188559a))
 - 2026-05-28: [AI agent とキャラクター人格で技術エッセイを書くということ](2026/05/20260528/20260528-general-character-persona-technical-essay.md) ([note](https://note.com/toshikiigaa/n/ne68cf56c07f3))
@@ -64,7 +142,22 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 ### miku 系ツール
 
-- 2026-05-29: [miku-grep 開発日誌：AI agent に選ばれる CLI をそっと考察中](2026/05/20260529/20260529-general-ai-agent-cli-text-json.md) ([note](https://note.com/toshikiigaa/n/na7fb76c52fda))
+#### miku-ms-office および同梱 miku-soft
+
+2026-07-03 の `miku-ms-office-skills` 紹介記事から、Word / PowerPoint /
+Excel と Markdown の相互変換を扱う miku-soft シリーズが続きます。
+
+- 2026-07-06: [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) ([note](https://note.com/toshikiigaa/n/nb4c40d11d14c))
+- 2026-07-06: [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/na2cc3d672fee))
+- 2026-07-05: [[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2](2026/07/20260705b/20260705b-general-miku-md2pptx-markdown-to-powerpoint-reference.md) ([note](https://note.com/toshikiigaa/n/nb1a5ce0ef213))
+- 2026-07-05: [[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1](2026/07/20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/nf785326726a6))
+- 2026-07-04: [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](2026/07/20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md) ([note](https://note.com/toshikiigaa/n/nf764295a696f))
+- 2026-07-04: [[miku-docx2md] WordをMarkdownへ変換する小さな道具 v1.2.1](2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md) ([note](https://note.com/toshikiigaa/n/n0e91f4a20563))
+- 2026-07-03: [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) ([note](https://note.com/toshikiigaa/n/n19f7ee34501e))
+
+#### それ以外の miku 系ツール
+
+- 2026-10-13: [[igapyon-miku-daybook] 日々の予定とタスクを、AIに話しかけて整える](2026/10/20261010c/20261010c-general-miku-daybook-agent-skill-intro.md) ([note](https://note.com/toshikiigaa/n/n0e8ea5bfc5a0))
 - 2026-05-16: [[miku-text-bundle] 複数のテキストファイルを生成AI向け Markdown bundle に整理する](2026/05/20260516/20260516-miku-text-bundle-ai-text-assets.md) ([note](https://note.com/toshikiigaa/n/n5b18c376b2f0))
 - 2026-04-28: [[miku-indexgen] AI にファイルを読ませる前に、まず地図が欲しかった話](2026/04/20260428/20260428-miku-indexgen-intro.md) ([note](https://note.com/toshikiigaa/n/n5b0ac55dce0a))
 - 2026-04-12: [[miku-abc-player] `ABC` 記譜法の譜面を、ちょっと五線譜で見たくなった](2026/04/20260412/20260412-miku-abc-player-intro.md) ([note](https://note.com/toshikiigaa/n/n5be1d51d336a))
@@ -80,9 +173,45 @@ Mermaid、Markdown、アジャイルなど、生成AI時代にも土台として
 
 | Date | Article | Published |
 | --- | --- | --- |
+| 2026-10-25 | [開発日誌：MarkdownをちょっとHTMLで確認したくて、4形式を扱うAgent Skillを作ってみました。](2026/10/20261025a/20261025a-general-miku-md2formats-skills-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n772f7c396f84) |
+| 2026-10-13 | [[igapyon-miku-daybook] 日々の予定とタスクを、AIに話しかけて整える](2026/10/20261010c/20261010c-general-miku-daybook-agent-skill-intro.md) | [note](https://note.com/toshikiigaa/n/n0e8ea5bfc5a0) |
+| 2026-10-10 | [GPT-5.6 Lunaも衝撃価格だったのに、GPT-6ではSolもLunaもさらに安い](2026/10/20261010b/20261010b-general-gpt6-luna-price-performance.md) | [note](https://note.com/toshikiigaa/n/n744ba61b7117) |
+| 2026-10-10 | [規約・ルール・チェックシートを、Agent Skillsが「活きたドキュメント」にする](2026/10/20261010a/20261010a-general-agent-skills-living-documents.md) | [note](https://note.com/toshikiigaa/n/nb79393dbac78) |
+| 2026-09-23 | [義務教育の小学校国語をヒントに、生成AIとの会話を改善する](2026/09/20260923/20260923-general-elementary-school-speaking-listening.md) | [note](https://note.com/toshikiigaa/n/nb093c8b87b47) |
+| 2026-09-22 | [GPT-5.6 Luna xhigh は、モデル選択のゲームチェンジャーになるかもしれない](2026/09/20260922c/20260922c-general-gpt56-luna-xhigh-model-selection.md) | [note](https://note.com/toshikiigaa/n/na306b8f40866) |
+| 2026-09-22 | [みくくが作ってきた Agent Skills を、いったん28件、数えてみました](2026/09/20260922a/20260922a-general-agent-skills-inventory.md) | [note](https://note.com/toshikiigaa/n/nab66caab2cf1) |
+| 2026-09-22 | [[igapyon-miku-scm] 開発日誌：Agent Skill の実行経路を .mjs で軽くする](2026/09/20260922b/20260922b-general-miku-scm-prompt-mjs-pairing-dev-diary.md) | [note](https://note.com/toshikiigaa/n/ne1ce4e569ac8) |
+| 2026-07-31 | [AI agent が Shift_JIS を文字化けさせまくるので、仕方なく Agent Skills を作った](2026/07/20260731a/20260731a-general-miku-text-file-ops-skills-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n5a6dd1d42dd0) |
+| 2026-07-24 | [生成 AI をもちいたソフトウェアの設計・製造・そして記事執筆](2026/07/20260724/20260724-general-generative-ai-software-design-development-article-writing.md) | [note](https://note.com/toshikiigaa/n/n4da488faf4aa) |
+| 2026-07-23 | [[backlog-api-skills] 開発日誌：Nulab 公式の Backlog MCP を Agent Skills に変換してみました](2026/07/20260723/20260723-general-backlog-api-skills-nulab-mcp-dev-diary.md) | [note](https://note.com/toshikiigaa/n/nbe78f691594e) |
+| 2026-07-21 | [[miku-ai-assistant-builder] 開発日誌：AI assistant 登録作業をちょっと楽にする Agent Skill を作ってみました。](2026/07/20260721/20260721-general-miku-ai-assistant-builder-skills-v0-8-0-dev-diary.md) | [note](https://note.com/toshikiigaa/n/nbcf7dabc5307) |
+| 2026-07-17 | [[miku-text-bundle] v1.5.1までの開発日誌：handoffからKnowledge sourceへ](2026/07/20260717/20260717-miku-text-bundle-development-diary-v1-5-1.md) | [note](https://note.com/toshikiigaa/n/n26f7f240ae55) |
+| 2026-07-16 | [開発日誌：プロンプトをレビューする Agent Skill をつくってみた。](2026/07/20260716/20260716-general-miku-prompt-lint-skills-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n9fc8879ffa2f) |
+| 2026-07-11 | [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Terra画像版】](2026/07/20260711/20260711-general-gpt-5-6-sol-terra-luna-first-look.md) | [note](https://note.com/toshikiigaa/n/nc1e4c4a789c9) |
+| 2026-07-11 | [Codex 利用日誌：GPT-5.6のSol・Terra・Lunaが選べるようになった【Sol画像版】](2026/07/20260711b/20260711b-general-gpt-5-6-sol-terra-luna-first-look.md) | [note](https://note.com/toshikiigaa/n/ne6700915c2cc) |
+| 2026-07-08 | [miku-soft 開発日誌：Markdown から Office への出口を、テンプレート適用で少し強くする](2026/07/20260708/20260708-general-miku-soft-template-mode-dev-diary.md) | [note](https://note.com/toshikiigaa/n/n8a476ac6f75d) |
+| 2026-07-07 | [専門ツール、ちょっと苦しくなくなるかもしれません：Codex と DaVinci Resolve で生成AI時代の動画制作を体験](2026/07/20260707/20260707-general-codex-davinci-resolve-video-workflow.md) | [note](https://note.com/toshikiigaa/n/nb475b83dd49c) |
+| 2026-07-06 | [[miku-md2xlsx] MarkdownをExcelへ変換する小さな道具 v0.6.6](2026/07/20260706b/20260706b-general-miku-md2xlsx-markdown-to-excel-reference.md) | [note](https://note.com/toshikiigaa/n/nb4c40d11d14c) |
+| 2026-07-06 | [[miku-xlsx2md] ExcelをMarkdownへ変換する小さな道具 v1.3.0](2026/07/20260706/20260706-general-miku-xlsx2md-excel-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/na2cc3d672fee) |
+| 2026-07-05 | [[miku-md2pptx] MarkdownをPowerPointへ変換する小さな道具 v0.2.2](2026/07/20260705b/20260705b-general-miku-md2pptx-markdown-to-powerpoint-reference.md) | [note](https://note.com/toshikiigaa/n/nb1a5ce0ef213) |
+| 2026-07-05 | [[miku-pptx2md] PowerPointをMarkdownへ変換する小さな道具 v0.5.1](2026/07/20260705/20260705-general-miku-pptx2md-powerpoint-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/nf785326726a6) |
+| 2026-07-04 | [[miku-md2docx] MarkdownをWordへ変換する小さな道具 v0.9.2](2026/07/20260704b/20260704b-general-miku-md2docx-markdown-to-word-reference.md) | [note](https://note.com/toshikiigaa/n/nf764295a696f) |
+| 2026-07-04 | [[miku-docx2md] WordをMarkdownへ変換する小さな道具 v1.2.1](2026/07/20260704/20260704-general-miku-docx2md-word-to-markdown-reference.md) | [note](https://note.com/toshikiigaa/n/n0e91f4a20563) |
+| 2026-07-03 | [MS OfficeファイルをMarkdown化するOSSのAgent Skillsをつくってみました](2026/07/20260703/20260703-general-miku-ms-office-skills-introduction.md) | [note](https://note.com/toshikiigaa/n/n19f7ee34501e) |
+| 2026-06-26 | [Playwright を、WebテストとAI agentの入口として、そっと見てみる](2026/06/20260626/20260626-general-playwright-overview.md) | [note](https://note.com/toshikiigaa/n/ne390f4d61a35) |
+| 2026-06-25 | [GOAL運用する Agent Skill を作ってみた](2026/06/20260625/20260625-general-agent-state-management-skill.md) | [note](https://note.com/toshikiigaa/n/n7db7a4c8c2e7) |
+| 2026-06-24 | [GPT-5.5とQwen3-Thinkingでは、プロンプト / Agent Skills 像が違って見える](2026/06/20260624/20260624-general-agent-skills-model-specific-driving-layer.md) | [note](https://note.com/toshikiigaa/n/nf9f8493e0100) |
+| 2026-06-22 | [AIエージェントの状態管理、まずは GOAL.md・TODO.md・DECISIONS.md から試してみたい](2026/06/20260622/20260622-general-ai-agent-state-management-three-markdown-files.md) | [note](https://note.com/toshikiigaa/n/nae43c4e81e4f) |
+| 2026-06-20 | [簡易RAG風Agent Skillsの作成 step3：蒸留 Markdownで意味の地図を作る](2026/06/20260620/20260620-agent-skills-rag-step-03-distilled-answer-skeleton.md) | [note](https://note.com/toshikiigaa/n/necbdeff54e80) |
+| 2026-06-17 | [簡易RAG風Agent Skillsの作成 step2：miku-indexgenを足す](2026/06/20260617/20260617-agent-skills-rag-step-02-indexgen.md) | [note](https://note.com/toshikiigaa/n/n964e40f68b6c) |
+| 2026-06-15 | [簡易RAG風Agent Skillsの作成 step1：はじめまして擬似RAG](2026/06/20260615/20260615-agent-skills-rag-step-01.md) | [note](https://note.com/toshikiigaa/n/nbacb4098147a) |
+| 2026-06-14 | [生成AI時代の既存システムのドキュメント作成：ソフトウェア考古学で仕様メモを蒸留する](2026/06/20260614/20260614-general-software-archaeology-spec-notes.md) | [note](https://note.com/toshikiigaa/n/n57726c8663c0) |
 | 2026-06-13 | [AI agent は速読する：しくみを知ってうまく付き合う開発スタイル](2026/06/20260613/20260613-general-ai-agent-speed-reading-dev-style.md) | [note](https://note.com/toshikiigaa/n/n5a3c4ef23c6a) |
+| 2026-06-12 | [生成AIとの付き合い方：人間同士の会話の力学を少し応用する](2026/06/20260612/20260612-general-ai-conversation-dynamics.md) | [note](https://note.com/toshikiigaa/n/n4d8d3f9afb10) |
 | 2026-06-11 | [生成AI時代のアジャイル：4つの価値に起きるパラダイムシフト](2026/06/20260611/20260611-general-ai-agile-values-shift.md) | [note](https://note.com/toshikiigaa/n/nf5c7d9583836) |
 | 2026-06-09 | [アジャイルソフトウェア開発宣言からはじまるアジャイル入門](2026/06/20260609/20260609-general-agile-thinking.md) | [note](https://note.com/toshikiigaa/n/nb8814892039d) |
+| 2026-06-08 | [Microsoft Copilot のことを少し調べてみた](2026/06/20260608/20260608-general-microsoft-copilot-overview.md) | [note](https://note.com/toshikiigaa/n/nc42765828f90) |
+| 2026-06-07 | [生成AI 省トークン考察 2026年6月版（OpenAI系を題材に）](2026/06/20260607/20260607-general-token-efficiency.md) | [note](https://note.com/toshikiigaa/n/n4e3831adfa5c) |
 | 2026-06-06 | [生成AI agent の向こう側には、いろいろな妖精さんがいる](2026/06/20260606/20260606-general-ai-agent-fairies-outline.md) | [note](https://note.com/toshikiigaa/n/ndc1b1eca21fc) |
 | 2026-06-05 | [生成AIの MCP は、妖精さんへお願いする魔法陣に近い](2026/06/20260605/20260605-general-mcp-magic-circle-outline.md) | [note](https://note.com/toshikiigaa/n/n4d3a240982f2) |
 | 2026-06-04 | [Mermaid から入る UML 入門：図からクラス図・シーケンス図・状態遷移図をちょっと理解](2026/06/20260604/20260604-general-mermaid-uml-introduction.md) | [note](https://note.com/toshikiigaa/n/nf5c1c6c1d2c1) |
@@ -131,13 +260,6 @@ Supporting documentation:
 
 - `docs/repository-overview.md`: repository overview and current article theme.
 - `docs/note-article-import-procedure.md`: procedure for importing Note articles.
-- `docs/root-index-maintenance.md`: how to update root `index.json`.
-
-Generated root index:
-
-- `index.json`
-
-The root index is generated by `miku-indexgen`. Do not edit it by hand.
 
 ## Directory Layout
 
@@ -152,7 +274,6 @@ The root index is generated by `miku-indexgen`. Do not edit it by hand.
         image-prompt.md
         sections/
 docs/
-index.json
 README.md
 ```
 
@@ -186,26 +307,23 @@ After front matter, place the article title as an H1, then the cover image:
 
 See `docs/note-article-import-procedure.md` for the full import procedure.
 
-## Updating Root Indexes
+## 記事・資料の探し方
 
-Run this from the repository root after adding or changing articles or docs:
+普段は「記事をテーマ別に読む」「全記事一覧」と [note 記事一覧](2026/05/20260531/20260531-note-article-list.md) を入口にします。個々の資料は、対象ディレクトリを絞ってファイル名や本文を検索します。
 
 ```sh
-java -jar /Users/igapyon/.codex/skills/igapyon-miku-indexgen/runtime/miku-indexgen-1.4.4.jar \
-  --input-directory . \
-  --output-directory . \
-  --title "mikuku-articles"
+rg --files 2026/10 -g '*.md'
+rg -n '検索語' 2026/10 docs
 ```
 
-This updates `index.json`.
-
-See `docs/root-index-maintenance.md` for maintenance details.
+リポジトリルートの `index.json` は通常の管理対象に含めず、記事や docs の追加・更新時にも生成しません。インデックスが必要な場合は、明示的に依頼された範囲について `miku-indexgen` で生成します。生成した `index.json` は手で編集しません。
 
 ## Repository Hygiene
 
 - Do not commit `.DS_Store`.
-- Do not manually edit generated `index.json`.
+- Use `workplace/` as a local scratch area for generated files, external clones,
+  and verification artifacts. Git tracks only `workplace/.gitkeep` there.
 - Keep image-generation prompts under each article's `images/src/` directory when
   they are part of the article package.
-- Commit article Markdown, images, prompt sources, docs, and the refreshed root index
-  together when they belong to the same import or maintenance task.
+- Commit article Markdown, images, prompt sources, and docs together when they
+  belong to the same import or maintenance task.

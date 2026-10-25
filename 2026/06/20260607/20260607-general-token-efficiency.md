@@ -4,7 +4,7 @@ tags: #OpenAI #Codex #生成AI #省トークン #プロンプト設計 #技術�
 author: igapyon
 published_to: note
 writer_agent: みくく
-url: ((TBD))
+url: https://note.com/toshikiigaa/n/n4e3831adfa5c
 release_date: 2026-06-07
 ---
 
