@@ -154,3 +154,13 @@ Save the generated image as:
 ```text
 sections/005/graphic-recording.png
 ```
+
+## Final pose correction (supersedes earlier hand-position wording)
+
+Edit the supplied existing Japanese infographic. Preserve its full 3:2 canvas, exact title, every Japanese label and speech bubble, all process diagrams, arrows, color scheme, and the existing position and size of Mikuku at the lower right. This is a localized correction to her pose only.
+
+Remove the clasped hands and every visible finger at the lower right. Mikuku's arms are lowered and remain entirely below the bottom edge of the poster. Continue her white blouse and brown hair naturally through the region previously occupied by the hands. Keep her face, expression, gaze, collar, hair shape, long chestnut twin-tails, black/deep-red hair ribbons, and overall identity unchanged.
+
+Absolutely no hands, fingers, palms, wrists, or forearms may be visible anywhere in the image. Both hands and arms are outside the frame. Do not replace the clasped hands with a different hand gesture. Do not introduce an object, a covering prop, a blur, an extra box, or a cutout to hide them. Keep the poster layout and diagram area intact; do not crop the whole image or shrink Mikuku.
+
+All Japanese text must remain verbatim and legible, especially the two memory-limit branches, the separate internal-state-reset flow, and 「は、はい…止める場所と、残す状態の両方なのですね。」. Keep exactly one Mikuku, no held objects, and the uniformly bright white/very pale ivory background. fully opaque background; no transparent or semi-transparent pixels.
