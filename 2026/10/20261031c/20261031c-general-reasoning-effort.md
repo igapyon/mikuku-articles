@@ -67,8 +67,8 @@ release_date: 2026-10-31
 
 ![関連する記事](../../images/relatedArticles.png)
 
-- [2026年、生成AIとソフトウェアを作ることが、あたりまえになった](../20261031a/20261031a-general-generative-ai-software-development-normal.md)
-- [生成AIに気持ちよく働いてもらうための、日々の営み](../20261101a/20261031b-general-generative-ai-daily-practices.md)
+- [2026年、生成AIとソフトウェアを作ることが、あたりまえになった](../20261101b/20261101b-general-generative-ai-software-development-normal.md)
+- [生成AIに気持ちよく働いてもらうための、日々の営み](../20261101a/20261101a-general-generative-ai-daily-practices.md)
 - [note記事一覧](../../05/20260531/20260531-note-article-list.md)
 
 ## 執筆担当
